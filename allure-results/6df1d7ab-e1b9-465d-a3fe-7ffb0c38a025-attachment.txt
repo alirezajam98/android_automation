@@ -1,0 +1,2 @@
+INFO     logging_config:test_settings_page.py:27 نام کاربر: امیر کنارنگ
+INFO     logging_config:test_settings_page.py:28 شماره تلفن: ۰۹۵۸۶۴۳۱۶۸۲

@@ -1,0 +1,15 @@
+{
+  "settings_page": {
+    "settings_title": "تنظیمات",
+    "username_label": "امیر کنارنگ",
+    "phone_number_label": "۰۹۵۸۶۴۳۱۶۸۲",
+    "privacy_label": "حریم خصوصی",
+    "logout_button": "خروج"
+  },
+  "box_page": {
+    "box_deposit_text": "۰ ریال",
+    "box_deposit_description": "موجودی باکس‌ها",
+    "no_active_box_title": "باکس فعالی ندارید"
+  }
+}
+

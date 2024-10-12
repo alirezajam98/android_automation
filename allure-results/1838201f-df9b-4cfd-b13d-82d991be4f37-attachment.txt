@@ -1,0 +1,3 @@
+INFO     logging_config:test_settings_page.py:34 نام کاربر: امیر کنارنگ
+INFO     logging_config:test_settings_page.py:35 شماره تلفن: ۰۹۵۸۶۴۳۱۶۸۲
+INFO     logging_config:test_settings_page.py:44 All texts in settings page are correct.

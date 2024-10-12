@@ -1,0 +1,210 @@
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\a.jamshidi\AppData\Local\Programs\Python\Python38\lib\logging\__init__.py", line 1088, in emit
+    stream.write(msg + self.terminator)
+OSError: [WinError 6] The handle is invalid
+Call stack:
+  File ".\run_test.py", line 65, in <module>
+    run_tests_for_device(device)
+  File ".\run_test.py", line 58, in run_tests_for_device
+    pytest.main(pytest_args)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\config\__init__.py", line 175, in main
+    ret: ExitCode | int = config.hook.pytest_cmdline_main(config=config)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\main.py", line 330, in pytest_cmdline_main
+    return wrap_session(config, _main)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\main.py", line 283, in wrap_session
+    session.exitstatus = doit(config, session) or 0
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\main.py", line 337, in _main
+    config.hook.pytest_runtestloop(session=session)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\main.py", line 362, in pytest_runtestloop
+    item.config.hook.pytest_runtest_protocol(item=item, nextitem=nextitem)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\runner.py", line 113, in pytest_runtest_protocol
+    runtestprotocol(item, nextitem=nextitem)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\runner.py", line 132, in runtestprotocol
+    reports.append(call_and_report(item, "call", log))
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\runner.py", line 241, in call_and_report
+    call = CallInfo.from_call(
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\runner.py", line 341, in from_call
+    result: TResult | None = func()
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\runner.py", line 242, in <lambda>
+    lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\runner.py", line 174, in pytest_runtest_call
+    item.runtest()
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\python.py", line 1627, in runtest
+    self.ihook.pytest_pyfunc_call(pyfuncitem=self)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\python.py", line 159, in pytest_pyfunc_call
+    result = testfunction(**testargs)
+  File "C:\Users\a.jamshidi\Documents\android_test_automation\android_automation\android_automation\tests\settings\test_settings_page.py", line 34, in test_check_settings_texts
+    logger.info(f"نام کاربر: {user_name}")
+Message: 'نام کاربر: امیر کنارنگ'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\a.jamshidi\AppData\Local\Programs\Python\Python38\lib\logging\__init__.py", line 1088, in emit
+    stream.write(msg + self.terminator)
+OSError: [WinError 6] The handle is invalid
+Call stack:
+  File ".\run_test.py", line 65, in <module>
+    run_tests_for_device(device)
+  File ".\run_test.py", line 58, in run_tests_for_device
+    pytest.main(pytest_args)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\config\__init__.py", line 175, in main
+    ret: ExitCode | int = config.hook.pytest_cmdline_main(config=config)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\main.py", line 330, in pytest_cmdline_main
+    return wrap_session(config, _main)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\main.py", line 283, in wrap_session
+    session.exitstatus = doit(config, session) or 0
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\main.py", line 337, in _main
+    config.hook.pytest_runtestloop(session=session)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\main.py", line 362, in pytest_runtestloop
+    item.config.hook.pytest_runtest_protocol(item=item, nextitem=nextitem)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\runner.py", line 113, in pytest_runtest_protocol
+    runtestprotocol(item, nextitem=nextitem)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\runner.py", line 132, in runtestprotocol
+    reports.append(call_and_report(item, "call", log))
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\runner.py", line 241, in call_and_report
+    call = CallInfo.from_call(
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\runner.py", line 341, in from_call
+    result: TResult | None = func()
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\runner.py", line 242, in <lambda>
+    lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\runner.py", line 174, in pytest_runtest_call
+    item.runtest()
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\python.py", line 1627, in runtest
+    self.ihook.pytest_pyfunc_call(pyfuncitem=self)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\python.py", line 159, in pytest_pyfunc_call
+    result = testfunction(**testargs)
+  File "C:\Users\a.jamshidi\Documents\android_test_automation\android_automation\android_automation\tests\settings\test_settings_page.py", line 35, in test_check_settings_texts
+    logger.info(f"شماره تلفن: {phone_number}")
+Message: 'شماره تلفن: ۰۹۵۸۶۴۳۱۶۸۲'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\a.jamshidi\AppData\Local\Programs\Python\Python38\lib\logging\__init__.py", line 1088, in emit
+    stream.write(msg + self.terminator)
+OSError: [WinError 6] The handle is invalid
+Call stack:
+  File ".\run_test.py", line 65, in <module>
+    run_tests_for_device(device)
+  File ".\run_test.py", line 58, in run_tests_for_device
+    pytest.main(pytest_args)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\config\__init__.py", line 175, in main
+    ret: ExitCode | int = config.hook.pytest_cmdline_main(config=config)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\main.py", line 330, in pytest_cmdline_main
+    return wrap_session(config, _main)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\main.py", line 283, in wrap_session
+    session.exitstatus = doit(config, session) or 0
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\main.py", line 337, in _main
+    config.hook.pytest_runtestloop(session=session)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\main.py", line 362, in pytest_runtestloop
+    item.config.hook.pytest_runtest_protocol(item=item, nextitem=nextitem)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\runner.py", line 113, in pytest_runtest_protocol
+    runtestprotocol(item, nextitem=nextitem)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\runner.py", line 132, in runtestprotocol
+    reports.append(call_and_report(item, "call", log))
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\runner.py", line 241, in call_and_report
+    call = CallInfo.from_call(
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\runner.py", line 341, in from_call
+    result: TResult | None = func()
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\runner.py", line 242, in <lambda>
+    lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\runner.py", line 174, in pytest_runtest_call
+    item.runtest()
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\python.py", line 1627, in runtest
+    self.ihook.pytest_pyfunc_call(pyfuncitem=self)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\python.py", line 159, in pytest_pyfunc_call
+    result = testfunction(**testargs)
+  File "C:\Users\a.jamshidi\Documents\android_test_automation\android_automation\android_automation\tests\settings\test_settings_page.py", line 59, in test_check_settings_texts
+    logger.info("All texts in settings page are correct.")
+Message: 'All texts in settings page are correct.'
+Arguments: ()

@@ -1,0 +1,7 @@
+INFO     utils.config:test_box.py:33 کلیک روی آیکون باکس برای باز کردن صفحه باکس: Galaxy A11
+INFO     utils.config:test_box.py:37 بستن صفحه انبوردینگ...
+INFO     utils.config:test_box.py:42 بررسی نمایش صفحه باکس...
+INFO     utils.config:test_box.py:51 بررسی متن '۰ ریال' پاس شد.
+INFO     utils.config:test_box.py:62 بررسی متن 'موجودی باکس‌ها' پاس شد.
+INFO     utils.config:test_box.py:73 بررسی متن 'باکس فعالی ندارید' پاس شد.
+INFO     utils.config:test_box.py:87 تمام متن های باکس پاس شده‌اند.

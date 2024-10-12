@@ -1,0 +1,10 @@
+{
+  "devices": {
+    "Galaxy A11": [
+      {
+        "name": "test_setting_page",
+        "file": "tests/settings/test_settings_page.py"
+      }
+    ]
+  }
+}
