@@ -8,10 +8,10 @@ device_configs = {
         "appPackage": "com.samanpr.blu.dev",
         "automationName": "UiAutomator2"
     },
-    "Pixel 4": {
+    "Galaxy A7": {
         "platformName": "Android",
-        "platformVersion": "11.0.0",
-        "udid": "ABC123456789",
+        "platformVersion": "10.0.0",
+        "udid": "3200b0985ea0b513",
         "appActivity": "com.samanpr.blu.presentation.BaseActivity",
         "appPackage": "com.samanpr.blu.dev",
         "automationName": "UiAutomator2"

@@ -1,6 +1,6 @@
-INFO     logging_config:test_settings_page.py:34 نام کاربر: امیر کنارنگ
-INFO     logging_config:test_settings_page.py:35 شماره تلفن: ۰۹۵۸۶۴۳۱۶۸۲
-INFO     logging_confERROR    utils.config:test_box.py:79 خطا رخ داد: Message: 
+[32mINFO    [0m utils.config:test_box.py:33 کلیک روی آیکون باکس برای باز کردن صفحه باکس: Galaxy A7
+[32mINFO    [0m utils.config:test_box.py:37 بستن صفحه انبوردینگ...
+[1m[31mERROR   [0m utils.config:test_box.py:79 خطا رخ داد: Message: 
 Stacktrace:
 NoSuchElementError: An element could not be located on the page using the given search parameters.
     at AndroidUiautomator2Driver.findElOrEls (C:\Users\a.jamshidi\.appium\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\lib\commands\find.ts:86:11)

@@ -4,14 +4,14 @@
       {
         "name": "test_setting_page",
         "file": "tests/settings/test_settings_page.py"
-      },{
-        "name": "test_setting_page",
-        "file": "tests/settings/test_settings_page.py"
-      },{
-        "name": "test_setting_page",
-        "file": "tests/settings/test_settings_page.py"
+      }
+    ],"Galaxy A7": [
+      {
+        "name": "test_box_page",
+        "file": "tests/box/test_box.py"
       }
     ]
   }
 }
+
 
