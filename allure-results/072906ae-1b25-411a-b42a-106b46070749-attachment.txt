@@ -1,0 +1,6 @@
+INFO     conftest:conftest.py:76 No biometric page displayed, skipping.
+INFO     conftest:conftest.py:85 Clicked on 'Allow' button for notification permission.
+INFO     conftest:conftest.py:96 Dashboard page displayed successfully.
+INFO     utils.config:test_box.py:35 کلیک روی آیکون باکس برای باز کردن صفحه باکس: Galaxy S24 Ultra
+INFO     utils.config:test_box.py:39 بستن صفحه انبوردینگ...
+INFO     utils.config:test_box.py:44 بررسی نمایش صفحه باکس...

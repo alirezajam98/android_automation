@@ -1,0 +1,9 @@
+[32mINFO    [0m utils.config:test_box.py:33 کلیک روی آیکون باکس برای باز کردن صفحه باکس: Galaxy A7
+[32mINFO    [0m utils.config:test_box.py:37 بستن صفحه انبوردینگ...
+[31m[1mERROR   [0m utils.config:test_box.py:79 خطا رخ داد: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (C:\Users\a.jamshidi\.appium\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\lib\commands\find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (C:\Users\a.jamshidi\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (C:\Users\a.jamshidi\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\find.ts:75:12)

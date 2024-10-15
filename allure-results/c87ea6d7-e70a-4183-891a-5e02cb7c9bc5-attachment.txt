@@ -1,0 +1,2 @@
+INFO:conftest:No biometric page displayed, skipping.
+INFO:conftest:Clicked on 'Allow' button for notification permission.

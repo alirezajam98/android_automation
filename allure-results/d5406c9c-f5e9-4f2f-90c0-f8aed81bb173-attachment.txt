@@ -1,0 +1,13 @@
+INFO:conftest:No biometric page displayed, skipping.
+INFO:conftest:Clicked on 'Allow' button for notification permission.
+ERROR:conftest:Failed to load the dashboard page.
+INFO:utils.config:کلیک روی آیکون باکس برای باز کردن صفحه باکس: Galaxy S24 Ultra
+INFO:utils.config:بستن صفحه انبوردینگ...
+INFO:utils.config:بررسی نمایش صفحه باکس...
+INFO:utils.config:بررسی متن '۰ ریال' پاس شد.
+INFO:utils.config:بررسی متن 'موجودی باکس‌ها' پاس شد.
+ERROR:utils.config:Expected 'باکس فعالی ندارید', but got 'My Test Box1'
+assert 'My Test Box1' == 'باکس فعالی ندارید'
+  
+  - باکس فعالی ندارید
+  + My Test Box1

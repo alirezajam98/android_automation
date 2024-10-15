@@ -2,7 +2,7 @@ import json
 import allure
 import pytest
 from logging_config import logger
-from pages.setting.settings_page import SettingsPage
+
 
 # تابعی برای بارگذاری فایل JSON
 def load_text_reference():

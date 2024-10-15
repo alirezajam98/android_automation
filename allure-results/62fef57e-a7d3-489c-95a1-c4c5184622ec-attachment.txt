@@ -1,0 +1,171 @@
+2024-10-13 17:36:30,882 - logging_config - INFO - نام کاربر: امیر کنارنگ
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\a.jamshidi\AppData\Local\Programs\Python\Python38\lib\logging\__init__.py", line 1088, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\a.jamshidi\AppData\Local\Programs\Python\Python38\lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+UnicodeEncodeError: 'charmap' codec can't encode characters in position 50-52: character maps to <undefined>
+Call stack:
+  File "<string>", line 1, in <module>
+  File "<string>", line 8, in <module>
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\execnet\gateway_base.py", line 1806, in serve
+    WorkerGateway(io=io, id=id, _startcount=2).serve()
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\execnet\gateway_base.py", line 1273, in serve
+    self._execpool.integrate_as_primary_thread()
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\execnet\gateway_base.py", line 389, in integrate_as_primary_thread
+    self._perform_spawn(reply)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\execnet\gateway_base.py", line 411, in _perform_spawn
+    reply.run()
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\execnet\gateway_base.py", line 341, in run
+    self._result = func(*args, **kwargs)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\execnet\gateway_base.py", line 1291, in executetask
+    exec(co, loc)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\xdist\remote.py", line 393, in <module>
+    config.hook.pytest_cmdline_main(config=config)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\main.py", line 330, in pytest_cmdline_main
+    return wrap_session(config, _main)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\main.py", line 283, in wrap_session
+    session.exitstatus = doit(config, session) or 0
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\main.py", line 337, in _main
+    config.hook.pytest_runtestloop(session=session)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\xdist\remote.py", line 174, in pytest_runtestloop
+    self.run_one_test()
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\xdist\remote.py", line 195, in run_one_test
+    self.config.hook.pytest_runtest_protocol(item=item, nextitem=nextitem)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\runner.py", line 113, in pytest_runtest_protocol
+    runtestprotocol(item, nextitem=nextitem)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\runner.py", line 132, in runtestprotocol
+    reports.append(call_and_report(item, "call", log))
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\runner.py", line 241, in call_and_report
+    call = CallInfo.from_call(
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\runner.py", line 341, in from_call
+    result: TResult | None = func()
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\runner.py", line 242, in <lambda>
+    lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\runner.py", line 174, in pytest_runtest_call
+    item.runtest()
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\python.py", line 1627, in runtest
+    self.ihook.pytest_pyfunc_call(pyfuncitem=self)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\python.py", line 159, in pytest_pyfunc_call
+    result = testfunction(**testargs)
+  File "G:\android_automation\tests\settings\test_settings_page.py", line 34, in test_check_settings_texts
+    logger.info(f"نام کاربر: {user_name}")
+Message: 'نام کاربر: امیر کنارنگ'
+Arguments: ()
+2024-10-13 17:36:30,887 - logging_config - INFO - شماره تلفن: ۰۹۵۸۶۴۳۱۶۸۲
+--- Logging error ---
+Traceback (most recent call last):
+  File "C:\Users\a.jamshidi\AppData\Local\Programs\Python\Python38\lib\logging\__init__.py", line 1088, in emit
+    stream.write(msg + self.terminator)
+  File "C:\Users\a.jamshidi\AppData\Local\Programs\Python\Python38\lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+UnicodeEncodeError: 'charmap' codec can't encode characters in position 50-54: character maps to <undefined>
+Call stack:
+  File "<string>", line 1, in <module>
+  File "<string>", line 8, in <module>
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\execnet\gateway_base.py", line 1806, in serve
+    WorkerGateway(io=io, id=id, _startcount=2).serve()
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\execnet\gateway_base.py", line 1273, in serve
+    self._execpool.integrate_as_primary_thread()
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\execnet\gateway_base.py", line 389, in integrate_as_primary_thread
+    self._perform_spawn(reply)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\execnet\gateway_base.py", line 411, in _perform_spawn
+    reply.run()
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\execnet\gateway_base.py", line 341, in run
+    self._result = func(*args, **kwargs)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\execnet\gateway_base.py", line 1291, in executetask
+    exec(co, loc)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\xdist\remote.py", line 393, in <module>
+    config.hook.pytest_cmdline_main(config=config)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\main.py", line 330, in pytest_cmdline_main
+    return wrap_session(config, _main)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\main.py", line 283, in wrap_session
+    session.exitstatus = doit(config, session) or 0
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\main.py", line 337, in _main
+    config.hook.pytest_runtestloop(session=session)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\xdist\remote.py", line 174, in pytest_runtestloop
+    self.run_one_test()
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\xdist\remote.py", line 195, in run_one_test
+    self.config.hook.pytest_runtest_protocol(item=item, nextitem=nextitem)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\runner.py", line 113, in pytest_runtest_protocol
+    runtestprotocol(item, nextitem=nextitem)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\runner.py", line 132, in runtestprotocol
+    reports.append(call_and_report(item, "call", log))
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\runner.py", line 241, in call_and_report
+    call = CallInfo.from_call(
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\runner.py", line 341, in from_call
+    result: TResult | None = func()
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\runner.py", line 242, in <lambda>
+    lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\runner.py", line 174, in pytest_runtest_call
+    item.runtest()
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\python.py", line 1627, in runtest
+    self.ihook.pytest_pyfunc_call(pyfuncitem=self)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\pluggy\_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\a.jamshidi\android_automation\android_automation\.venv\lib\site-packages\_pytest\python.py", line 159, in pytest_pyfunc_call
+    result = testfunction(**testargs)
+  File "G:\android_automation\tests\settings\test_settings_page.py", line 35, in test_check_settings_texts
+    logger.info(f"شماره تلفن: {phone_number}")
+Message: 'شماره تلفن: ۰۹۵۸۶۴۳۱۶۸۲'
+Arguments: ()
+2024-10-13 17:36:30,888 - logging_config - INFO - All texts in settings page are correct.

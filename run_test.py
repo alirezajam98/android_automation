@@ -45,15 +45,20 @@ def run_tests_for_device(device_name):
         logger.error(f"No valid test files found for device '{device_name}'")
         return
 
-    # ارسال پارامترهای دستگاه به pytest و اجرای همه تست‌ها یکجا
-    report_file = f"report_{device_name}.html"  # گزارش نهایی برای هر دستگاه
+    # ایجاد پوشه 'report' اگر وجود ندارد
+    report_dir = os.path.join(os.getcwd(), 'report')
+    if not os.path.exists(report_dir):
+        os.makedirs(report_dir)
+
+    # تنظیم مسیر گزارش نهایی برای هر دستگاه
+    report_file = os.path.join(report_dir, f"report_{device_name}.html")
 
     pytest_args = [
         *test_files,  # لیست فایل‌های تست
         "-v",  # برای نمایش اطلاعات بیشتر
         f"--device_name={device_name}",
         f"--device_udid={device_config.get('udid', 'unknown_udid')}",  # تنظیم پیش‌فرض برای udid
-        f"--html={report_file}",  # تولید گزارش HTML
+        f"--html={report_file}",  # تولید گزارش HTML در مسیر جدید
         "--self-contained-html",  # ایجاد گزارش مستقل HTML
     ]
     pytest.main(pytest_args)

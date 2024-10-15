@@ -3,14 +3,13 @@ import allure
 import yaml
 import os
 from datetime import datetime
-
-
-def load_config():
-    # مسیر کامل به config.yml
-    config_path = 'C:\\Users\\a.jamshidi\\android_automation\\android_automation\\config.yml'
-    print(f"Loading config from: {config_path}")  # چاپ مسیر برای بررسی
-    with open(config_path, 'r') as file:
-        return yaml.safe_load(file)
+#
+# def load_config():
+#     # مسیر کامل به config.yml
+#     config_path = 'C:\\Users\\a.jamshidi\\android_automation\\android_automation\\config.yml'
+#     print(f"Loading config from: {config_path}")  # چاپ مسیر برای بررسی
+#     with open(config_path, 'r') as file:
+#         return yaml.safe_load(file)
 
 
 # تنظیمات برای لاگ‌ها
