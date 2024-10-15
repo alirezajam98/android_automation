@@ -1,10 +1,0 @@
-[32mINFO    [0m utils.config:test_box.py:33 کلیک روی آیکون باکس برای باز کردن صفحه باکس: Galaxy A11
-[32mINFO    [0m utils.config:test_box.py:37 بستن صفحه انبوردینگ...
-[32mINFO    [0m utils.config:test_box.py:42 بررسی نمایش صفحه باکس...
-[32mINFO    [0m utils.config:test_box.py:51 بررسی متن '۰ ریال' پاس شد.
-[32mINFO    [0m utils.config:test_box.py:62 بررسی متن 'موجودی باکس‌ها' پاس شد.
-[31m[1mERROR   [0m utils.config:test_box.py:76 Expected 'باکس فعالی ندارید', but got 'My Test Box1'
-assert 'My Test Box1' == 'باکس فعالی ندارید'
-  
-  - باکس فعالی ندارید
-  + My Test Box1

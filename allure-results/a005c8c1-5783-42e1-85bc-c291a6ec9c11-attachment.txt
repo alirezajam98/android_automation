@@ -1,5 +1,0 @@
-INFO:logging_config:Navigating to the settings page...
-INFO:logging_config:Settings page displayed successfully.
-INFO:logging_config:User Name: امیر کنارنگ
-INFO:logging_config:Phone Number: ۰۹۵۸۶۴۳۱۶۸۲
-INFO:logging_config:Test completed successfully.

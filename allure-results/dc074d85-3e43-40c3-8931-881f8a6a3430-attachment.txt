@@ -1,3 +1,0 @@
-No biometric page displayed, skipping.
-Clicked on 'Allow' button for notification permission.
-Failed to load the dashboard page.

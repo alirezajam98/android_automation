@@ -1,5 +1,0 @@
-INFO     logging_config:test_settings_page.py:17 Navigating to the settings page...
-INFO     logging_config:test_settings_page.py:23 Settings page displayed successfully.
-INFO     logging_config:test_settings_page.py:27 User Name: امیر کنارنگ
-INFO     logging_config:test_settings_page.py:28 Phone Number: ۰۹۵۸۶۴۳۱۶۸۲
-INFO     logging_config:test_settings_page.py:32 Test completed successfully.

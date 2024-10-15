@@ -1,9 +1,10 @@
-# pages/box_page.py
+import json
 from appium.webdriver.common.appiumby import AppiumBy
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from pages.base_page import BasePage
 from pages.dashboard.box.select_box_type_page import SelectBoxTypePage
+from pages.dashboard.box.box_profile_page import BoxProfilePage
 
 
 class BoxPage(BasePage):
@@ -16,6 +17,14 @@ class BoxPage(BasePage):
         self.no_active_box_title = (AppiumBy.ID, "com.samanpr.blu.dev:id/titleTextView")
         self.no_active_box_description = (AppiumBy.ID, "com.samanpr.blu.dev:id/descriptionTextView")
         self.new_box_button = (AppiumBy.XPATH, "//android.widget.Button[@resource-id='com.samanpr.blu.dev:id/fabNewSpace']")
+        self.first_box_name = (AppiumBy.ID, "com.samanpr.blu.dev:id/titleTextView")
+        self.first_box_amount = (AppiumBy.ID, "com.samanpr.blu.dev:id/descriptionTextView")
+        self.first_box_image = (AppiumBy.ID, "com.samanpr.blu.dev:id/avatarImageView")
+
+        # بارگذاری فایل JSON
+        with open('text_reference.json', 'r', encoding='utf-8') as f:
+            self.text_reference = json.load(f)
+
     def close_onboarding(self):
         # صبر برای نمایش دکمه Close و کلیک روی آن
         WebDriverWait(self.driver, 20).until(
@@ -55,16 +64,16 @@ class BoxPage(BasePage):
         return self.driver.find_element(*self.no_active_box_description).get_attribute("text")
 
     def is_box_deposit_text_correct(self):
-        return self.get_box_deposit_text() == "۰ ریال"
+        return self.get_box_deposit_text() == self.text_reference["box_page"]["box_deposit_text"]
 
     def is_box_deposit_description_correct(self):
-        return self.get_box_deposit_description() == "موجودی باکس‌ها"
+        return self.get_box_deposit_description() == self.text_reference["box_page"]["box_deposit_description"]
 
     def is_no_active_box_title_correct(self):
-        return self.get_no_active_box_title() == "باکس فعالی ندارید"
+        return self.get_no_active_box_title() == self.text_reference["box_page"]["no_active_box_title"]
 
     def is_no_active_box_description_correct(self):
-        return self.get_no_active_box_description() == "اولین باکس خود را از طریق دکمه «باکس جدید» بسازید"
+        return self.get_no_active_box_description() == self.text_reference["box_page"]["no_active_box_description"]
 
     def click_new_box(self):
         # استفاده از XPath برای کلیک روی دکمه "باکس جدید"
@@ -73,3 +82,16 @@ class BoxPage(BasePage):
         ).click()
         # هدایت به صفحه انتخاب نوع باکس
         return SelectBoxTypePage(self.driver)
+
+    def is_first_box_name_correct(self):
+        # بررسی نام اولین باکس
+        return self.driver.find_element(*self.first_box_name).get_attribute("text") == self.text_reference["box_page"]["first_box_name"]
+
+    def is_first_box_amount_correct(self):
+        # بررسی مقدار اولین باکس
+        return self.driver.find_element(*self.first_box_amount).get_attribute("text") == self.text_reference["box_page"]["first_box_amount"]
+
+    def click_first_box(self):
+        # کلیک روی اولین باکس
+        self.driver.find_element(*self.first_box_image).click()
+        return BoxProfilePage(self.driver)

@@ -39,7 +39,10 @@ def run_tests_for_device(device_name):
         return
 
     # ساخت لیستی از فایل‌های تست برای اجرا در یک pytest
-    test_files = [test["file"] for test in tests if os.path.exists(test["file"])]
+    test_files = [
+        test["file"] for test in tests
+        if os.path.exists(test["file"]) and test.get("enabled", True)  # چک کردن 'enabled'
+    ]
 
     if not test_files:
         logger.error(f"No valid test files found for device '{device_name}'")

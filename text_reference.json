@@ -9,7 +9,10 @@
   "box_page": {
     "box_deposit_text": "۰ ریال",
     "box_deposit_description": "موجودی باکس‌ها",
-    "no_active_box_title": "باکس فعالی ندارید"
+    "no_active_box_title": "باکس فعالی ندارید",
+    "no_active_box_description": "اولین باکس خود را از طریق دکمه «باکس جدید» بسازید",
+    "first_box_name": "My Test Box1",
+    "first_box_amount": "۰ ریال"
   }
 }
 

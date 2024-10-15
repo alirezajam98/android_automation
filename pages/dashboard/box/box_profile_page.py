@@ -2,6 +2,7 @@ from appium.webdriver.common.appiumby import AppiumBy
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from pages.base_page import BasePage
+from pages.dashboard.box.box_setting_bottom_sheet import BoxSettingBottomSheet
 
 
 class BoxProfilePage(BasePage):
@@ -116,6 +117,9 @@ class BoxProfilePage(BasePage):
     def get_active_goal_status(self):
         return self.driver.find_element(*self.status_goal_active).get_attribute("text")
 
+    def click_box_settings(self):
+        self.driver.find_element(*self.setting_button).click()
+        return BoxSettingBottomSheet(self.driver)
 
     def click_back_to_box_page(self):
         self.driver.find_element(*self.back_to_box_page).click()
@@ -140,6 +144,9 @@ class BoxProfilePage(BasePage):
     def get_deposit_btn_text(self):
         # بررسی عنوان "بلوباکس"
         return self.driver.find_element(*self.deposit_button).text == "واریز"
+
+    def is_page_displayed_deposit_btn(self):
+        return self.driver.find_element(*self.deposit_button).is_displayed()
 
     def click_deposit_btn(self):
         self.driver.find_element(*self.deposit_button).click()
