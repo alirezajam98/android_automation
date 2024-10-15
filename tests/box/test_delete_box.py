@@ -96,6 +96,35 @@ def test_edit_box_name_and_delete_box(login_and_dashboard):
             except AssertionError as e:
                 logger.warning(f"Error in no_active_box_title: {e}")
                 logger.error(str(e))
+        with allure.step("Check '۰ ریال' text"):
+            try:
+                expected_text = text_reference["box_page"]["box_deposit_text"]
+                actual_text = box_page.get_box_deposit_text()
+                assert actual_text == expected_text, \
+                    f"Expected '{expected_text}', but got '{actual_text}'"
+            except AssertionError as e:
+                logger.warning(f"Error in box_deposit_text: {e}")
+                logger.error(str(e))
+
+        with allure.step("Check 'موجودی باکس‌ها' text"):
+            try:
+                expected_text = text_reference["box_page"]["box_deposit_description"]
+                actual_text = box_page.get_box_deposit_description()
+                assert actual_text == expected_text, \
+                    f"Expected '{expected_text}', but got '{actual_text}'"
+            except AssertionError as e:
+                logger.warning(f"Error in box_deposit_description: {e}")
+                logger.error(str(e))
+
+        with allure.step("Check 'باکس فعالی ندارید' text"):
+            try:
+                expected_text = text_reference["box_page"]["no_active_box_title"]
+                actual_text = box_page.get_no_active_box_title()
+                assert actual_text == expected_text, \
+                    f"Expected '{expected_text}', but got '{actual_text}'"
+            except AssertionError as e:
+                logger.warning(f"Error in no_active_box_title: {e}")
+                logger.error(str(e))
 
     except Exception as e:
         logger.error(f"خطا رخ داد: {e}")
