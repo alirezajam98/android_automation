@@ -6,10 +6,12 @@ import json
 # تنظیمات لاگ
 logger = configure_logger()
 
+
 # تابعی برای بارگذاری فایل JSON
 def load_text_reference():
     with open('text_reference.json', 'r', encoding='utf-8') as f:
         return json.load(f)
+
 
 @pytest.mark.order(1)
 @pytest.mark.check_box
@@ -45,10 +47,9 @@ def test_close_onboarding_and_check_box_texts(login_and_dashboard, device_name):
         with allure.step("Check '۰ ریال' text"):
             try:
                 expected_text = text_reference["box_page"]["box_deposit_text"]
-                actual_text = box_page.get_box_deposit_text()  # تابعی که متن واقعی را برمی‌گرداند
+                actual_text = box_page.get_box_deposit_text()
                 assert actual_text == expected_text, \
                     f"Expected '{expected_text}', but got '{actual_text}'"
-                logger.info(f"بررسی متن '{expected_text}' پاس شد.")
             except AssertionError as e:
                 errors.append(f"Error in box_deposit_text: {e}")
                 logger.error(str(e))
@@ -56,10 +57,9 @@ def test_close_onboarding_and_check_box_texts(login_and_dashboard, device_name):
         with allure.step("Check 'موجودی باکس‌ها' text"):
             try:
                 expected_text = text_reference["box_page"]["box_deposit_description"]
-                actual_text = box_page.get_box_deposit_description()  # تابعی که متن واقعی را برمی‌گرداند
+                actual_text = box_page.get_box_deposit_description()
                 assert actual_text == expected_text, \
                     f"Expected '{expected_text}', but got '{actual_text}'"
-                logger.info(f"بررسی متن '{expected_text}' پاس شد.")
             except AssertionError as e:
                 errors.append(f"Error in box_deposit_description: {e}")
                 logger.error(str(e))
@@ -67,10 +67,9 @@ def test_close_onboarding_and_check_box_texts(login_and_dashboard, device_name):
         with allure.step("Check 'باکس فعالی ندارید' text"):
             try:
                 expected_text = text_reference["box_page"]["no_active_box_title"]
-                actual_text = box_page.get_no_active_box_title()  # تابعی که متن واقعی را برمی‌گرداند
+                actual_text = box_page.get_no_active_box_title()
                 assert actual_text == expected_text, \
                     f"Expected '{expected_text}', but got '{actual_text}'"
-                logger.info(f"بررسی متن '{expected_text}' پاس شد.")
             except AssertionError as e:
                 errors.append(f"Error in no_active_box_title: {e}")
                 logger.error(str(e))
@@ -82,6 +81,5 @@ def test_close_onboarding_and_check_box_texts(login_and_dashboard, device_name):
 
     # گزارش خطاهای ثبت شده (در صورت وجود)
     if errors:
-        raise AssertionError("Errors encountered during test:\n" + "\n".join(errors))
-
-    logger.info("تمام متن های باکس پاس شده‌اند.")
+        error_summary = "\n".join(errors)
+        raise AssertionError(f"Errors encountered during test:\n{error_summary}")

@@ -1,9 +1,6 @@
-INFO     logging_config:test_settings_page.py:34 نام کاربر: امیر کنارنگ
-INFO     logging_config:test_settings_page.py:35 شماره تلفن: ۰۹۵۸۶۴۳۱۶۸۲
-INFO     logging_confERROR    utils.config:test_box.py:79 خطا رخ داد: Message: 
-Stacktrace:
-NoSuchElementError: An element could not be located on the page using the given search parameters.
-    at AndroidUiautomator2Driver.findElOrEls (C:\Users\a.jamshidi\.appium\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\lib\commands\find.ts:86:11)
-    at processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at AndroidUiautomator2Driver.findElOrElsWithProcessing (C:\Users\a.jamshidi\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\find.ts:60:12)
-    at AndroidUiautomator2Driver.findElement (C:\Users\a.jamshidi\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\find.ts:75:12)
+INFO     conftest:conftest.py:76 No biometric page displayed, skipping.
+INFO     conftest:conftest.py:85 Clicked on 'Allow' button for notification permission.
+INFO     conftest:conftest.py:96 Dashboard page displayed successfully.
+INFO     utils.config:test_box.py:35 کلیک روی آیکون باکس برای باز کردن صفحه باکس: Galaxy S24 Ultra
+INFO     utils.config:test_box.py:39 بستن صفحه انبوردینگ...
+INFO     utils.config:test_box.py:44 بررسی نمایش صفحه باکس...
