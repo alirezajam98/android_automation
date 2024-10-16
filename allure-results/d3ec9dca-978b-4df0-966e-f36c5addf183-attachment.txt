@@ -1,0 +1,4 @@
+INFO:conftest:No biometric page displayed, skipping.
+INFO:conftest:Clicked on 'Allow' button for notification permission.
+INFO:conftest:Dashboard page displayed successfully.
+ERROR:utils.config:خطا رخ داد: 'DashboardPage' object has no attribute 'is_first_box_name_correct'

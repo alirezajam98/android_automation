@@ -1,0 +1,14 @@
+INFO     conftest:conftest.py:76 No biometric page displayed, skipping.
+INFO     conftest:conftest.py:85 Clicked on 'Allow' button for notification permission.
+INFO     conftest:conftest.py:96 Dashboard page displayed successfully.
+INFO     utils.config:test_first_box_profile.py:23 کلیک روی آیکون باکس برای باز کردن صفحه باکس...
+INFO     utils.config:test_first_box_profile.py:27 بستن صفحه انبوردینگ...
+INFO     utils.config:test_first_box_profile.py:38 صفحه باکس نمایش داده شد.
+WARNING  utils.config:test_first_box_profile.py:45 نام اولین باکس نادرست است: نام اولین باکس نادرست است.
+assert False
+ +  where False = is_first_box_name_correct()
+ +    where is_first_box_name_correct = <pages.dashboard.box.box_page.BoxPage object at 0x0000022BAFD43040>.is_first_box_name_correct
+ERROR    utils.config:test_first_box_profile.py:60 خطا رخ داد: مقدار اولین باکس نادرست است.
+assert False
+ +  where False = is_first_box_amount_correct()
+ +    where is_first_box_amount_correct = <pages.dashboard.box.box_page.BoxPage object at 0x0000022BAFD43040>.is_first_box_amount_correct

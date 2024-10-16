@@ -1,0 +1,9 @@
+INFO:conftest:No biometric page displayed, skipping.
+INFO:conftest:Clicked on 'Allow' button for notification permission.
+INFO:conftest:Dashboard page displayed successfully.
+INFO:utils.config:کلیک روی آیکون باکس برای باز کردن صفحه باکس...
+INFO:utils.config:بستن صفحه انبوردینگ...
+ERROR:utils.config:خطا رخ داد: نام اولین باکس نادرست است.
+assert False
+ +  where False = is_first_box_name_correct()
+ +    where is_first_box_name_correct = <pages.dashboard.box.box_page.BoxPage object at 0x000001E302CAAD00>.is_first_box_name_correct

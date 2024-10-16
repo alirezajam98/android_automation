@@ -1,0 +1,9 @@
+INFO     conftest:conftest.py:76 No biometric page displayed, skipping.
+INFO     conftest:conftest.py:85 Clicked on 'Allow' button for notification permission.
+INFO     conftest:conftest.py:96 Dashboard page displayed successfully.
+INFO     utils.config:test_first_box_profile.py:24 کلیک روی آیکون باکس برای باز کردن صفحه باکس...
+INFO     utils.config:test_first_box_profile.py:28 بستن صفحه انبوردینگ...
+INFO     utils.config:test_first_box_profile.py:34 نام اولین باکس صحیح است.
+INFO     utils.config:test_first_box_profile.py:40 مقدار اولین باکس صحیح است.
+INFO     utils.config:test_first_box_profile.py:43 کلیک روی اولین باکس و هدایت به صفحه پروفایل باکس...
+ERROR    utils.config:test_first_box_profile.py:51 خطا رخ داد: 'BoxProfilePage' object has no attribute 'is_page_displayed'
