@@ -14,7 +14,6 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)  # فقط پیام‌های INFO و بالاتر نمایش داده می‌شود
 
 from pages.dashboard.dashboard_page import DashboardPage
-from pages.login_page import LoginPage
 
 
 @pytest.fixture(scope="function")
@@ -47,6 +46,7 @@ def device_udid(request):
 
 @pytest.fixture
 def login_and_dashboard(request):
+    from pages.login_page import LoginPage
     device_name = request.config.getoption("--device_name")
     options = AppiumOptions()
     options.load_capabilities(device_configs[device_name])
