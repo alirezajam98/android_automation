@@ -45,6 +45,27 @@ def device_udid(request):
 
 
 @pytest.fixture
+def open_app_without_login(request):
+    device_name = request.config.getoption("--device_name")
+    options = AppiumOptions()
+    options.load_capabilities(device_configs[device_name])
+
+    service = AppiumService()
+    service.start()
+
+    appium_url = "http://127.0.0.1:4723"
+    driver = webdriver.Remote(appium_url, options=options)
+
+    # باز کردن اپ بدون لاگین
+    logger.info("App opened without logging in.")
+
+    yield driver
+
+    driver.quit()
+    service.stop()
+
+
+@pytest.fixture
 def login_and_dashboard(request):
     from pages.login_page import LoginPage
     device_name = request.config.getoption("--device_name")

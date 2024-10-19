@@ -1,0 +1,5 @@
+INFO     conftest:conftest.py:76 No biometric page displayed, skipping.
+INFO     conftest:conftest.py:85 Clicked on 'Allow' button for notification permission.
+INFO     conftest:conftest.py:96 Dashboard page displayed successfully.
+INFO     utils.config:test_create_account.py:23 کلیک روی دکمه 'ایجاد حساب کاربری'...
+ERROR    utils.config:test_create_account.py:50 خطا رخ داد: name 'driver' is not defined

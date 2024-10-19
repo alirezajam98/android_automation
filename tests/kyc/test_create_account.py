@@ -1,8 +1,14 @@
 import pytest
 import allure
+from appium.options.common import AppiumOptions
+from appium.webdriver import webdriver
+from appium.webdriver.appium_service import AppiumService
+from selenium.common import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from appium.webdriver.common.appiumby import AppiumBy
+
+from devices.device_config import device_configs
 from utils.config import configure_logger, capture_screenshot  # تنظیمات لاگ و تابع اسکرین‌شات
 
 # تنظیمات لاگ
@@ -13,12 +19,9 @@ logger = configure_logger()
 @allure.feature("User Account Creation")  # ویژگی
 @allure.story("Create a new user account")  # داستان تست
 @allure.severity(allure.severity_level.CRITICAL)  # سطح اهمیت
-def test_create_account(login_and_dashboard):
-    """تست ایجاد حساب کاربری جدید"""
-
-    # صفحه داشبورد (یا صفحه ورود اولیه)
-    dashboard_page = login_and_dashboard
-    driver = dashboard_page.driver
+@pytest.mark.order(1)
+def test_kyc(open_app_without_login):
+    driver = open_app_without_login
 
     try:
         # مرحله 1: کلیک روی دکمه 'ایجاد حساب کاربری'
@@ -29,6 +32,16 @@ def test_create_account(login_and_dashboard):
             )
             create_account_button.click()
             logger.info("دکمه 'ایجاد حساب کاربری' کلیک شد.")
+            # بررسی دسترسی نوتیفیکیشن (Allow)
+            try:
+                allow_button = (AppiumBy.ID, "com.android.permissioncontroller:id/permission_allow_button")
+                WebDriverWait(driver, 5).until(
+                    EC.visibility_of_element_located(allow_button)
+                )
+                driver.find_element(*allow_button).click()
+                logger.info("Clicked on 'Allow' button for notification permission.")
+            except TimeoutException:
+                logger.info("No notification permission modal displayed, continuing.")
 
         # مرحله 2: کلیک روی دکمه 'بازکردن حساب'
         with allure.step("Click on 'Open Account' button"):

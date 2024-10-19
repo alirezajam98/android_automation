@@ -39,8 +39,8 @@
         "file": "tests/settings/test_settings_page.py",
         "enabled": false
       },{
-        "name": "test_create_account",
-        "file": "pages/kyc/create_account_info_page.py",
+        "name": "test_kyc",
+        "file": "tests/kyc/test_create_account.py",
         "enabled": true
       }
     ]
