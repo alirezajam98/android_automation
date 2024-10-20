@@ -131,9 +131,13 @@ class NationalCodePage(BasePage):
         )
         next_button.click()
 
-
-import re  # برای استفاده از Regex
-
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from appium.webdriver.common.appiumby import AppiumBy
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import TimeoutException
+import re
 
 class BirthDatePage(BasePage):
 
@@ -142,7 +146,7 @@ class BirthDatePage(BasePage):
         year_picker = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/year"))
         )
-        self.scroll_down_year()  # اسکرول کوچک به پایین برای فعال‌سازی فیلد تاریخ
+        self.scroll_down(year_picker)  # اسکرول کوچک به پایین برای فعال‌سازی فیلد تاریخ
 
     def get_current_date(self):
         """دریافت تاریخ انتخاب‌شده به‌صورت 'YYYY/MM/DD'"""
@@ -154,8 +158,7 @@ class BirthDatePage(BasePage):
         if not raw_date:
             raise ValueError("تاریخی برای نمایش وجود ندارد. اسکرول اولیه انجام نشده است.")
 
-        # حذف تمام کاراکترهای غیر عددی (مانند "روز" یا "ماه")
-        clean_date = re.sub(r'[^0-9/]', '', raw_date)
+        clean_date = re.sub(r'[^0-9/]', '', raw_date)  # حذف کاراکترهای غیر عددی
         return clean_date  # تاریخ را به صورت YYYY/MM/DD برمی‌گرداند
 
     def set_year(self, target_year):
@@ -196,28 +199,53 @@ class BirthDatePage(BasePage):
             else:
                 self.scroll_up_day()  # اسکرول به سمت بالا برای کاهش روز
 
+    def scroll_up(self, element):
+        """اسکرول به سمت بالا"""
+        actions = ActionChains(self.driver)
+        pointer = PointerInput(Interaction.TOUCH, "finger")
+        actions.w3c_actions = [pointer]
+        actions.w3c_actions[0].create_pointer_move(
+            duration=0,
+            origin=element,
+            x=0,
+            y=0
+        )
+        actions.w3c_actions[0].create_pointer_down(pointer.DOWN)
+        actions.w3c_actions[0].create_pointer_move(
+            duration=500,
+            origin=element,
+            x=0,
+            y=-200  # تنظیم مقدار برای اسکرول به بالا
+        )
+        actions.w3c_actions[0].create_pointer_up(pointer.UP)
+        actions.perform()
+
+    def scroll_down(self, element):
+        """اسکرول به سمت پایین"""
+        actions = ActionChains(self.driver)
+        pointer = PointerInput(Interaction.TOUCH, "finger")
+        actions.w3c_actions = [pointer]
+        actions.w3c_actions[0].create_pointer_move(
+            duration=0,
+            origin=element,
+            x=0,
+            y=0
+        )
+        actions.w3c_actions[0].create_pointer_down(pointer.DOWN)
+        actions.w3c_actions[0].create_pointer_move(
+            duration=500,
+            origin=element,
+            x=0,
+            y=200  # تنظیم مقدار برای اسکرول به پایین
+        )
+        actions.w3c_actions[0].create_pointer_up(pointer.UP)
+        actions.perform()
+
     def set_birth_date(self, year, month, day):
         """تنظیم تاریخ تولد کامل"""
         self.set_year(year)
         self.set_month(month)
         self.set_day(day)
-
-    # همان متدهای scroll_up و scroll_down که قبلاً تعریف شدند
-    def scroll_up_year(self):
-        """اسکرول سال به سمت بالا"""
-        year_picker = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/year"))
-        )
-        self.scroll_up(year_picker)
-
-    def scroll_down_year(self):
-        """اسکرول سال به سمت پایین"""
-        year_picker = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/year"))
-        )
-        self.scroll_down(year_picker)
-
-    # سایر متدهای scroll برای ماه و روز مشابه همین
 
 
 class NotificationPermissionPage(BasePage):
