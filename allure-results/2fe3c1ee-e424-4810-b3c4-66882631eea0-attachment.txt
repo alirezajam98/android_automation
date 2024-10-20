@@ -1,0 +1,11 @@
+INFO     conftest:conftest.py:62 App opened without logging in.
+INFO     utils.config:test_create_account.py:36 Clicked on 'Allow' button for notification permission.
+INFO     utils.config:test_create_account.py:43 کلیک روی دکمه 'ایجاد حساب کاربری'...
+INFO     utils.config:test_create_account.py:50 No login page displayed, continuing.
+INFO     utils.config:test_create_account.py:60 No notification permission modal displayed, continuing.
+INFO     utils.config:test_create_account.py:64 کلیک روی دکمه 'بازکردن حساب'...
+INFO     utils.config:test_create_account.py:69 دکمه 'بازکردن حساب' کلیک شد.
+INFO     utils.config:test_create_account.py:73 انتخاب سرور 'UAT'...
+INFO     utils.config:test_create_account.py:79 سرور 'UAT' انتخاب شد.
+INFO     utils.config:test_create_account.py:82 کلیک بر روی دکمه شروع
+ERROR    utils.config:test_create_account.py:86 خطا رخ داد: click() missing 2 required positional arguments: 'self' and 'locator'

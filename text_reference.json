@@ -13,6 +13,9 @@
     "no_active_box_description": "اولین باکس خود را از طریق دکمه «باکس جدید» بسازید",
     "first_box_name": "My Test Box1",
     "first_box_amount": "۰ ریال"
+  },
+  "kyc_pages": {
+    "national_code": "کد ملی ۱۰ رقمی"
   }
 }
 

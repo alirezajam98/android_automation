@@ -1,3 +1,5 @@
+import random
+
 import pytest
 from appium.webdriver.appium_service import AppiumService
 from selenium.common import TimeoutException
@@ -77,7 +79,16 @@ def login_and_dashboard(request):
 
     appium_url = "http://127.0.0.1:4723"
     driver = webdriver.Remote(appium_url, options=options)
-
+    # بررسی دسترسی نوتیفیکیشن (Allow)
+    try:
+        allow_button = (AppiumBy.ID, "com.android.permissioncontroller:id/permission_allow_button")
+        WebDriverWait(driver, 5).until(
+            EC.visibility_of_element_located(allow_button)
+        )
+        driver.find_element(*allow_button).click()
+        logger.info("Clicked on 'Allow' button for notification permission.")
+    except TimeoutException:
+        logger.info("No notification permission modal displayed, continuing.")
     # ورود به سیستم
     login_page = LoginPage(driver)
     login_page.enter_username("andpfm7")
@@ -91,6 +102,7 @@ def login_and_dashboard(request):
         WebDriverWait(driver, 10).until(
             EC.visibility_of_element_located(not_now_button)
         )
+
         biometric_page.click_not_now()
         logger.info("Clicked on 'Not Now' button in biometric page.")
     except TimeoutException:
@@ -141,3 +153,37 @@ def driver(request):
     driver = webdriver.Remote("http://localhost:4723/wd/hub", desired_caps)
     yield driver
     driver.quit()
+
+
+def mobile_number_generator():
+    random_digits = ''.join([str(random.randint(0, 9)) for _ in range(8)])
+    mobile_number = "091" + random_digits
+    return mobile_number
+
+
+# مثال استفاده از تابع
+
+
+def national_code_generator():
+    number_list = []
+    sum_digits = 0
+
+    # ایجاد ارقام تصادفی و محاسبه‌ی جمع ضرب‌ها
+    for i in range(10, 1, -1):
+        j = random.randint(0, 9)
+        number_list.append(j)
+        sum_digits += j * i
+
+    # محاسبه‌ی رقم کنترل
+    m = sum_digits % 11
+    if m < 2:
+        number_list.append(m)
+    else:
+        number_list.append(11 - m)
+
+    # ترکیب لیست ارقام به یک رشته
+    national_code = ''.join(map(str, number_list))
+
+    return national_code
+
+print(national_code_generator())
