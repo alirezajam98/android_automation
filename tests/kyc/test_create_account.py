@@ -155,10 +155,16 @@ def test_kyc(open_app_without_login):
             national_page.click_next_button()
             logger.info("دکمه 'بعدی' کلیک شد.")
 
-        with allure.step("Set birth date"):
+        with allure.step("Scroll year field"):
             birth_date_page = BirthDatePage(driver)
-            birth_date_page.set_birth_date(1380, 7, 25)  # تنظیم تاریخ تولد به صورت شمسی
-            logger.info("تاریخ تولد با موفقیت تنظیم شد.")
+            birth_date_page.scroll_year()  # اسکرول کردن سال
+            logger.info("سال با موفقیت اسکرول شد.")
+
+        with allure.step("Click next button"):
+            logger.info("کلیک روی دکمه 'بعدی'...")
+            birth_date_page.click_next_button()
+            logger.info("دکمه 'بعدی' کلیک شد.")
+
 
     except Exception as e:
         logger.error(f"خطا رخ داد: {e}")
