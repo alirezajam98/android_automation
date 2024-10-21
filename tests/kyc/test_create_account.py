@@ -113,6 +113,18 @@ def test_kyc(open_app_without_login):
             phone_page.click_next_button()
             logger.info("دکمه 'بعدی' کلیک شد.")
 
+        with allure.step("Check 'مانند:‌ MDMGKP' text"):
+            logger.info("بررسی متن ریفرال...")
+            expected_text = text_reference["kyc_pages"]["referralInputEditText"]
+
+            # استفاده از شیء درست برای فراخوانی متد
+            referral_page = ReferralPage(driver)
+            actual_text = referral_page.get_referral_field_text()  # به درستی شیء ReferralPage استفاده می‌شود
+
+            assert actual_text == expected_text, \
+                f"Expected '{expected_text}', but got '{actual_text}'"
+            logger.info(f"متن ریفرال صحیح است: {actual_text}")
+
         with (allure.step("Click next button")):
             logger.info("کلیک روی دکمه 'بعدی'...")
             referral_page = ReferralPage(driver)
@@ -126,7 +138,7 @@ def test_kyc(open_app_without_login):
 
             # استفاده از شیء درست برای فراخوانی متد
             national_page = NationalCodePage(driver)
-            actual_text = national_page.get_national_code_text()  # به درستی شیء phone_page استفاده می‌شود
+            actual_text = national_page.get_national_code_text()  # به درستی شیء national_page استفاده می‌شود
 
             assert actual_text == expected_text, \
                 f"Expected '{expected_text}', but got '{actual_text}'"

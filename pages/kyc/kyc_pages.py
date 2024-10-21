@@ -104,6 +104,11 @@ class EnterPhoneNumberPage(BasePage):
 
 
 class ReferralPage(BasePage):
+    def get_referral_field_text(self):
+        referral_field = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/referralInputEditText"))
+        )
+        return referral_field.get_attribute("text")
     def click_next_button(self):
         next_button = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/nextButton"))

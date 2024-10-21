@@ -15,7 +15,8 @@
     "first_box_amount": "۰ ریال"
   },
   "kyc_pages": {
-    "national_code": "کد ملی ۱۰ رقمی"
+    "national_code": "کد ملی ۱۰ رقمی",
+    "referralInputEditText": "مانند:‌ MDMGKP"
   }
 }
 
