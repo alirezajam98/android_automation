@@ -9,10 +9,12 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from conftest import mobile_number_generator, national_code_generator
+from conftest import mobile_number_generator, national_code_generator, username_generator
 from pages.kyc.kyc_pages import NotificationPermissionPage, CreateAccountPage, OpenAccountPage, SelectServerPage, \
     CreateAccountInfoPage, AcceptRulesAndRegulations, EnterPhoneNumberPage, ReferralPage, NationalCodePage, \
-    BirthDatePage
+    BirthDatePage, UserNamePage, PasswordPage, CreateAccountInBluStatePage, SelectNationalCardOrTrackerIdPage, \
+    TakePhotoPage, ConfirmPhotoPage, ConfirmPhotoModal, UploadPhotoModal, SelectJobPage, VideoDemoPage, \
+    VideoRecordingPage, ConfirmVideoModal, FinalPage
 from utils.config import configure_logger, capture_screenshot  # تنظیمات لاگ و تابع اسکرین‌شات
 
 # تنظیمات لاگ
@@ -54,7 +56,12 @@ def test_kyc(open_app_without_login):
                 logger.info("دکمه 'ایجاد حساب کاربری' کلیک شد.")
         except TimeoutException:
             logger.info("No login page displayed, continuing.")
-
+        try:
+            notification_permission_page = NotificationPermissionPage(driver)
+            notification_permission_page.allow_notification_permission()
+            logger.info("Clicked on 'Allow' button for notification permission.")
+        except TimeoutException:
+            logger.info("No notification permission modal displayed, continuing.")
         # مرحله 2: کلیک روی دکمه 'بازکردن حساب'
         with allure.step("Click on 'Open Account' button"):
             logger.info("کلیک روی دکمه 'بازکردن حساب'...")
@@ -177,8 +184,139 @@ def test_kyc(open_app_without_login):
             birth_date_page.click_next_button()
             logger.info("دکمه 'بعدی' کلیک شد.")
 
+        with allure.step("write new username"):
+            logger.info("وارد کردن نام کاربری ...")
+            try:
+                # فراخوانی تابع username_generator برای تولید کد ملی
+                username = username_generator()
+                username_page = UserNamePage(driver)
+                username_page.enter_username(username)
+                logger.info(f"نام کاربری وارد شد: {username}")
+
+            except TimeoutException as e:
+                logger.error(f"خطا در پیدا کردن فیلد نام کاربری: {e}")
+                capture_screenshot(driver, "username_field_error")
+                raise e
+
+        with allure.step("Click next button"):
+            logger.info("کلیک روی دکمه 'بعدی'...")
+            username_page.click_next_button()
+            logger.info("دکمه 'بعدی' کلیک شد.")
+
+        with allure.step("Enter password"):
+            logger.info("وارد کردن رمز عبور")
+            password_page = PasswordPage(driver)
+            password_page.enter_password("Aa123456")
+            logger.info("رمز عبور وارد شد.")
+
+        with allure.step("Click next button"):
+            logger.info("کلیک روی دکمه 'بعدی'...")
+            password_page.click_next_button()
+            logger.info("دکمه 'بعدی' کلیک شد.")
+
+        with allure.step("Click next button"):
+            logger.info("کلیک روی دکمه 'ادامه'...")
+            create_account_in_blu_state_page = CreateAccountInBluStatePage(driver)
+            create_account_in_blu_state_page.click_confirm_button()
+            logger.info("دکمه 'ادامه' کلیک شد.")
+
+        with allure.step("select national card button"):
+            logger.info("کلیک روی دکمه 'ساخت اکانت با کارت ملی'...")
+            select_national_card = SelectNationalCardOrTrackerIdPage(driver)
+            select_national_card.click_select_national_card()
+            logger.info("دکمه 'ساخت اکانت با کارت ملی' کلیک شد.")
+
+        try:
+            camera_permission_page = NotificationPermissionPage(driver)
+            camera_permission_page.allow_camera_permission()
+            logger.info("Clicked on 'Allow' button for camera permission.")
+        except TimeoutException:
+            logger.info("No notification permission modal displayed, continuing.")
+
+        with allure.step("Take photo from front of nationalcard"):
+            logger.info("کلیک بر روی دکمه شاتر برای 'عکس جلوی کارت ملی'...")
+            take_photo_page = TakePhotoPage(driver)
+            take_photo_page.click_take_photo()
+            logger.info("دکمه شاتر برای عکس برداری کلیک شد.")
+
+        with allure.step("Click confirm button"):
+            logger.info("کلیک روی دکمه تایید...")
+            confirm_photo_page = ConfirmPhotoPage(driver)
+            confirm_photo_page.click_confirm_photo()
+            logger.info("دکمه تایید کلیک شد.")
+
+        with allure.step("Click confirm button"):
+            logger.info("کلیک روی دکمه تایید...")
+            confirm_photo_modal = ConfirmPhotoModal(driver)
+            confirm_photo_modal.click_confirm_photo()
+            logger.info("دکمه تایید کلیک شد.")
+
+        with allure.step("Take photo from back of nationalcard"):
+            logger.info("کلیک بر روی دکمه شاتر برای 'عکس پشت کارت ملی'...")
+            take_photo_page = TakePhotoPage(driver)
+            take_photo_page.click_take_photo()
+            logger.info("دکمه شاتر برای عکس برداری کلیک شد.")
+
+        with allure.step("Click confirm button for back card"):
+            logger.info("کلیک روی دکمه تایید...")
+            confirm_photo_page = ConfirmPhotoPage(driver)
+            confirm_photo_page.click_confirm_photo()
+            logger.info("دکمه تایید کلیک شد.")
+
+        with allure.step("Click confirm button"):
+            logger.info("کلیک روی دکمه تایید...")
+            confirm_photo_modal = ConfirmPhotoModal(driver)
+            confirm_photo_modal.click_confirm_photo()
+            logger.info("دکمه تایید کلیک شد.")
+
+        with allure.step("Click next button"):
+            logger.info("کلیک روی دکمه 'ادامه'...")
+            create_account_in_blu_state_page = CreateAccountInBluStatePage(driver)
+            create_account_in_blu_state_page.click_confirm_button()
+            logger.info("دکمه 'ادامه' کلیک شد.")
+
+        with allure.step("Select job for user"):
+            logger.info("کلیک بر روی اولین شغل")
+            select_job_page = SelectJobPage(driver)
+            select_job_page.select_job()
+            logger.info("اولین شغل از لیست انتخاب شد.")
+            logger.info("کلیک روی دکمه تایید...")
+            select_job_page.click_confirm_job()
+            logger.info("دکمه 'ادامه' کلیک شد.")
+
+        with allure.step("show and skip demo video"):
+            logger.info("ویدیو آموزشی نحوه ارسال ویدیو در حال پخش است...")
+            video_demo_page = VideoDemoPage(driver)
+            video_demo_page.click_confirm_video_demo()
+            logger.info("دکمه 'ادامه' کلیک شد.")
+
+        try:
+            camera_permission_page = NotificationPermissionPage(driver)
+            camera_permission_page.allow_camera_permission()
+            logger.info("Clicked on 'Allow' button for camera permission.")
+        except TimeoutException:
+            logger.info("No notification permission modal displayed, continuing.")
+
+        with allure.step("record video"):
+            logger.info("کلیک روی دکمه ریکورد ویدیو")
+            video_record_page = VideoRecordingPage(driver)
+            video_record_page.click_video_recording()
+            logger.info("ویدیو در حال ضبط شدن است...")
+            sleep(10)
+            video_record_page.click_stop_recording_button()
+            logger.info("توقف ضبط ویدیو.")
+            logger.info("کلیک روی آپلود ویدیو")
+            video_record_page.click_upload_video()
+            logger.info("ویدیو در حال آپلود است...")
+            confirm_video_modal = ConfirmVideoModal(driver)
+            confirm_video_modal.click_confirm_video()
+            logger.info("کلیک روی تایید آپلود ویدیو")
+            final_page = FinalPage(driver)
+            final_page.click_final_confirm()
+            logger.info("مراحل ایجاد حساب کاربری با موفقیت به پایان رسید")
 
     except Exception as e:
+
         logger.error(f"خطا رخ داد: {e}")
         capture_screenshot(driver, "account_creation_error")
         raise e

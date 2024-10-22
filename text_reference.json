@@ -16,7 +16,8 @@
   },
   "kyc_pages": {
     "national_code": "کد ملی ۱۰ رقمی",
-    "referralInputEditText": "مانند:‌ MDMGKP"
+    "referralInputEditText": "مانند:‌ MDMGKP",
+    "end_text_KYC": "امیر کنارنگ عزیز\\n\\nاطلاعات شما با موفقیت دریافت شد\\n\\nاطلاعات شما را تا 1 ساعت آینده بررسی می\u200Cکنیم و نتیجه را از طریق پیامک به شما اطلاع می\u200Cدهیم"
   }
 }
 

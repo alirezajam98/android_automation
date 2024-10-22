@@ -186,4 +186,42 @@ def national_code_generator():
 
     return national_code
 
-print(national_code_generator())
+
+import os
+
+
+# تابع برای خواندن شمارنده از فایل
+def read_counter(filename='utils/counter.txt'):
+    if os.path.exists(filename):
+        with open(filename, 'r') as file:
+            return int(file.read().strip())  # خواندن و برگرداندن مقدار شمارنده
+    return 1  # اگر فایل وجود ندارد، شمارنده را با 1 شروع می‌کنیم
+
+
+# تابع برای نوشتن شمارنده در فایل
+def write_counter(counter, filename='utils/counter.txt'):
+    with open(filename, 'w') as file:
+        file.write(str(counter))  # ذخیره شمارنده در فایل
+
+
+# تابع تولید یوزرنیم با استفاده از شمارنده
+def username_generator():
+    # خواندن شمارنده از فایل
+    counter = read_counter()
+
+    # تولید یوزرنیم با استفاده از شمارنده
+    username = f"cardnil{counter}"
+
+    # افزایش شمارنده و ذخیره آن در فایل
+    counter += 1
+    write_counter(counter)
+
+    return username
+
+
+# تست تولید یوزرنیم
+new_username = username_generator()
+print(new_username)
+print(
+    national_code_generator()
+)

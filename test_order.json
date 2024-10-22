@@ -42,6 +42,82 @@
         "name": "test_kyc",
         "file": "tests/kyc/test_create_account.py",
         "enabled": true
+      },{
+        "name": "test_kyc",
+        "file": "tests/kyc/test_create_account.py",
+        "enabled": true
+      },{
+        "name": "test_kyc",
+        "file": "tests/kyc/test_create_account.py",
+        "enabled": true
+      },{
+        "name": "test_kyc",
+        "file": "tests/kyc/test_create_account.py",
+        "enabled": true
+      },{
+        "name": "test_kyc",
+        "file": "tests/kyc/test_create_account.py",
+        "enabled": true
+      },{
+        "name": "test_kyc",
+        "file": "tests/kyc/test_create_account.py",
+        "enabled": true
+      },{
+        "name": "test_kyc",
+        "file": "tests/kyc/test_create_account.py",
+        "enabled": true
+      },{
+        "name": "test_kyc",
+        "file": "tests/kyc/test_create_account.py",
+        "enabled": true
+      },{
+        "name": "test_kyc",
+        "file": "tests/kyc/test_create_account.py",
+        "enabled": true
+      },{
+        "name": "test_kyc",
+        "file": "tests/kyc/test_create_account.py",
+        "enabled": true
+      },{
+        "name": "test_kyc",
+        "file": "tests/kyc/test_create_account.py",
+        "enabled": true
+      },{
+        "name": "test_kyc",
+        "file": "tests/kyc/test_create_account.py",
+        "enabled": true
+      },{
+        "name": "test_kyc",
+        "file": "tests/kyc/test_create_account.py",
+        "enabled": true
+      },{
+        "name": "test_kyc",
+        "file": "tests/kyc/test_create_account.py",
+        "enabled": true
+      },{
+        "name": "test_kyc",
+        "file": "tests/kyc/test_create_account.py",
+        "enabled": true
+      },{
+        "name": "test_kyc",
+        "file": "tests/kyc/test_create_account.py",
+        "enabled": true
+      },{
+        "name": "test_kyc",
+        "file": "tests/kyc/test_create_account.py",
+        "enabled": true
+      },{
+        "name": "test_kyc",
+        "file": "tests/kyc/test_create_account.py",
+        "enabled": true
+      },{
+        "name": "test_kyc",
+        "file": "tests/kyc/test_create_account.py",
+        "enabled": true
+      },{
+        "name": "test_kyc",
+        "file": "tests/kyc/test_create_account.py",
+        "enabled": true
       }
     ]
   }

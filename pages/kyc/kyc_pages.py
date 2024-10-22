@@ -8,6 +8,35 @@ from appium.webdriver.common.appiumby import AppiumBy
 
 from conftest import driver
 from pages.base_page import BasePage
+from pages.login_page import LoginPage
+
+
+class NotificationPermissionPage(BasePage):
+    """کلاس مربوط به اجازه دسترسی به نوتیفیکیشن"""
+
+    def allow_notification_permission(self):
+        try:
+            allow_button = WebDriverWait(self.driver, 5).until(
+                EC.presence_of_element_located(
+
+                    (AppiumBy.ID, "com.android.permissioncontroller:id/permission_allow_button"))
+            )
+            allow_button.click()
+        except TimeoutException:
+            # اگر صفحه مجوز نمایش داده نشود، ادامه دهید
+            pass
+
+    def allow_camera_permission(self):
+        try:
+            allow_button = WebDriverWait(self.driver, 5).until(
+                EC.presence_of_element_located(
+
+                    (AppiumBy.ID, "com.android.permissioncontroller:id/permission_allow_foreground_only_button"))
+            )
+            allow_button.click()
+        except TimeoutException:
+            # اگر صفحه مجوز نمایش داده نشود، ادامه دهید
+            pass
 
 
 class CreateAccountPage(BasePage):
@@ -109,6 +138,7 @@ class ReferralPage(BasePage):
             EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/referralInputEditText"))
         )
         return referral_field.get_attribute("text")
+
     def click_next_button(self):
         next_button = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/nextButton"))
@@ -156,16 +186,160 @@ class BirthDatePage(BasePage):
         next_button.click()
 
 
-class NotificationPermissionPage(BasePage):
-    """کلاس مربوط به اجازه دسترسی به نوتیفیکیشن"""
+class UserNamePage(BasePage):
+    def enter_username(self, username):
+        username_field = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/usernameInputEditText"))
+        )
+        username_field.send_keys(username)
 
-    def allow_notification_permission(self):
-        try:
-            allow_button = WebDriverWait(self.driver, 5).until(
-                EC.presence_of_element_located(
-                    (AppiumBy.ID, "com.android.permissioncontroller:id/permission_allow_button"))
-            )
-            allow_button.click()
-        except TimeoutException:
-            # اگر صفحه مجوز نمایش داده نشود، ادامه دهید
-            pass
+    def enter_username(self, username):
+        username_field = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/usernameInputEditText"))
+        )
+        username_field.send_keys(username)
+        return username_field.get_attribute("text")
+
+    def click_next_button(self):
+        next_button = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/nextButton"))
+        )
+        next_button.click()
+        return
+
+
+class PasswordPage(BasePage):
+    def enter_password(self, password):
+        password_field = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/textInputEditText"))
+        )
+        password_field.send_keys(password)
+        return password_field.get_attribute("text")
+
+    def click_next_button(self):
+        next_button = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/nextButton"))
+        )
+        next_button.click()
+
+
+class CreateAccountInBluStatePage(BasePage):
+    def click_confirm_button(self):
+        confirm_button = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/confirm"))
+        )
+        confirm_button.click()
+
+
+class SelectNationalCardOrTrackerIdPage(BasePage):
+    def click_select_national_card(self):
+        national_card = WebDriverWait(self.driver, 10).until(
+
+            EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/nationalCardButton"))
+        )
+        national_card.click()
+
+    def click_select_tracker_id(self):
+        tracker_id = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/trackerIdButton"))
+        )
+        tracker_id.click()
+
+
+class TakePhotoPage(BasePage):
+    def click_take_photo(self):
+        take_photo = WebDriverWait(self.driver, 30).until(
+            EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/takePhotoButton"))
+        )
+        take_photo.click()
+
+
+class ConfirmPhotoPage(BasePage):
+    def click_confirm_photo(self):
+        confirm_photo = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/confirmSendButton"))
+        )
+        confirm_photo.click()
+        return ConfirmPhotoModal
+
+
+class ConfirmPhotoModal(BasePage):
+    def click_confirm_photo(self):
+        confirm_photo_modal = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/confirmAndSendBtn"))
+        )
+        confirm_photo_modal.click()
+
+
+class UploadPhotoModal(BasePage):
+    def click_upload_photo(self):
+        upload_photo = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/confirmAndSendBtn"))
+        )
+        upload_photo.click()
+
+
+class SelectJobPage(BasePage):
+    def select_job(self):
+        select_job = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located(
+                (AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("‏طراح و تحلیلگر علمی / فنی / پژوهشگر")'))
+        )
+        select_job.click()
+
+    def click_confirm_job(self):
+        confirm_job = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/confirmButton"))
+        )
+        confirm_job.click()
+
+
+class VideoDemoPage(BasePage):
+    def click_confirm_video_demo(self):
+        button_locator = (AppiumBy.ID, "com.samanpr.blu.dev:id/continueButton")  # شناسه دکمه را تنظیم کنید
+
+        # صبر کردن تا زمانی که ویژگی 'enabled' برابر با 'true' شود
+        WebDriverWait(self.driver, 30).until(
+            lambda driver: self.driver.find_element(*button_locator).is_enabled()
+        )
+
+        # بعد از فعال شدن دکمه، کلیک کردن روی آن
+        self.driver.find_element(*button_locator).click()
+
+
+class VideoRecordingPage(BasePage):
+    def click_video_recording(self):
+        record_button = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/recordButton"))
+        )
+        record_button.click()
+
+    def click_stop_recording_button(self):
+        stop_button = WebDriverWait(self.driver, 10).until(
+
+            EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/recordButton"))
+        )
+        stop_button.click()
+
+    def click_upload_video(self):
+        upload_button = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/uploadButton"))
+        )
+        upload_button.click()
+
+
+class ConfirmVideoModal(BasePage):
+    def click_confirm_video(self):
+        confirm_video = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/confirmAndSendBtn"))
+        )
+        confirm_video.click()
+
+
+class FinalPage(BasePage):
+    def click_final_confirm(self):
+        confirm_button = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/confirmButton"))
+        )
+        confirm_button.click()
+        return LoginPage
