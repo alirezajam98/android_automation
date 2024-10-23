@@ -149,3 +149,9 @@ if __name__ == "__main__":
 #     # منتظر ماندن برای اتمام همه پروسه‌ها
 #     for p in processes:
 #         p.join()
+
+
+
+
+def run_kyc_test_multiple_times():
+    pytest.main(["tests/kyc/test_create_account.py", "--count=100"])

@@ -210,7 +210,7 @@ def username_generator():
     counter = read_counter()
 
     # تولید یوزرنیم با استفاده از شمارنده
-    username = f"cardnil{counter}"
+    username = f"ajcard{counter}"
 
     # افزایش شمارنده و ذخیره آن در فایل
     counter += 1
