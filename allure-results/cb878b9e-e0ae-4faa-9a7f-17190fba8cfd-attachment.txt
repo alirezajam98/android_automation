@@ -1,0 +1,48 @@
+INFO:conftest:App opened without logging in.
+INFO:utils.config:Clicked on 'Allow' button for notification permission.
+INFO:utils.config:کلیک روی دکمه 'ایجاد حساب کاربری'...
+INFO:utils.config:دکمه 'ایجاد حساب کاربری' کلیک شد.
+INFO:utils.config:Clicked on 'Allow' button for notification permission.
+INFO:utils.config:کلیک روی دکمه 'باز کردن حساب'...
+INFO:utils.config:دکمه 'باز کردن حساب' کلیک شد.
+INFO:utils.config:انتخاب سرور 'UAT'...
+INFO:utils.config:سرور 'UAT' انتخاب شد.
+INFO:utils.config:کلیک روی دکمه 'شروع'...
+INFO:utils.config:دکمه 'شروع' کلیک شد.
+INFO:utils.config:Initial switch status: OFF
+INFO:utils.config:Switch status after toggle: ON
+INFO:utils.config:کلیک روی دکمه 'تایید'...
+INFO:utils.config:دکمه 'تایید' کلیک شد و به صفحه وارد کردن شماره تلفن هدایت شد.
+INFO:utils.config:شماره تلفن وارد شد: 09163542661
+INFO:utils.config:دکمه 'بعدی' کلیک شد.
+INFO:utils.config:متن ریفرال صحیح است: مانند:‌ MDMGKP
+INFO:utils.config:دکمه 'بعدی' کلیک شد.
+INFO:utils.config:متن کد ملی صحیح است: کد ملی ۱۰ رقمی
+INFO:utils.config:کدملی وارد شد: 2296267246
+INFO:utils.config:دکمه 'بعدی' کلیک شد.
+INFO:utils.config:سال با موفقیت اسکرول شد.
+INFO:utils.config:دکمه 'بعدی' کلیک شد.
+INFO:utils.config:نام کاربری وارد شد: ajcard115
+INFO:utils.config:دکمه 'بعدی' کلیک شد.
+INFO:utils.config:رمز عبور وارد شد.
+INFO:utils.config:دکمه 'بعدی' کلیک شد.
+INFO:utils.config:دکمه 'ادامه' کلیک شد.
+INFO:utils.config:گزینه 'کارت ملی' انتخاب شد.
+INFO:utils.config:دسترسی به دوربین تأیید شد.
+INFO:utils.config:عکس جلوی کارت ملی گرفته شد.
+INFO:utils.config:عکس تایید شد.
+INFO:utils.config:عکس پشت کارت ملی گرفته شد.
+INFO:utils.config:عکس تایید شد.
+INFO:utils.config:کلیک روی دکمه 'ادامه'...
+INFO:utils.config:دکمه 'ادامه' کلیک شد.
+INFO:utils.config:کلیک بر روی اولین شغل
+INFO:utils.config:اولین شغل از لیست انتخاب شد.
+INFO:utils.config:کلیک روی دکمه تایید...
+INFO:utils.config:دکمه 'ادامه' کلیک شد.
+INFO:utils.config:ویدیو آموزشی رد شد.
+INFO:utils.config:مجوز دوربین تأیید شد.
+INFO:utils.config:ضبط ویدیو شروع شد.
+INFO:utils.config:ضبط ویدیو متوقف شد.
+INFO:utils.config:ویدیو آپلود شد.
+INFO:utils.config:آپلود ویدیو تایید شد.
+INFO:utils.config:مراحل ایجاد حساب کاربری با موفقیت به پایان رسید.
