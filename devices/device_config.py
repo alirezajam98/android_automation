@@ -19,7 +19,7 @@ device_configs = {
     "Galaxy S24 Ultra": {
         "platformName": "Android",
         "platformVersion": "14.0.0",
-        "udid": "R5CX13P2LJL",
+        "udid": "192.168.137.119:5555",
         "appActivity": "com.samanpr.blu.presentation.BaseActivity",
         "appPackage": "com.samanpr.blu.dev",
         "automationName": "UiAutomator2"

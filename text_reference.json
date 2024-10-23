@@ -13,6 +13,11 @@
     "no_active_box_description": "اولین باکس خود را از طریق دکمه «باکس جدید» بسازید",
     "first_box_name": "My Test Box1",
     "first_box_amount": "۰ ریال"
+  },
+  "kyc_pages": {
+    "national_code": "کد ملی ۱۰ رقمی",
+    "referralInputEditText": "مانند:‌ MDMGKP",
+    "end_text_KYC": "امیر کنارنگ عزیز\\n\\nاطلاعات شما با موفقیت دریافت شد\\n\\nاطلاعات شما را تا 1 ساعت آینده بررسی می\u200Cکنیم و نتیجه را از طریق پیامک به شما اطلاع می\u200Cدهیم"
   }
 }
 

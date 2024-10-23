@@ -1,0 +1,34 @@
+INFO     conftest:conftest.py:62 App opened without logging in.
+INFO     utils.config:test_create_account.py:41 Clicked on 'Allow' button for notification permission.
+INFO     utils.config:test_create_account.py:46 کلیک روی دکمه 'ایجاد حساب کاربری'...
+INFO     utils.config:test_create_account.py:53 No login page displayed, continuing.
+INFO     utils.config:test_create_account.py:57 کلیک روی دکمه 'بازکردن حساب'...
+INFO     utils.config:test_create_account.py:60 دکمه 'بازکردن حساب' کلیک شد.
+INFO     utils.config:test_create_account.py:64 انتخاب سرور 'UAT'...
+INFO     utils.config:test_create_account.py:67 سرور 'UAT' انتخاب شد.
+INFO     utils.config:test_create_account.py:71 کلیک روی دکمه 'شروع'...
+INFO     utils.config:test_create_account.py:74 دکمه 'شروع' کلیک شد.
+INFO     utils.config:test_create_account.py:79 Initial switch status: OFF
+INFO     utils.config:test_create_account.py:85 کلیک بر روی تاگل سوییچ موافقت با قوانین و مقررات ...
+INFO     utils.config:test_create_account.py:88 Switch status after toggle: ON
+INFO     utils.config:test_create_account.py:94 کلیک روی دکمه تایید...
+INFO     utils.config:test_create_account.py:96 دکمه تایید کلیک شد و به صفحه وارد کردن شماره تلفن هدایت شد.
+INFO     utils.config:test_create_account.py:99 ورود شماره تلفن ...
+INFO     utils.config:test_create_account.py:105 شماره تلفن وارد شد: 09181181593
+INFO     utils.config:test_create_account.py:109 کلیک روی دکمه 'بعدی'...
+INFO     utils.config:test_create_account.py:111 دکمه 'بعدی' کلیک شد.
+INFO     utils.config:test_create_account.py:114 کلیک روی دکمه 'بعدی'...
+INFO     utils.config:test_create_account.py:117 دکمه 'بعدی' کلیک شد.
+ERROR    utils.config:test_create_account.py:127 Expected 'کد ملی ۱۰ رقمی', but got '1041758405'
+assert '1041758405' == 'کد ملی ۱۰ رقمی'
+  
+  - کد ملی ۱۰ رقمی
+  + 1041758405
+INFO     utils.config:test_create_account.py:130 ورود کد ملی ...
+ERROR    utils.config:test_create_account.py:144 خطا رخ داد: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (C:\Users\a.jamshidi\.appium\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\lib\commands\find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (C:\Users\a.jamshidi\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (C:\Users\a.jamshidi\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\find.ts:75:12)

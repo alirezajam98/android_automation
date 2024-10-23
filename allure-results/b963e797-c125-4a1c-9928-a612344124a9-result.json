@@ -1,0 +1,1 @@
+{"name": "test_kyc[3-100]", "status": "skipped", "parameters": [{"name": "__pytest_repeat_step_number", "value": "2"}], "start": 1729603150860, "stop": 1729603150860, "uuid": "551714ea-0b18-4bee-b801-125fec3ab40e", "testCaseId": "190b09abcd6c5ed17aef79066d090e97", "fullName": "tests.kyc.test_create_account#test_kyc"}

@@ -18,7 +18,7 @@
       {
         "name": "test_box_page",
         "file": "tests/box/test_box.py",
-        "enabled": true
+        "enabled": false
       },
       {
         "name": "test_create_box",
@@ -38,6 +38,10 @@
         "name": "test_open_setting_page",
         "file": "tests/settings/test_settings_page.py",
         "enabled": false
+      },{
+        "name": "test_kyc",
+        "file": "tests/kyc/test_create_account.py",
+        "enabled": true
       }
     ]
   }

@@ -1,0 +1,1 @@
+INFO     conftest:conftest.py:62 App opened without logging in.
