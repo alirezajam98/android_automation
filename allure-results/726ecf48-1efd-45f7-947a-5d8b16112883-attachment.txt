@@ -1,0 +1,106 @@
+INFO:conftest:App opened without logging in.
+INFO:utils.config:Clicked on 'Allow' button for notification permission.
+INFO:utils.config:کلیک روی دکمه 'ایجاد حساب کاربری'...
+INFO:utils.config:دکمه 'ایجاد حساب کاربری' کلیک شد.
+INFO:utils.config:Clicked on 'Allow' button for notification permission.
+INFO:utils.config:کلیک روی دکمه 'بازکردن حساب'...
+INFO:utils.config:دکمه 'بازکردن حساب' کلیک شد.
+INFO:utils.config:انتخاب سرور 'UAT'...
+INFO:utils.config:سرور 'UAT' انتخاب شد.
+INFO:utils.config:کلیک روی دکمه 'شروع'...
+INFO:utils.config:دکمه 'شروع' کلیک شد.
+INFO:utils.config:Initial switch status: OFF
+INFO:utils.config:کلیک بر روی تاگل سوییچ موافقت با قوانین و مقررات ...
+INFO:utils.config:Switch status after toggle: ON
+INFO:utils.config:کلیک روی دکمه تایید...
+INFO:utils.config:دکمه تایید کلیک شد و به صفحه وارد کردن شماره تلفن هدایت شد.
+INFO:utils.config:ورود شماره تلفن ...
+INFO:utils.config:شماره تلفن وارد شد: 09108928706
+INFO:utils.config:کلیک روی دکمه 'بعدی'...
+INFO:utils.config:دکمه 'بعدی' کلیک شد.
+INFO:utils.config:بررسی متن ریفرال...
+INFO:utils.config:متن ریفرال صحیح است: مانند:‌ MDMGKP
+INFO:utils.config:کلیک روی دکمه 'بعدی'...
+INFO:utils.config:دکمه 'بعدی' کلیک شد.
+INFO:utils.config:بررسی متن کد ملی...
+INFO:utils.config:متن کد ملی صحیح است: کد ملی ۱۰ رقمی
+INFO:utils.config:ورود کد ملی ...
+INFO:utils.config:کدملی وارد شد: 8517996224
+INFO:utils.config:کلیک روی دکمه 'بعدی'...
+INFO:utils.config:دکمه 'بعدی' کلیک شد.
+INFO:utils.config:سال با موفقیت اسکرول شد.
+INFO:utils.config:کلیک روی دکمه 'بعدی'...
+INFO:utils.config:دکمه 'بعدی' کلیک شد.
+INFO:utils.config:وارد کردن نام کاربری ...
+INFO:utils.config:نام کاربری وارد شد: cardaj2
+INFO:utils.config:کلیک روی دکمه 'بعدی'...
+INFO:utils.config:دکمه 'بعدی' کلیک شد.
+INFO:utils.config:وارد کردن رمز عبور
+INFO:utils.config:رمز عبور وارد شد.
+INFO:utils.config:کلیک روی دکمه 'بعدی'...
+INFO:utils.config:دکمه 'بعدی' کلیک شد.
+INFO:utils.config:کلیک روی دکمه 'ادامه'...
+INFO:utils.config:دکمه 'ادامه' کلیک شد.
+INFO:utils.config:کلیک روی دکمه 'ساخت اکانت با کارت ملی'...
+INFO:utils.config:دکمه 'ساخت اکانت با کارت ملی' کلیک شد.
+INFO:utils.config:Clicked on 'Allow' button for camera permission.
+INFO:utils.config:کلیک بر روی دکمه شاتر برای 'عکس جلوی کارت ملی'...
+INFO:utils.config:دکمه شاتر برای عکس برداری کلیک شد.
+INFO:utils.config:کلیک روی دکمه تایید...
+INFO:utils.config:دکمه تایید کلیک شد.
+INFO:utils.config:کلیک روی دکمه تایید...
+INFO:utils.config:دکمه تایید کلیک شد.
+INFO:utils.config:کلیک بر روی دکمه شاتر برای 'عکس پشت کارت ملی'...
+INFO:utils.config:دکمه شاتر برای عکس برداری کلیک شد.
+INFO:utils.config:کلیک روی دکمه تایید...
+INFO:utils.config:دکمه تایید کلیک شد.
+INFO:utils.config:کلیک روی دکمه تایید...
+INFO:utils.config:دکمه تایید کلیک شد.
+INFO:utils.config:کلیک روی دکمه 'ادامه'...
+INFO:utils.config:دکمه 'ادامه' کلیک شد.
+INFO:utils.config:کلیک بر روی اولین شغل
+INFO:utils.config:اولین شغل از لیست انتخاب شد.
+INFO:utils.config:کلیک روی دکمه تایید...
+INFO:utils.config:دکمه 'ادامه' کلیک شد.
+INFO:utils.config:ویدیو آموزشی نحوه ارسال ویدیو در حال پخش است...
+ERROR:utils.config:خطا رخ داد: Message: The element 'By.id: com.samanpr.blu.dev:id/continueButton' does not exist in DOM anymore; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+io.appium.uiautomator2.common.exceptions.StaleElementReferenceException: The element 'By.id: com.samanpr.blu.dev:id/continueButton' does not exist in DOM anymore
+	at io.appium.uiautomator2.model.ElementsCache.restore(ElementsCache.java:117)
+	at io.appium.uiautomator2.model.ElementsCache.get(ElementsCache.java:153)
+	at io.appium.uiautomator2.handler.GetElementAttribute.safeHandle(GetElementAttribute.java:23)
+	at io.appium.uiautomator2.handler.request.SafeRequestHandler.handle(SafeRequestHandler.java:59)
+	at io.appium.uiautomator2.server.AppiumServlet.handleRequest(AppiumServlet.java:259)
+	at io.appium.uiautomator2.server.AppiumServlet.handleHttpRequest(AppiumServlet.java:253)
+	at io.appium.uiautomator2.http.ServerHandler.channelRead(ServerHandler.java:77)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:345)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:345)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:435)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:293)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:267)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:250)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:345)
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:266)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:345)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1294)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:366)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:352)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:911)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:611)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:552)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:466)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:438)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:140)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:144)
+	at java.lang.Thread.run(Thread.java:1012)
+
