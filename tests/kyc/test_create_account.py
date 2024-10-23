@@ -34,240 +34,213 @@ def load_text_reference():
 def test_kyc(open_app_without_login):
     driver = open_app_without_login
     accept_page = AcceptRulesAndRegulations(driver)
+
     # بارگذاری فایل JSON برای دریافت متون مرجع
     text_reference = load_text_reference()
 
     # متغیر برای ذخیره نتیجه تست
     errors = []
     try:
-        # بررسی دسترسی نوتیفیکیشن
+        # مرحله 1: بررسی دسترسی نوتیفیکیشن
         notification_permission_page = NotificationPermissionPage(driver)
         notification_permission_page.allow_notification_permission()
         logger.info("Clicked on 'Allow' button for notification permission.")
 
-        # مرحله 1: کلیک روی دکمه 'ایجاد حساب کاربری'
-        try:
-            with allure.step("Click on 'Create Account' button"):
+        # مرحله 2: کلیک روی دکمه 'ایجاد حساب کاربری'
+        with allure.step("Click on 'Create Account' button"):
+            try:
                 logger.info("کلیک روی دکمه 'ایجاد حساب کاربری'...")
                 create_account_button = WebDriverWait(driver, 10).until(
                     EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/openButton"))
                 )
                 create_account_button.click()
                 logger.info("دکمه 'ایجاد حساب کاربری' کلیک شد.")
-        except TimeoutException:
-            logger.info("No login page displayed, continuing.")
+            except TimeoutException:
+                logger.info("No nCreate Account button displayed, continuing.")
+
+        # مرحله 3: بررسی دوباره نوتیفیکیشن (در صورت لزوم)
         try:
             notification_permission_page = NotificationPermissionPage(driver)
             notification_permission_page.allow_notification_permission()
             logger.info("Clicked on 'Allow' button for notification permission.")
         except TimeoutException:
             logger.info("No notification permission modal displayed, continuing.")
-        # مرحله 2: کلیک روی دکمه 'بازکردن حساب'
+
+        # مرحله 4: کلیک روی دکمه 'باز کردن حساب'
         with allure.step("Click on 'Open Account' button"):
-            logger.info("کلیک روی دکمه 'بازکردن حساب'...")
+            logger.info("کلیک روی دکمه 'باز کردن حساب'...")
             open_account_page = OpenAccountPage(driver)
             open_account_page.click_open_account()
-            logger.info("دکمه 'بازکردن حساب' کلیک شد.")
+            logger.info("دکمه 'باز کردن حساب' کلیک شد.")
 
-        # مرحله 3: انتخاب UAT در سرور
-        with allure.step("click on 'UAT' from server selection"):
+        # مرحله 5: انتخاب سرور 'UAT'
+        with allure.step("Select 'UAT' from server selection"):
             logger.info("انتخاب سرور 'UAT'...")
             select_server_page = SelectServerPage(driver)
             select_server_page.select_uat_server()
             logger.info("سرور 'UAT' انتخاب شد.")
 
-        # مرحله 4: کلیک روی 'شروع'
+        # بررسی متن "create_account_info_page" اما اگر اشتباه بود، ادامه پیدا کند
+        with allure.step("Check 'create_account_info_page' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["create_account_info_page_title"]
+                create_account_info_page = CreateAccountInfoPage(driver)
+                actual_text = create_account_info_page.get_account_info_page_title()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن تایتل برای صفحه توضیحات صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن تایتل صفحه توضیحات: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+
+        # بررسی متن "clock_title_info_page" اما اگر اشتباه بود، ادامه پیدا کند
+        with allure.step("Check 'clock_title_info_page' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["clock_title_info_page"]
+                create_account_info_page = CreateAccountInfoPage(driver)
+                actual_text = create_account_info_page.get_account_info_page_title()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه توضیحات صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن ساعت صفحه توضیحات: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+
+        # مرحله 6: کلیک روی دکمه 'شروع'
         with allure.step("Click on 'Start' button"):
             logger.info("کلیک روی دکمه 'شروع'...")
             create_account_info_page = CreateAccountInfoPage(driver)
             create_account_info_page.click_start()
             logger.info("دکمه 'شروع' کلیک شد.")
 
-        # بررسی وضعیت اولیه سوییچ
-        with allure.step("Check initial state of the switch"):
+        # مرحله 7: بررسی و تغییر وضعیت سوییچ
+        with allure.step("Check and toggle the agreement switch"):
             initial_status = accept_page.is_switch_on()
             logger.info(f"Initial switch status: {'ON' if initial_status else 'OFF'}")
-            allure.attach(f"Initial switch status: {'ON' if initial_status else 'OFF'}", "Switch Status",
-                          allure.attachment_type.TEXT)
-
-        # تغییر وضعیت سوییچ
-        with allure.step("Toggle the agreement switch"):
-            logger.info("کلیک بر روی تاگل سوییچ موافقت با قوانین و مقررات ...")
-            accept_page.toggle_switch()  # استفاده از متد toggle_switch
+            accept_page.toggle_switch()
             new_status = accept_page.is_switch_on()
             logger.info(f"Switch status after toggle: {'ON' if new_status else 'OFF'}")
-            allure.attach(f"New switch status: {'ON' if new_status else 'OFF'}", "Switch Status After Toggle",
-                          allure.attachment_type.TEXT)
 
-        # کلیک روی دکمه تایید بعد از تغییر وضعیت
+        # مرحله 8: کلیک روی دکمه 'تایید' و رفتن به مرحله وارد کردن شماره تلفن
         with allure.step("Click confirm button after toggle"):
-            logger.info("کلیک روی دکمه تایید...")
+            logger.info("کلیک روی دکمه 'تایید'...")
             accept_page.click_confirm_button()
-            logger.info("دکمه تایید کلیک شد و به صفحه وارد کردن شماره تلفن هدایت شد.")
-        # مرحله 2: وارد کردن شماره تلفن
+            logger.info("دکمه 'تایید' کلیک شد و به صفحه وارد کردن شماره تلفن هدایت شد.")
+
+        # مرحله 9: وارد کردن شماره تلفن
         with allure.step("Enter phone number"):
-            logger.info("ورود شماره تلفن ...")
-            # فراخوانی تابع mobile_number_generator برای تولید شماره موبایل
             phone_number = mobile_number_generator()
             phone_page = EnterPhoneNumberPage(driver)
             phone_page.enter_phone_number(phone_number)
+            logger.info(f"شماره تلفن وارد شد: {phone_number}")
 
-        logger.info(f"شماره تلفن وارد شد: {phone_number}")
-
-        # مرحله 3: کلیک روی دکمه "بعدی"
+        # مرحله 10: کلیک روی دکمه 'بعدی'
         with allure.step("Click next button"):
-            logger.info("کلیک روی دکمه 'بعدی'...")
             phone_page.click_next_button()
             logger.info("دکمه 'بعدی' کلیک شد.")
 
+        # مرحله 11: بررسی متن ریفرال
         with allure.step("Check 'مانند:‌ MDMGKP' text"):
-            logger.info("بررسی متن ریفرال...")
             expected_text = text_reference["kyc_pages"]["referralInputEditText"]
-
-            # استفاده از شیء درست برای فراخوانی متد
             referral_page = ReferralPage(driver)
-            actual_text = referral_page.get_referral_field_text()  # به درستی شیء ReferralPage استفاده می‌شود
-
-            assert actual_text == expected_text, \
-                f"Expected '{expected_text}', but got '{actual_text}'"
+            actual_text = referral_page.get_referral_field_text()
+            assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
             logger.info(f"متن ریفرال صحیح است: {actual_text}")
 
-        with (allure.step("Click next button")):
-            logger.info("کلیک روی دکمه 'بعدی'...")
-            referral_page = ReferralPage(driver)
+        with allure.step("Click next button"):
             referral_page.click_next_button()
             logger.info("دکمه 'بعدی' کلیک شد.")
 
-        # بررسی متن کد ملی
+        # مرحله 12: بررسی و وارد کردن کد ملی
         with allure.step("Check 'کد ملی ۱۰ رقمی' text"):
-            logger.info("بررسی متن کد ملی...")
             expected_text = text_reference["kyc_pages"]["national_code"]
-
-            # استفاده از شیء درست برای فراخوانی متد
             national_page = NationalCodePage(driver)
-            actual_text = national_page.get_national_code_text()  # به درستی شیء national_page استفاده می‌شود
-
-            assert actual_text == expected_text, \
-                f"Expected '{expected_text}', but got '{actual_text}'"
+            actual_text = national_page.get_national_code_text()
+            assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
             logger.info(f"متن کد ملی صحیح است: {actual_text}")
 
         with allure.step("Enter national code"):
-            logger.info("ورود کد ملی ...")
+            national_code = national_code_generator()
+            national_page.enter_national_code(national_code)
+            logger.info(f"کدملی وارد شد: {national_code}")
 
-            try:
-                # فراخوانی تابع national_code_generator برای تولید کد ملی
-                national_code = national_code_generator()
-                national_code_page = NationalCodePage(driver)
-
-                # افزایش زمان انتظار به 20 ثانیه
-                national_code_page.enter_national_code(national_code)
-                logger.info(f"کدملی وارد شد: {national_code}")
-
-            except TimeoutException as e:
-                logger.error(f"خطا در پیدا کردن فیلد کد ملی: {e}")
-                capture_screenshot(driver, "national_code_error")
-                raise e
-
-        # مرحله 3: کلیک روی دکمه "بعدی"
         with allure.step("Click next button"):
-            logger.info("کلیک روی دکمه 'بعدی'...")
             national_page.click_next_button()
             logger.info("دکمه 'بعدی' کلیک شد.")
 
+        # مرحله 13: اسکرول کردن سال
         with allure.step("Scroll year field"):
             birth_date_page = BirthDatePage(driver)
             birth_date_page.scroll_year()  # اسکرول کردن سال
             logger.info("سال با موفقیت اسکرول شد.")
 
         with allure.step("Click next button"):
-            logger.info("کلیک روی دکمه 'بعدی'...")
             birth_date_page.click_next_button()
             logger.info("دکمه 'بعدی' کلیک شد.")
 
-        with allure.step("write new username"):
-            logger.info("وارد کردن نام کاربری ...")
-            try:
-                # فراخوانی تابع username_generator برای تولید کد ملی
-                username = username_generator()
-                username_page = UserNamePage(driver)
-                username_page.enter_username(username)
-                logger.info(f"نام کاربری وارد شد: {username}")
-
-            except TimeoutException as e:
-                logger.error(f"خطا در پیدا کردن فیلد نام کاربری: {e}")
-                capture_screenshot(driver, "username_field_error")
-                raise e
+        # مرحله 14: وارد کردن نام کاربری
+        with allure.step("Enter new username"):
+            username = username_generator()
+            username_page = UserNamePage(driver)
+            username_page.enter_username(username)
+            logger.info(f"نام کاربری وارد شد: {username}")
 
         with allure.step("Click next button"):
-            logger.info("کلیک روی دکمه 'بعدی'...")
             username_page.click_next_button()
             logger.info("دکمه 'بعدی' کلیک شد.")
 
+        # مرحله 15: وارد کردن رمز عبور
         with allure.step("Enter password"):
-            logger.info("وارد کردن رمز عبور")
             password_page = PasswordPage(driver)
             password_page.enter_password("Aa123456")
             logger.info("رمز عبور وارد شد.")
 
         with allure.step("Click next button"):
-            logger.info("کلیک روی دکمه 'بعدی'...")
             password_page.click_next_button()
             logger.info("دکمه 'بعدی' کلیک شد.")
 
+        # مرحله 16: تایید وضعیت حساب کاربری در Blu
         with allure.step("Click next button"):
-            logger.info("کلیک روی دکمه 'ادامه'...")
             create_account_in_blu_state_page = CreateAccountInBluStatePage(driver)
             create_account_in_blu_state_page.click_confirm_button()
             logger.info("دکمه 'ادامه' کلیک شد.")
 
-        with allure.step("select national card button"):
-            logger.info("کلیک روی دکمه 'ساخت اکانت با کارت ملی'...")
+        # مرحله 17: انتخاب گزینه 'کارت ملی'
+        with allure.step("Select 'National Card' option"):
             select_national_card = SelectNationalCardOrTrackerIdPage(driver)
             select_national_card.click_select_national_card()
-            logger.info("دکمه 'ساخت اکانت با کارت ملی' کلیک شد.")
+            logger.info("گزینه 'کارت ملی' انتخاب شد.")
 
         try:
             camera_permission_page = NotificationPermissionPage(driver)
             camera_permission_page.allow_camera_permission()
-            logger.info("Clicked on 'Allow' button for camera permission.")
+            logger.info("دسترسی به دوربین تأیید شد.")
         except TimeoutException:
-            logger.info("No notification permission modal displayed, continuing.")
+            logger.info("مجوز دوربین نمایش داده نشد، ادامه دهید.")
 
-        with allure.step("Take photo from front of nationalcard"):
-            logger.info("کلیک بر روی دکمه شاتر برای 'عکس جلوی کارت ملی'...")
+        # مرحله 18: گرفتن عکس جلو و پشت کارت ملی
+        with allure.step("Take photo from front of national card"):
             take_photo_page = TakePhotoPage(driver)
             take_photo_page.click_take_photo()
-            logger.info("دکمه شاتر برای عکس برداری کلیک شد.")
+            logger.info("عکس جلوی کارت ملی گرفته شد.")
 
         with allure.step("Click confirm button"):
-            logger.info("کلیک روی دکمه تایید...")
             confirm_photo_page = ConfirmPhotoPage(driver)
             confirm_photo_page.click_confirm_photo()
-            logger.info("دکمه تایید کلیک شد.")
-
-        with allure.step("Click confirm button"):
-            logger.info("کلیک روی دکمه تایید...")
             confirm_photo_modal = ConfirmPhotoModal(driver)
             confirm_photo_modal.click_confirm_photo()
-            logger.info("دکمه تایید کلیک شد.")
+            logger.info("عکس تایید شد.")
 
-        with allure.step("Take photo from back of nationalcard"):
-            logger.info("کلیک بر روی دکمه شاتر برای 'عکس پشت کارت ملی'...")
-            take_photo_page = TakePhotoPage(driver)
+        with allure.step("Take photo from back of national card"):
             take_photo_page.click_take_photo()
-            logger.info("دکمه شاتر برای عکس برداری کلیک شد.")
-
-        with allure.step("Click confirm button for back card"):
-            logger.info("کلیک روی دکمه تایید...")
-            confirm_photo_page = ConfirmPhotoPage(driver)
-            confirm_photo_page.click_confirm_photo()
-            logger.info("دکمه تایید کلیک شد.")
+            logger.info("عکس پشت کارت ملی گرفته شد.")
 
         with allure.step("Click confirm button"):
-            logger.info("کلیک روی دکمه تایید...")
-            confirm_photo_modal = ConfirmPhotoModal(driver)
+            confirm_photo_page.click_confirm_photo()
             confirm_photo_modal.click_confirm_photo()
-            logger.info("دکمه تایید کلیک شد.")
+            logger.info("عکس تایید شد.")
 
         with allure.step("Click next button"):
             logger.info("کلیک روی دکمه 'ادامه'...")
@@ -275,6 +248,7 @@ def test_kyc(open_app_without_login):
             create_account_in_blu_state_page.click_confirm_button()
             logger.info("دکمه 'ادامه' کلیک شد.")
 
+        # مرحله 19: انتخاب شغل
         with allure.step("Select job for user"):
             logger.info("کلیک بر روی اولین شغل")
             select_job_page = SelectJobPage(driver)
@@ -284,37 +258,38 @@ def test_kyc(open_app_without_login):
             select_job_page.click_confirm_job()
             logger.info("دکمه 'ادامه' کلیک شد.")
 
-        with allure.step("show and skip demo video"):
-            logger.info("ویدیو آموزشی نحوه ارسال ویدیو در حال پخش است...")
+        with allure.step("Show and skip demo video"):
             video_demo_page = VideoDemoPage(driver)
             video_demo_page.click_confirm_video_demo()
-            logger.info("دکمه 'ادامه' کلیک شد.")
+            logger.info("ویدیو آموزشی رد شد.")
 
         try:
-            camera_permission_page = NotificationPermissionPage(driver)
             camera_permission_page.allow_camera_permission()
-            logger.info("Clicked on 'Allow' button for camera permission.")
+            logger.info("مجوز دوربین تأیید شد.")
         except TimeoutException:
-            logger.info("No notification permission modal displayed, continuing.")
+            logger.info("مجوز دوربین نمایش داده نشد.")
 
-        with allure.step("record video"):
-            logger.info("کلیک روی دکمه ریکورد ویدیو")
+        # مرحله 21: ضبط ویدیو
+        with allure.step("Record video"):
             video_record_page = VideoRecordingPage(driver)
             video_record_page.click_video_recording()
-            logger.info("ویدیو در حال ضبط شدن است...")
+            logger.info("ضبط ویدیو شروع شد.")
             sleep(10)
             video_record_page.click_stop_recording_button()
-            logger.info("توقف ضبط ویدیو.")
-            logger.info("کلیک روی آپلود ویدیو")
+            logger.info("ضبط ویدیو متوقف شد.")
             video_record_page.click_upload_video()
-            logger.info("ویدیو در حال آپلود است...")
+            logger.info("ویدیو آپلود شد.")
+
+        with allure.step("Confirm video upload"):
             confirm_video_modal = ConfirmVideoModal(driver)
             confirm_video_modal.click_confirm_video()
-            logger.info("کلیک روی تایید آپلود ویدیو")
+            logger.info("آپلود ویدیو تایید شد.")
+
+        # مرحله 22: تایید نهایی و پایان
+        with allure.step("Final confirmation"):
             final_page = FinalPage(driver)
             final_page.click_final_confirm()
-            logger.info("مراحل ایجاد حساب کاربری با موفقیت به پایان رسید")
-
+            logger.info("مراحل ایجاد حساب کاربری با موفقیت به پایان رسید.")
     except Exception as e:
 
         logger.error(f"خطا رخ داد: {e}")
