@@ -1,9 +1,0 @@
-INFO:conftest:No biometric page displayed, skipping.
-INFO:conftest:Clicked on 'Allow' button for notification permission.
-INFO:conftest:Dashboard page displayed successfully.
-INFO:utils.config:کلیک روی آیکون باکس برای باز کردن صفحه باکس...
-INFO:utils.config:بستن صفحه انبوردینگ...
-INFO:utils.config:نام اولین باکس صحیح است.
-INFO:utils.config:مقدار اولین باکس صحیح است.
-INFO:utils.config:کلیک روی اولین باکس و هدایت به صفحه پروفایل باکس...
-ERROR:utils.config:خطا رخ داد: 'BoxProfilePage' object has no attribute 'is_page_displayed'

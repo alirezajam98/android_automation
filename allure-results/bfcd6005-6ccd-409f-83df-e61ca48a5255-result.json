@@ -1,1 +1,0 @@
-{"name": "test_edit_box_name_and_delete_box", "status": "skipped", "description": "تست ویرایش نام باکس و حذف باکس با تأیید و کنسل", "start": 1729003878675, "stop": 1729003878675, "uuid": "bdfa8b90-bf44-44e6-b576-586249455cab", "testCaseId": "6157ad99577042cf0aa5fab24e4ed68b", "fullName": "tests.box.test_delete_box#test_edit_box_name_and_delete_box"}

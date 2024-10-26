@@ -1,6 +1,0 @@
-INFO:conftest:No biometric page displayed, skipping.
-INFO:conftest:Clicked on 'Allow' button for notification permission.
-INFO:conftest:Dashboard page displayed successfully.
-INFO:logging_config:نام کاربر: امیر کنارنگ
-INFO:logging_config:شماره تلفن: ۰۹۵۸۶۴۳۱۶۸۲
-INFO:logging_config:All texts in settings page are correct.
