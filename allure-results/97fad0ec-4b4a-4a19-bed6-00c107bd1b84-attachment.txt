@@ -19,36 +19,19 @@ INFO     utils.config:test_create_account.py:121 Initial switch status: OFF
 INFO     utils.config:test_create_account.py:124 Switch status after toggle: ON
 INFO     utils.config:test_create_account.py:128 کلیک روی دکمه 'تایید'...
 INFO     utils.config:test_create_account.py:130 دکمه 'تایید' کلیک شد و به صفحه وارد کردن شماره تلفن هدایت شد.
-INFO     utils.config:test_create_account.py:137 شماره تلفن وارد شد: 09157136420
+INFO     utils.config:test_create_account.py:137 شماره تلفن وارد شد: 09138252054
 INFO     utils.config:test_create_account.py:142 دکمه 'بعدی' کلیک شد.
 INFO     utils.config:test_create_account.py:150 متن ریفرال صحیح است: مانند:‌ MDMGKP
 INFO     utils.config:test_create_account.py:154 دکمه 'بعدی' کلیک شد.
 INFO     utils.config:test_create_account.py:162 متن کد ملی صحیح است: کد ملی ۱۰ رقمی
-INFO     utils.config:test_create_account.py:167 کدملی وارد شد: 3398103324
+INFO     utils.config:test_create_account.py:167 کدملی وارد شد: 5202039921
 INFO     utils.config:test_create_account.py:171 دکمه 'بعدی' کلیک شد.
 INFO     utils.config:test_create_account.py:177 سال با موفقیت اسکرول شد.
 INFO     utils.config:test_create_account.py:181 دکمه 'بعدی' کلیک شد.
-INFO     utils.config:test_create_account.py:188 نام کاربری وارد شد: ajcard140
-INFO     utils.config:test_create_account.py:192 دکمه 'بعدی' کلیک شد.
-INFO     utils.config:test_create_account.py:198 رمز عبور وارد شد.
-INFO     utils.config:test_create_account.py:202 دکمه 'بعدی' کلیک شد.
-INFO     utils.config:test_create_account.py:208 دکمه 'ادامه' کلیک شد.
-INFO     utils.config:test_create_account.py:214 گزینه 'کارت ملی' انتخاب شد.
-INFO     utils.config:test_create_account.py:219 دسترسی به دوربین تأیید شد.
-INFO     utils.config:test_create_account.py:227 عکس جلوی کارت ملی گرفته شد.
-INFO     utils.config:test_create_account.py:234 عکس تایید شد.
-INFO     utils.config:test_create_account.py:238 عکس پشت کارت ملی گرفته شد.
-INFO     utils.config:test_create_account.py:243 عکس تایید شد.
-INFO     utils.config:test_create_account.py:246 کلیک روی دکمه 'ادامه'...
-INFO     utils.config:test_create_account.py:249 دکمه 'ادامه' کلیک شد.
-INFO     utils.config:test_create_account.py:253 کلیک بر روی اولین شغل
-INFO     utils.config:test_create_account.py:256 اولین شغل از لیست انتخاب شد.
-INFO     utils.config:test_create_account.py:257 کلیک روی دکمه تایید...
-INFO     utils.config:test_create_account.py:259 دکمه 'ادامه' کلیک شد.
-INFO     utils.config:test_create_account.py:264 ویدیو آموزشی رد شد.
-INFO     utils.config:test_create_account.py:268 مجوز دوربین تأیید شد.
-INFO     utils.config:test_create_account.py:276 ضبط ویدیو شروع شد.
-INFO     utils.config:test_create_account.py:279 ضبط ویدیو متوقف شد.
-INFO     utils.config:test_create_account.py:281 ویدیو آپلود شد.
-INFO     utils.config:test_create_account.py:286 آپلود ویدیو تایید شد.
-INFO     utils.config:test_create_account.py:292 مراحل ایجاد حساب کاربری با موفقیت به پایان رسید.
+ERROR    utils.config:test_create_account.py:295 خطا رخ داد: Message: 
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (C:\Users\a.jamshidi\.appium\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\lib\commands\find.ts:86:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (C:\Users\a.jamshidi\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\find.ts:60:12)
+    at AndroidUiautomator2Driver.findElement (C:\Users\a.jamshidi\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\find.ts:75:12)

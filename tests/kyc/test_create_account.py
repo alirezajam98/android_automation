@@ -271,6 +271,7 @@ def test_kyc(open_app_without_login):
 
         # مرحله 21: ضبط ویدیو
         with allure.step("Record video"):
+            logger.info("ویدیو آموزشی در حال پخش است...")
             video_record_page = VideoRecordingPage(driver)
             video_record_page.click_video_recording()
             logger.info("ضبط ویدیو شروع شد.")
