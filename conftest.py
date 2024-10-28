@@ -57,17 +57,26 @@ def open_app_without_login(setup):
 
 
 # فیکسچر برای لاگین و هدایت به صفحه داشبورد، وابسته به setup
-@pytest.fixture
-def login_and_dashboard(setup):
-    from pages.kyc.kyc_pages import NotificationPermissionPage
 
+@pytest.fixture
+def login_and_dashboard(request):
     from pages.login_page import LoginPage
-    driver = setup
-    logger.info("App opened without logging in.")
+    device_name = request.config.getoption("--device_name")
+    options = AppiumOptions()
+    options.load_capabilities(device_configs[device_name])
+
+    service = AppiumService()
+    service.start()
+
+    appium_url = "http://127.0.0.1:4723"
+    driver = webdriver.Remote(appium_url, options=options)
     # بررسی دسترسی نوتیفیکیشن (Allow)
     try:
-        notification_permission_page = NotificationPermissionPage(driver)
-        notification_permission_page.allow_notification_permission()
+        allow_button = (AppiumBy.ID, "com.android.permissioncontroller:id/permission_allow_button")
+        WebDriverWait(driver, 5).until(
+            EC.visibility_of_element_located(allow_button)
+        )
+        driver.find_element(*allow_button).click()
         logger.info("Clicked on 'Allow' button for notification permission.")
     except TimeoutException:
         logger.info("No notification permission modal displayed, continuing.")
@@ -76,9 +85,15 @@ def login_and_dashboard(setup):
     login_page.enter_username("andpfm7")
     login_page.enter_password("Aa123456")
 
+    biometric_page = login_page.click_login()
+
     # بستن صفحه بیومتریک (در صورت نمایش)
+    not_now_button = (AppiumBy.ID, "com.samanpr.blu.dev:id/btnNotNow")
     try:
-        biometric_page = BiometricPage
+        WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located(not_now_button)
+        )
+
         biometric_page.click_not_now()
         logger.info("Clicked on 'Not Now' button in biometric page.")
     except TimeoutException:
@@ -86,8 +101,11 @@ def login_and_dashboard(setup):
 
     # بررسی دسترسی نوتیفیکیشن (Allow)
     try:
-        notification_permission_page = NotificationPermissionPage(driver)
-        notification_permission_page.allow_notification_permission()
+        allow_button = (AppiumBy.ID, "com.android.permissioncontroller:id/permission_allow_button")
+        WebDriverWait(driver, 5).until(
+            EC.visibility_of_element_located(allow_button)
+        )
+        driver.find_element(*allow_button).click()
         logger.info("Clicked on 'Allow' button for notification permission.")
     except TimeoutException:
         logger.info("No notification permission modal displayed, continuing.")
@@ -95,7 +113,7 @@ def login_and_dashboard(setup):
     # هدایت به داشبورد
     dashboard_page = DashboardPage(driver)
     try:
-        dashboard_identifier = (AppiumBy.ID, "com.samanpr.blu.dev:id/titleTextView")
+        dashboard_identifier = (AppiumBy.ID, "com.samanpr.blu.dev:id/toolbarTitleTextView")
         WebDriverWait(driver, 10).until(
             EC.visibility_of_element_located(dashboard_identifier)
         )
@@ -103,7 +121,10 @@ def login_and_dashboard(setup):
     except TimeoutException:
         logger.error("Failed to load the dashboard page.")
 
-    yield driver
+    yield dashboard_page
+
+    driver.quit()
+    service.stop()
 
 
 @pytest.fixture(scope="function")
@@ -156,10 +177,10 @@ def write_counter(counter, filename='utils/counter.txt'):
 def username_generator():
     counter = read_counter() + 1
     write_counter(counter)
-    return f"blu_auto{counter}"
+    return f"cardm{counter}"
 
 
 ###############################################################################################
 # تست تولید یوزرنیم
-print(username_generator())
-print(national_code_generator())
+# print(username_generator())
+# print(national_code_generator())

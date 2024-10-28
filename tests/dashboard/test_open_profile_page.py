@@ -1,7 +1,7 @@
 import os
 import pytest
 import allure
-from logging_config import logger
+from utils.logging_config import logger
 from datetime import datetime
 
 

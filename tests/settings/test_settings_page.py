@@ -1,12 +1,12 @@
 import json
 import allure
 import pytest
-from logging_config import logger
+from utils.logging_config import logger
 
 
 # تابعی برای بارگذاری فایل JSON
 def load_text_reference():
-    with open('text_reference.json', 'r', encoding='utf-8') as f:
+    with open('utils/text_reference.json', 'r', encoding='utf-8') as f:
         return json.load(f)
 
 @pytest.mark.order(1)

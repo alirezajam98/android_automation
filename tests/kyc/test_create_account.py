@@ -1,7 +1,6 @@
 import json
 import time
 from time import sleep
-
 import pytest
 import allure
 from appium.webdriver.common.appiumby import AppiumBy
@@ -23,7 +22,7 @@ logger = configure_logger()
 
 # تابعی برای بارگذاری فایل JSON
 def load_text_reference():
-    with open('text_reference.json', 'r', encoding='utf-8') as f:
+    with open('utils/text_reference.json', 'r', encoding='utf-8') as f:
         return json.load(f)
 
 
@@ -38,7 +37,7 @@ def test_kyc(open_app_without_login):
     # بارگذاری فایل JSON برای دریافت متون مرجع
     text_reference = load_text_reference()
 
-    # متغیر برای ذخیره نتیجه تست
+    # متغیر برای ذخیره error تست
     errors = []
     try:
         # مرحله 1: بررسی دسترسی نوتیفیکیشن
@@ -90,8 +89,16 @@ def test_kyc(open_app_without_login):
                 logger.info(f"متن تایتل برای صفحه توضیحات صحیح است: {actual_text}")
             except AssertionError as e:
                 logger.error(f"خطا در بررسی متن تایتل صفحه توضیحات: {e}")
+
+                # گرفتن اسکرین‌شات و افزودن به گزارش
+                screenshot_path = capture_screenshot(driver, "account_info_title_mismatch")
+                allure.attach.file(screenshot_path, name="Mismatch Screenshot",
+                                   attachment_type=allure.attachment_type.PNG)
+
+                # اضافه کردن متن خطا به گزارش
                 allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
                               allure.attachment_type.TEXT)
+
                 # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
 
         # بررسی متن "clock_title_info_page" اما اگر اشتباه بود، ادامه پیدا کند
@@ -259,9 +266,10 @@ def test_kyc(open_app_without_login):
             logger.info("دکمه 'ادامه' کلیک شد.")
 
         with allure.step("Show and skip demo video"):
+            logger.info("ویدیو آموزشی در حال پخش است ...")
             video_demo_page = VideoDemoPage(driver)
             video_demo_page.click_confirm_video_demo()
-            logger.info("ویدیو آموزشی رد شد.")
+            logger.info("ویدیو آموزشی پخش و بر روی ادامه کلیک شد.")
 
         try:
             camera_permission_page.allow_camera_permission()
@@ -271,7 +279,7 @@ def test_kyc(open_app_without_login):
 
         # مرحله 21: ضبط ویدیو
         with allure.step("Record video"):
-            logger.info("ویدیو آموزشی در حال پخش است...")
+            logger.info("دوربین سلفی جهت فیلم برداری باز شد...")
             video_record_page = VideoRecordingPage(driver)
             video_record_page.click_video_recording()
             logger.info("ضبط ویدیو شروع شد.")
@@ -294,5 +302,7 @@ def test_kyc(open_app_without_login):
     except Exception as e:
 
         logger.error(f"خطا رخ داد: {e}")
-        capture_screenshot(driver, "account_creation_error")
+        # اسکرین‌شات در صورت بروز هرگونه خطا
+        screenshot_path = capture_screenshot(driver, "account_creation_error")
+        allure.attach.file(screenshot_path, name="Error Screenshot", attachment_type=allure.attachment_type.PNG)
         raise e

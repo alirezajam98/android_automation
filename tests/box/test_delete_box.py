@@ -11,7 +11,7 @@ logger = configure_logger()
 
 # تابعی برای بارگذاری فایل JSON
 def load_text_reference():
-    with open('text_reference.json', 'r', encoding='utf-8') as f:
+    with open('utils/text_reference.json', 'r', encoding='utf-8') as f:
         return json.load(f)
 
 

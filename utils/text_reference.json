@@ -1,0 +1,36 @@
+{
+  "dashboard_page": {
+    "dashboard_title": "خانه"
+  },
+  "settings_page": {
+    "settings_title": "تنظیمات",
+    "username_label": "امیر کنارنگ",
+    "phone_number_label": "۰۹۵۸۶۴۳۱۶۸۲",
+    "privacy_label": "حریم خصوصی",
+    "logout_button": "خروج"
+  },
+  "box_page": {
+    "box_deposit_text": "۰ ریال",
+    "box_deposit_description": "موجودی باکس‌ها",
+    "no_active_box_title": "باکس فعالی ندارید",
+    "no_active_box_description": "اولین باکس خود را از طریق دکمه «باکس جدید» بسازید",
+    "first_box_name": "My Test Box1",
+    "first_box_amount": "۰ ریال"
+  },
+  "kyc_pages": {
+    "create_account": "بازکردن حساب",
+    "create_account_info_page_title": "در فرایند بازکردن حساب در بلو به موارد زیر نیاز خواهید داشت:",
+    "clock_title_info_page":"۷ دقیقه زمان!",
+    "clock_subtitle_info_page": "کمتر از ۷ دقیقه زمان نیاز دارید",
+    "sim_title_info_page":"سیم\u200Cکارت به\u200Cنام",
+    "sim_subtitle_info_page": "فعال و به نام خودتان باشد",
+    "identification_documents_title_info_page":"اصل مدرک هویتی",
+    "identification_documents_subtitle_info_page": "[ کارت ملی هوشمند ] یا [ کد رهگیری + شناسنامه ]",
+    "video_title_info_page":"ویدیو سلفی",
+    "video_subtitle_info_page": "کوتاه و با متن مشخص\u200Cشده از شما ضبط خواهد شد",
+    "national_code": "کد ملی ۱۰ رقمی",
+    "referralInputEditText": "مانند:‌ MDMGKP",
+    "end_text_KYC": "امیر کنارنگ عزیز\\n\\nاطلاعات شما با موفقیت دریافت شد\\n\\nاطلاعات شما را تا 1 ساعت آینده بررسی می\u200Cکنیم و نتیجه را از طریق پیامک به شما اطلاع می\u200Cدهیم"
+  }
+}
+

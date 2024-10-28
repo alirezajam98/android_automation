@@ -11,7 +11,7 @@ class DashboardPage(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver)
-        self.title_dashboard = (AppiumBy.CLASS_NAME, "android.widget.TextView")
+        self.title_dashboard = (AppiumBy.CLASS_NAME, "com.samanpr.blu.dev:id/toolbarTitleTextView")
         self.title_dashboard_by_id = (AppiumBy.ID, "com.samanpr.blu.dev:id/titleTextView")
         self.search_btn = (AppiumBy.ID, "com.samanpr.blu.dev:id/searchButton")
         self.top_up_btn = (AppiumBy.ID, "com.samanpr.blu.dev:id/chargeButton")
@@ -33,7 +33,10 @@ class DashboardPage(BasePage):
         self.settings_button = (AppiumBy.ID, "com.samanpr.blu.dev:id/nav_settings")  # ID دکمه تنظیمات
 
     def get_title(self):
-        return self.get_attribute(self.title_dashboard_by_id, "text")
+        get_title_dashboard = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located(self.title_dashboard)
+        )
+        return get_title_dashboard.get_attribute("text")
 
     def is_charge_button_displayed(self):
         try:
