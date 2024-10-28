@@ -15,7 +15,7 @@ class FirstPage(BasePage):
         return LoginPage(self.driver)
 
     def create_account(self):
-        have_account_button = self.find_element(AppiumBy.ID, "com.samanpr.blu.dev:id/openAccountButton")
-        have_account_button.click()
+        create_account_button = self.find_element(AppiumBy.ID, "com.samanpr.blu.dev:id/openAccountButton")
+        create_account_button.click()
 
         return SelectServerBottomSheet(self.driver)

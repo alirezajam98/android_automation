@@ -48,6 +48,7 @@ class CreateAccountPage(BasePage):
             EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/openButton"))
         )
         create_account_button.click()
+        create_account_button.get_attribute("text")
 
 
 class OpenAccountPage(BasePage):

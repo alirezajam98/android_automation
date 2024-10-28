@@ -5,6 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from pages.dashboard.box.box_page import BoxPage  # وارد کردن کلاس صفحه اصلی باکس
 from pages.dashboard.box.box_profile_page import BoxProfilePage  # وارد کردن کلاس صفحه پروفایل باکس
 
+
 class BoxConfirmModal(BasePage):
 
     def __init__(self, driver):
