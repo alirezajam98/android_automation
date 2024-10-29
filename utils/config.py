@@ -31,6 +31,8 @@ def configure_logger():
     return logger
 
 
+
+
 # تنظیم لاگر
 logger = logging.getLogger(__name__)
 if not logger.hasHandlers():
@@ -39,18 +41,29 @@ if not logger.hasHandlers():
 
 
 # تابعی برای گرفتن اسکرین‌شات و افزودن به گزارش Allure
-def capture_screenshot(driver, step_name):
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    screenshot_name = f"{step_name}_{timestamp}.png"
-    screenshot_path = os.path.join("screenshots", screenshot_name)
+# def capture_screenshot(driver, step_name):
+#     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+#     screenshot_name = f"{step_name}_{timestamp}.png"
+#     screenshot_path = os.path.join("screenshots", screenshot_name)
+#
+#     # ایجاد پوشه screenshots در صورتی که وجود نداشته باشد
+#     if not os.path.exists("screenshots"):
+#         os.makedirs("screenshots")
+#
+#     driver.save_screenshot(screenshot_path)
+#     with open(screenshot_path, "rb") as image_file:
+#         allure.attach(image_file.read(), name=screenshot_name, attachment_type=allure.attachment_type.PNG)
+#
 
-    # ایجاد پوشه screenshots در صورتی که وجود نداشته باشد
+def capture_screenshot(driver, name="screenshot"):
+    # ایجاد پوشه `screenshots` در صورت عدم وجود
     if not os.path.exists("screenshots"):
         os.makedirs("screenshots")
 
+    # ذخیره اسکرین‌شات در مسیر مشخص‌شده
+    screenshot_path = os.path.join("screenshots", f"{name}.png")
     driver.save_screenshot(screenshot_path)
-    with open(screenshot_path, "rb") as image_file:
-        allure.attach(image_file.read(), name=screenshot_name, attachment_type=allure.attachment_type.PNG)
+    return screenshot_path
 
 
 # خواندن فایل JSON برای دریافت ترتیب تست‌ها
@@ -64,7 +77,7 @@ def load_test_order(file_path):
 
 def run_tests_for_device(device_name):
     # بارگذاری ترتیب تست‌ها از فایل
-    test_order = load_test_order("utils/test_order.json")
+    test_order = load_test_order("test_order.json")
 
     # تنظیمات دستگاه انتخاب شده
     if device_name not in test_order["devices"]:

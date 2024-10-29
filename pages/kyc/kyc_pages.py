@@ -1,3 +1,5 @@
+import time
+
 from selenium.common import TimeoutException
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.actions.interaction import Interaction
@@ -439,7 +441,7 @@ class VideoRecordingPage(BasePage):
 
     def click_upload_video(self):
         """کلیک روی دکمه آپلود ویدیو"""
-        upload_button = WebDriverWait(self.driver, 10).until(
+        upload_button = WebDriverWait(self.driver, 20).until(
             EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/uploadButton"))
         )
         upload_button.click()
@@ -461,8 +463,7 @@ class FinalPage(BasePage):
 
     def click_final_confirm(self):
         """کلیک روی دکمه تایید نهایی"""
-        confirm_button = WebDriverWait(self.driver, 10).until(
+        confirm_button = WebDriverWait(self.driver, 20).until(
             EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/confirmButton"))
         )
         confirm_button.click()
-        return LoginPage

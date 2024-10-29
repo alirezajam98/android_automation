@@ -14,6 +14,7 @@ from pages.kyc.kyc_pages import NotificationPermissionPage, CreateAccountPage, O
     BirthDatePage, UserNamePage, PasswordPage, CreateAccountInBluStatePage, SelectNationalCardOrTrackerIdPage, \
     TakePhotoPage, ConfirmPhotoPage, ConfirmPhotoModal, UploadPhotoModal, SelectJobPage, VideoDemoPage, \
     VideoRecordingPage, ConfirmVideoModal, FinalPage
+from pages.login_page import LoginPage
 from utils.config import configure_logger, capture_screenshot  # تنظیمات لاگ و تابع اسکرین‌شات
 
 # تنظیمات لاگ
@@ -26,10 +27,18 @@ def load_text_reference():
         return json.load(f)
 
 
-@pytest.mark.order(1)
+# بارگذاری نسخه از فایل
+with open('utils/version.json') as f:
+    config = json.load(f)
+    VERSION = config.get("version", "unknown_version")  # مقدار پیش‌فرض در صورت نبود نسخه
+
+
+@allure.epic("KYC")
 @allure.feature("User Account Creation")
 @allure.story("Create a new user account")
-@allure.severity(allure.severity_level.CRITICAL)
+@allure.suite(f"version:{VERSION}")
+@allure.sub_suite("Tests for Create account by ID card")
+@allure.severity(allure.severity_level.BLOCKER)
 def test_kyc(open_app_without_login):
     driver = open_app_without_login
     accept_page = AcceptRulesAndRegulations(driver)
@@ -37,8 +46,19 @@ def test_kyc(open_app_without_login):
     # بارگذاری فایل JSON برای دریافت متون مرجع
     text_reference = load_text_reference()
 
-    # متغیر برای ذخیره error تست
-    errors = []
+    # تولید داده‌های کاربر
+    phone_number = mobile_number_generator()
+    national_code = national_code_generator()
+    username = username_generator()
+
+    # افزودن اطلاعات کاربر به عنوان پارامترهای اولیه در گزارش Allure
+    with allure.step("User Information Setup") as step:
+        allure.dynamic.parameter("Phone Number", phone_number)
+        allure.dynamic.parameter("National Code", national_code)
+        allure.dynamic.parameter("Username", username)
+        logger.info(
+            f"Generated user info - Phone Number: {phone_number}, National Code: {national_code}, Username: {username}")
+
     try:
         # مرحله 1: بررسی دسترسی نوتیفیکیشن
         notification_permission_page = NotificationPermissionPage(driver)
@@ -138,7 +158,6 @@ def test_kyc(open_app_without_login):
 
         # مرحله 9: وارد کردن شماره تلفن
         with allure.step("Enter phone number"):
-            phone_number = mobile_number_generator()
             phone_page = EnterPhoneNumberPage(driver)
             phone_page.enter_phone_number(phone_number)
             logger.info(f"شماره تلفن وارد شد: {phone_number}")
@@ -169,7 +188,6 @@ def test_kyc(open_app_without_login):
             logger.info(f"متن کد ملی صحیح است: {actual_text}")
 
         with allure.step("Enter national code"):
-            national_code = national_code_generator()
             national_page.enter_national_code(national_code)
             logger.info(f"کدملی وارد شد: {national_code}")
 
@@ -189,7 +207,6 @@ def test_kyc(open_app_without_login):
 
         # مرحله 14: وارد کردن نام کاربری
         with allure.step("Enter new username"):
-            username = username_generator()
             username_page = UserNamePage(driver)
             username_page.enter_username(username)
             logger.info(f"نام کاربری وارد شد: {username}")
@@ -299,6 +316,18 @@ def test_kyc(open_app_without_login):
             final_page = FinalPage(driver)
             final_page.click_final_confirm()
             logger.info("مراحل ایجاد حساب کاربری با موفقیت به پایان رسید.")
+
+        # مرحله 23: ورود به صفحه ورود و مقایسه نام کاربری
+        with allure.step("Verify displayed username in login page"):
+            logger.info("انتقال به صفحه ورود و بررسی نام کاربری...")
+            login_page = LoginPage(driver)
+
+            # گرفتن متن از فیلد نام کاربری در صفحه ورود
+            displayed_username = login_page.get_username_text()
+
+            # مقایسه با نام کاربری تولید شده در ابتدا
+            assert displayed_username == username, f"Mismatch in username: Expected '{username}', but got '{displayed_username}'"
+            logger.info(f"Username verification successful: {displayed_username}")
     except Exception as e:
 
         logger.error(f"خطا رخ داد: {e}")

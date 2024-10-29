@@ -14,6 +14,12 @@ class LoginPage(BasePage):
         )
         username_field.send_keys(username)
 
+    def get_username_text(self):
+        username_field = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/firstEditText"))
+        )
+        return username_field.get_attribute("text")  # مستقیماً متن را برمی‌گرداند
+
     def enter_password(self, password):
         password_field = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/secondEditText"))

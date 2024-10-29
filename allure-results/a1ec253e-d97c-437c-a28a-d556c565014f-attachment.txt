@@ -1,4 +1,5 @@
 INFO:conftest:App opened without logging in.
+INFO:utils.config:Generated user info - Phone Number: 09126432465, National Code: 8022732591, Username: cardm44
 INFO:utils.config:Clicked on 'Allow' button for notification permission.
 INFO:utils.config:کلیک روی دکمه 'ایجاد حساب کاربری'...
 INFO:utils.config:دکمه 'ایجاد حساب کاربری' کلیک شد.
@@ -19,16 +20,16 @@ INFO:utils.config:Initial switch status: OFF
 INFO:utils.config:Switch status after toggle: ON
 INFO:utils.config:کلیک روی دکمه 'تایید'...
 INFO:utils.config:دکمه 'تایید' کلیک شد و به صفحه وارد کردن شماره تلفن هدایت شد.
-INFO:utils.config:شماره تلفن وارد شد: 09121999024
+INFO:utils.config:شماره تلفن وارد شد: 09126432465
 INFO:utils.config:دکمه 'بعدی' کلیک شد.
 INFO:utils.config:متن ریفرال صحیح است: مانند:‌ MDMGKP
 INFO:utils.config:دکمه 'بعدی' کلیک شد.
 INFO:utils.config:متن کد ملی صحیح است: کد ملی ۱۰ رقمی
-INFO:utils.config:کدملی وارد شد: 0228591015
+INFO:utils.config:کدملی وارد شد: 8022732591
 INFO:utils.config:دکمه 'بعدی' کلیک شد.
 INFO:utils.config:سال با موفقیت اسکرول شد.
 INFO:utils.config:دکمه 'بعدی' کلیک شد.
-INFO:utils.config:نام کاربری وارد شد: cardm15
+INFO:utils.config:نام کاربری وارد شد: cardm44
 INFO:utils.config:دکمه 'بعدی' کلیک شد.
 INFO:utils.config:رمز عبور وارد شد.
 INFO:utils.config:دکمه 'بعدی' کلیک شد.
@@ -53,10 +54,6 @@ INFO:utils.config:ضبط ویدیو شروع شد.
 INFO:utils.config:ضبط ویدیو متوقف شد.
 INFO:utils.config:ویدیو آپلود شد.
 INFO:utils.config:آپلود ویدیو تایید شد.
-ERROR:utils.config:خطا رخ داد: Message: 
-Stacktrace:
-NoSuchElementError: An element could not be located on the page using the given search parameters.
-    at AndroidUiautomator2Driver.findElOrEls (C:\Users\a.jamshidi\.appium\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\lib\commands\find.ts:86:11)
-    at processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at AndroidUiautomator2Driver.findElOrElsWithProcessing (C:\Users\a.jamshidi\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\find.ts:60:12)
-    at AndroidUiautomator2Driver.findElement (C:\Users\a.jamshidi\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\find.ts:75:12)
+INFO:utils.config:مراحل ایجاد حساب کاربری با موفقیت به پایان رسید.
+INFO:utils.config:انتقال به صفحه ورود و بررسی نام کاربری...
+INFO:utils.config:Username verification successful: cardm44
