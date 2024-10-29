@@ -1,59 +1,52 @@
-INFO     conftest:conftest.py:55 App opened without logging in.
-INFO     utils.config:test_create_account.py:59 Generated user info - Phone Number: 09126432465, National Code: 8022732591, Username: cardm44
-INFO     utils.config:test_create_account.py:66 Clicked on 'Allow' button for notification permission.
-INFO     utils.config:test_create_account.py:71 کلیک روی دکمه 'ایجاد حساب کاربری'...
-INFO     utils.config:test_create_account.py:76 دکمه 'ایجاد حساب کاربری' کلیک شد.
-INFO     utils.config:test_create_account.py:84 Clicked on 'Allow' button for notification permission.
-INFO     utils.config:test_create_account.py:90 کلیک روی دکمه 'باز کردن حساب'...
-INFO     utils.config:test_create_account.py:93 دکمه 'باز کردن حساب' کلیک شد.
-INFO     utils.config:test_create_account.py:97 انتخاب سرور 'UAT'...
-INFO     utils.config:test_create_account.py:100 سرور 'UAT' انتخاب شد.
-INFO     utils.config:test_create_account.py:109 متن تایتل برای صفحه توضیحات صحیح است: در فرایند بازکردن حساب در بلو به موارد زیر نیاز خواهید داشت:
-ERROR    utils.config:test_create_account.py:133 خطا در بررسی متن ساعت صفحه توضیحات: Expected '۷ دقیقه زمان!', but got 'در فرایند بازکردن حساب در بلو به موارد زیر نیاز خواهید داشت:'
-assert 'در فرایند با... خواهید داشت:' == '۷ دقیقه زمان!'
-  
-  - ۷ دقیقه زمان!
-  + در فرایند بازکردن حساب در بلو به موارد زیر نیاز خواهید داشت:
-INFO     utils.config:test_create_account.py:140 کلیک روی دکمه 'شروع'...
-INFO     utils.config:test_create_account.py:143 دکمه 'شروع' کلیک شد.
-INFO     utils.config:test_create_account.py:148 Initial switch status: OFF
-INFO     utils.config:test_create_account.py:151 Switch status after toggle: ON
-INFO     utils.config:test_create_account.py:155 کلیک روی دکمه 'تایید'...
-INFO     utils.config:test_create_account.py:157 دکمه 'تایید' کلیک شد و به صفحه وارد کردن شماره تلفن هدایت شد.
-INFO     utils.config:test_create_account.py:163 شماره تلفن وارد شد: 09126432465
-INFO     utils.config:test_create_account.py:168 دکمه 'بعدی' کلیک شد.
-INFO     utils.config:test_create_account.py:176 متن ریفرال صحیح است: مانند:‌ MDMGKP
-INFO     utils.config:test_create_account.py:180 دکمه 'بعدی' کلیک شد.
-INFO     utils.config:test_create_account.py:188 متن کد ملی صحیح است: کد ملی ۱۰ رقمی
-INFO     utils.config:test_create_account.py:192 کدملی وارد شد: 8022732591
-INFO     utils.config:test_create_account.py:196 دکمه 'بعدی' کلیک شد.
-INFO     utils.config:test_create_account.py:202 سال با موفقیت اسکرول شد.
-INFO     utils.config:test_create_account.py:206 دکمه 'بعدی' کلیک شد.
-INFO     utils.config:test_create_account.py:212 نام کاربری وارد شد: cardm44
-INFO     utils.config:test_create_account.py:216 دکمه 'بعدی' کلیک شد.
-INFO     utils.config:test_create_account.py:222 رمز عبور وارد شد.
-INFO     utils.config:test_create_account.py:226 دکمه 'بعدی' کلیک شد.
-INFO     utils.config:test_create_account.py:232 دکمه 'ادامه' کلیک شد.
-INFO     utils.config:test_create_account.py:238 گزینه 'کارت ملی' انتخاب شد.
-INFO     utils.config:test_create_account.py:243 دسترسی به دوربین تأیید شد.
-INFO     utils.config:test_create_account.py:251 عکس جلوی کارت ملی گرفته شد.
-INFO     utils.config:test_create_account.py:258 عکس تایید شد.
-INFO     utils.config:test_create_account.py:262 عکس پشت کارت ملی گرفته شد.
-INFO     utils.config:test_create_account.py:267 عکس تایید شد.
-INFO     utils.config:test_create_account.py:270 کلیک روی دکمه 'ادامه'...
-INFO     utils.config:test_create_account.py:273 دکمه 'ادامه' کلیک شد.
-INFO     utils.config:test_create_account.py:277 کلیک بر روی اولین شغل
-INFO     utils.config:test_create_account.py:280 اولین شغل از لیست انتخاب شد.
-INFO     utils.config:test_create_account.py:281 کلیک روی دکمه تایید...
-INFO     utils.config:test_create_account.py:283 دکمه 'ادامه' کلیک شد.
-INFO     utils.config:test_create_account.py:286 ویدیو آموزشی در حال پخش است ...
-INFO     utils.config:test_create_account.py:289 ویدیو آموزشی پخش و بر روی ادامه کلیک شد.
-INFO     utils.config:test_create_account.py:293 مجوز دوربین تأیید شد.
-INFO     utils.config:test_create_account.py:299 دوربین سلفی جهت فیلم برداری باز شد...
-INFO     utils.config:test_create_account.py:302 ضبط ویدیو شروع شد.
-INFO     utils.config:test_create_account.py:305 ضبط ویدیو متوقف شد.
-INFO     utils.config:test_create_account.py:307 ویدیو آپلود شد.
-INFO     utils.config:test_create_account.py:312 آپلود ویدیو تایید شد.
-INFO     utils.config:test_create_account.py:318 مراحل ایجاد حساب کاربری با موفقیت به پایان رسید.
-INFO     utils.config:test_create_account.py:322 انتقال به صفحه ورود و بررسی نام کاربری...
-INFO     utils.config:test_create_account.py:330 Username verification successful: cardm44
+INFO     conftest:conftest.py:82 No notification permission modal displayed, continuing.
+INFO     conftest:conftest.py:100 No biometric page displayed, skipping.
+INFO     conftest:conftest.py:109 Clicked on 'Allow' button for notification permission.
+INFO     conftest:conftest.py:122 Dashboard page displayed successfully.
+INFO     utils.config:test_box.py:44 کلیک روی آیکون باکس برای باز کردن صفحه باکس: 
+INFO     utils.config:test_box.py:49 بستن صفحه انبوردینگ...
+INFO     utils.config:test_box.py:55 بررسی نمایش صفحه باکس...
+INFO     utils.config:test_box.py:64 متن '۰ ریال' صحیح است: ۰ ریال
+INFO     utils.config:test_box.py:76 متن 'موجودی باکس‌ها' صحیح است: موجودی باکس‌ها
+INFO     utils.config:test_box.py:88 متن 'باکس فعالی ندارید' صحیح است: باکس فعالی ندارید
+INFO     utils.config:test_box.py:105 تست بررسی متن‌های صفحه باکس با موفقیت انجام شد.
+INFO     conftest:conftest.py:82 No notification permission modal displayed, continuing.
+INFO     conftest:conftest.py:100 No biometric page displayed, skipping.
+INFO     conftest:conftest.py:109 Clicked on 'Allow' button for notification permission.
+INFO     conftest:conftest.py:122 Dashboard page displayed successfully.
+INFO     utils.config:test_create_box.py:37 کلیک روی آیکون باکس برای باز کردن صفحه باکس...
+INFO     utils.config:test_create_box.py:41 بستن صفحه انبوردینگ...
+INFO     utils.config:test_create_box.py:46 کلیک روی دکمه 'باکس جدید'...
+INFO     utils.config:test_create_box.py:49 وارد صفحه انتخاب نوع باکس شدید.
+INFO     utils.config:test_create_box.py:60 بررسی عنوان و توضیحات باکس عادی...
+INFO     utils.config:test_create_box.py:70 بررسی عنوان و توضیحات باکس بلند مدت...
+INFO     utils.config:test_create_box.py:78 انتخاب باکس عادی (بلوباکس)...
+INFO     utils.config:test_create_box.py:87 ورود نام باکس و ذخیره...
+INFO     utils.config:test_create_box.py:102 باکس با موفقیت ایجاد شد.
+INFO     conftest:conftest.py:82 No notification permission modal displayed, continuing.
+INFO     conftest:conftest.py:100 No biometric page displayed, skipping.
+INFO     conftest:conftest.py:109 Clicked on 'Allow' button for notification permission.
+INFO     conftest:conftest.py:122 Dashboard page displayed successfully.
+INFO     utils.config:test_first_box_profile.py:34 کلیک روی آیکون باکس برای باز کردن صفحه باکس...
+INFO     utils.config:test_first_box_profile.py:38 بستن صفحه انبوردینگ...
+INFO     utils.config:test_first_box_profile.py:49 صفحه باکس نمایش داده شد.
+INFO     utils.config:test_first_box_profile.py:54 نام اولین باکس صحیح است.
+INFO     utils.config:test_first_box_profile.py:60 مقدار اولین باکس صحیح است.
+INFO     utils.config:test_first_box_profile.py:63 کلیک روی اولین باکس و هدایت به صفحه پروفایل باکس...
+INFO     utils.config:test_first_box_profile.py:68 صفحه پروفایل باکس نمایش داده شد.
+INFO     conftest:conftest.py:82 No notification permission modal displayed, continuing.
+INFO     conftest:conftest.py:100 No biometric page displayed, skipping.
+INFO     conftest:conftest.py:109 Clicked on 'Allow' button for notification permission.
+INFO     conftest:conftest.py:122 Dashboard page displayed successfully.
+INFO     utils.config:test_delete_box.py:40 کلیک روی آیکون باکس برای باز کردن صفحه باکس...
+INFO     utils.config:test_delete_box.py:44 بستن صفحه انبوردینگ...
+INFO     utils.config:test_delete_box.py:55 صفحه باکس نمایش داده شد.
+INFO     utils.config:test_delete_box.py:60 نام اولین باکس صحیح است.
+INFO     utils.config:test_delete_box.py:66 مقدار اولین باکس صحیح است.
+INFO     utils.config:test_delete_box.py:69 کلیک روی اولین باکس و هدایت به صفحه پروفایل باکس...
+INFO     utils.config:test_delete_box.py:74 صفحه پروفایل باکس نمایش داده شد.
+INFO     utils.config:test_delete_box.py:77 باز کردن تنظیمات باکس...
+INFO     utils.config:test_delete_box.py:81 کلیک روی 'حذف باکس'...
+INFO     utils.config:test_delete_box.py:85 کنسل کردن حذف...
+INFO     utils.config:test_delete_box.py:89 باز کردن تنظیمات باکس...
+INFO     utils.config:test_delete_box.py:93 کلیک روی 'حذف باکس'...
+INFO     utils.config:test_delete_box.py:97 تایید کردن حذف...

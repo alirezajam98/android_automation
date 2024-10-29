@@ -1,3 +1,5 @@
+import json
+
 import pytest
 import allure
 from utils.config import configure_logger, capture_screenshot  # ایمپورت از فایل تنظیمات
@@ -8,6 +10,15 @@ from pages.dashboard.box.box_profile_page import BoxProfilePage
 # تنظیمات لاگ
 logger = configure_logger()
 
+
+# بارگذاری نسخه از فایل
+with open('utils/version.json') as f:
+    config = json.load(f)
+    VERSION = config.get("version", "unknown_version")  # مقدار پیش‌فرض در صورت نبود نسخه
+
+
+
+@allure.suite(f"version:{VERSION}")
 @pytest.mark.order(2)
 @allure.feature("Box Page")
 @allure.story("Select Box Type and Create Box")

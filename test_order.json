@@ -18,21 +18,21 @@
       {
         "name": "test_box_page",
         "file": "tests/box/test_box.py",
-        "enabled": false
+        "enabled": true
       },
       {
         "name": "test_create_box",
         "file": "tests/box/test_create_box.py",
-        "enabled": false
+        "enabled": true
       },
       {
         "name": "test_check_first_box",
         "file": "tests/box/test_first_box_profile.py",
-        "enabled": false
+        "enabled": true
       },{
         "name": "test_delete_first_box",
         "file": "tests/box/test_delete_box.py",
-        "enabled": false
+        "enabled": true
       },
       {
         "name": "test_open_setting_page",
@@ -41,7 +41,7 @@
       },{
         "name": "test_kyc",
         "file": "tests/kyc/test_create_account.py",
-        "enabled": true
+        "enabled": false
       }
     ]
   }

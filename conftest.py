@@ -38,16 +38,16 @@ def pytest_addoption(parser):
     parser.addoption("--device_udid", action="store", default="", help="Device UDID")
 
 
-#
-# @pytest.fixture
-# def device_name(request):
-#     return request.config.getoption("--device_name")
-#
-#
-# @pytest.fixture
-# def device_udid(request):
-#     return request.config.getoption("--device_udid")
-#
+
+@pytest.fixture
+def device_name(request):
+    return request.config.getoption("--device_name")
+
+
+@pytest.fixture
+def device_udid(request):
+    return request.config.getoption("--device_udid")
+
 
 @pytest.fixture
 def open_app_without_login(setup):
@@ -57,7 +57,6 @@ def open_app_without_login(setup):
 
 
 # فیکسچر برای لاگین و هدایت به صفحه داشبورد، وابسته به setup
-
 @pytest.fixture
 def login_and_dashboard(request):
     from pages.login_page import LoginPage
@@ -70,6 +69,7 @@ def login_and_dashboard(request):
 
     appium_url = "http://127.0.0.1:4723"
     driver = webdriver.Remote(appium_url, options=options)
+
     # بررسی دسترسی نوتیفیکیشن (Allow)
     try:
         allow_button = (AppiumBy.ID, "com.android.permissioncontroller:id/permission_allow_button")
@@ -80,6 +80,7 @@ def login_and_dashboard(request):
         logger.info("Clicked on 'Allow' button for notification permission.")
     except TimeoutException:
         logger.info("No notification permission modal displayed, continuing.")
+
     # ورود به سیستم
     login_page = LoginPage(driver)
     login_page.enter_username("andpfm7")
@@ -90,10 +91,9 @@ def login_and_dashboard(request):
     # بستن صفحه بیومتریک (در صورت نمایش)
     not_now_button = (AppiumBy.ID, "com.samanpr.blu.dev:id/btnNotNow")
     try:
-        WebDriverWait(driver, 10).until(
+        WebDriverWait(driver, 5).until(
             EC.visibility_of_element_located(not_now_button)
         )
-
         biometric_page.click_not_now()
         logger.info("Clicked on 'Not Now' button in biometric page.")
     except TimeoutException:
@@ -112,6 +112,8 @@ def login_and_dashboard(request):
 
     # هدایت به داشبورد
     dashboard_page = DashboardPage(driver)
+    dashboard_page.device_name = device_name  # اضافه کردن device_name به dashboard_page
+
     try:
         dashboard_identifier = (AppiumBy.ID, "com.samanpr.blu.dev:id/toolbarTitleTextView")
         WebDriverWait(driver, 10).until(

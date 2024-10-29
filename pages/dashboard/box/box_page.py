@@ -22,7 +22,7 @@ class BoxPage(BasePage):
         self.first_box_image = (AppiumBy.ID, "com.samanpr.blu.dev:id/avatarImageView")
 
         # بارگذاری فایل JSON
-        with open('text_reference.json', 'r', encoding='utf-8') as f:
+        with open('utils/text_reference.json', 'r', encoding='utf-8') as f:
             self.text_reference = json.load(f)
 
     def close_onboarding(self):

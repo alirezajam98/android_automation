@@ -15,6 +15,15 @@ def load_text_reference():
         return json.load(f)
 
 
+# بارگذاری نسخه از فایل
+with open('utils/version.json') as f:
+    config = json.load(f)
+    VERSION = config.get("version", "unknown_version")  # مقدار پیش‌فرض در صورت نبود نسخه
+
+
+
+@allure.suite(f"version:{VERSION}")
+
 @pytest.mark.order(4)
 @allure.feature("Box Settings")
 @allure.story("Edit Box Name and Delete Box")

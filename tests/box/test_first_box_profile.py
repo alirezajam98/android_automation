@@ -1,3 +1,5 @@
+import json
+
 import pytest
 import allure
 import time  # اضافه کردن برای استفاده از sleep
@@ -8,6 +10,15 @@ from selenium.webdriver.support import expected_conditions as EC
 # تنظیمات لاگ
 logger = configure_logger()
 
+
+# بارگذاری نسخه از فایل
+with open('utils/version.json') as f:
+    config = json.load(f)
+    VERSION = config.get("version", "unknown_version")  # مقدار پیش‌فرض در صورت نبود نسخه
+
+
+
+@allure.suite(f"version:{VERSION}")
 @pytest.mark.order(3)
 @allure.feature("Box Page")
 @allure.story("Check First Box and Navigate to Profile")
