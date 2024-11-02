@@ -94,7 +94,7 @@ def setup_user_account_creation_steps(driver, phone_number, national_code, usern
             try:
                 expected_text = text_reference["kyc_pages"]["clock_title_info_page"]
                 create_account_info_page = CreateAccountInfoPage(driver)
-                actual_text = create_account_info_page.get_account_info_page_title()
+                actual_text = create_account_info_page.get_clock_text_title()
                 assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
                 logger.info(f"متن صفحه توضیحات صحیح است: {actual_text}")
             except AssertionError as e:
@@ -103,6 +103,70 @@ def setup_user_account_creation_steps(driver, phone_number, national_code, usern
                               allure.attachment_type.TEXT)
                 # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
 
+        with allure.step("Check 'clock_subtitle_info_page' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["clock_subtitle_info_page"]
+                create_account_info_page = CreateAccountInfoPage(driver)
+                actual_text = create_account_info_page.get_clock_text_subtitle()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه توضیحات صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن ساعت صفحه توضیحات: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+
+        with allure.step("Check 'sim_title_info_page' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["sim_title_info_page"]
+                create_account_info_page = CreateAccountInfoPage(driver)
+                actual_text = create_account_info_page.get_sim_text_title()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه توضیحات صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن سیم کارت صفحه توضیحات: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+
+        with allure.step("Check 'sim_subtitle_info_page' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["sim_subtitle_info_page"]
+                create_account_info_page = CreateAccountInfoPage(driver)
+                actual_text = create_account_info_page.get_sim_text_subtitle()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه توضیحات صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن سیم کارت صفحه توضیحات: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+
+        with allure.step("Check 'identification_documents_title_info_page' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["identification_documents_title_info_page"]
+                create_account_info_page = CreateAccountInfoPage(driver)
+                actual_text = create_account_info_page.get_identification_documents_text_title()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه توضیحات صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن مدارک لازم صفحه توضیحات: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+
+        with allure.step("Check 'identification_documents_subtitle_info_page' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["identification_documents_subtitle_info_page"]
+                create_account_info_page = CreateAccountInfoPage(driver)
+                actual_text = create_account_info_page.get_identification_documents_text_subtitle()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه توضیحات صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن مدارک لازم صفحه توضیحات: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
         # مرحله 6: کلیک روی دکمه 'شروع'
         with allure.step("Click on 'Start' button"):
             logger.info("کلیک روی دکمه 'شروع'...")

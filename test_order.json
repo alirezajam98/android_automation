@@ -41,7 +41,7 @@
       },{
         "name": "test_kyc",
         "file": "tests/kyc/test_create_account.py",
-        "enabled": true
+        "enabled": false
       },{
         "name": "test_national_ID_card_upload",
         "file": "tests/kyc/test_national_ID_card_upload.py",

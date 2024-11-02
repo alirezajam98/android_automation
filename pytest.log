@@ -1,106 +1,20 @@
 INFO     conftest:conftest.py:55 App opened without logging in.
-INFO     utils.common_flows:common_flows.py:27 Generated user info - Phone Number: 09134161868, National Code: 1951137361, Username: cardm59
+INFO     utils.common_flows:common_flows.py:27 Generated user info - Phone Number: 09116520744, National Code: 0251789543, Username: cardm64
 INFO     utils.common_flows:common_flows.py:34 Clicked on 'Allow' button for notification permission.
 INFO     utils.common_flows:common_flows.py:39 کلیک روی دکمه 'ایجاد حساب کاربری'...
-INFO     utils.common_flows:common_flows.py:44 دکمه 'ایجاد حساب کاربری' کلیک شد.
+INFO     utils.common_flows:common_flows.py:46 No nCreate Account button displayed, continuing.
 INFO     utils.common_flows:common_flows.py:52 Clicked on 'Allow' button for notification permission.
 INFO     utils.common_flows:common_flows.py:58 کلیک روی دکمه 'باز کردن حساب'...
 INFO     utils.common_flows:common_flows.py:61 دکمه 'باز کردن حساب' کلیک شد.
 INFO     utils.common_flows:common_flows.py:65 انتخاب سرور 'UAT'...
 INFO     utils.common_flows:common_flows.py:68 سرور 'UAT' انتخاب شد.
-INFO     utils.common_flows:common_flows.py:72 کلیک روی دکمه 'شروع'...
-INFO     utils.common_flows:common_flows.py:75 دکمه 'شروع' کلیک شد.
-INFO     utils.common_flows:common_flows.py:80 Initial switch status: OFF
-INFO     utils.common_flows:common_flows.py:83 Switch status after toggle: ON
-INFO     utils.common_flows:common_flows.py:87 کلیک روی دکمه 'تایید'...
-INFO     utils.common_flows:common_flows.py:89 دکمه 'تایید' کلیک شد و به صفحه وارد کردن شماره تلفن هدایت شد.
-INFO     utils.common_flows:common_flows.py:95 شماره تلفن وارد شد: 09134161868
-INFO     utils.common_flows:common_flows.py:100 دکمه 'بعدی' کلیک شد.
-INFO     utils.common_flows:common_flows.py:108 متن ریفرال صحیح است: مانند:‌ MDMGKP
-INFO     utils.common_flows:common_flows.py:112 دکمه 'بعدی' کلیک شد.
-INFO     utils.common_flows:common_flows.py:120 متن کد ملی صحیح است: کد ملی ۱۰ رقمی
-INFO     utils.common_flows:common_flows.py:124 کدملی وارد شد: 1951137361
-INFO     utils.common_flows:common_flows.py:128 دکمه 'بعدی' کلیک شد.
-INFO     utils.common_flows:common_flows.py:134 سال با موفقیت اسکرول شد.
-INFO     utils.common_flows:common_flows.py:138 دکمه 'بعدی' کلیک شد.
-INFO     utils.common_flows:common_flows.py:144 نام کاربری وارد شد: cardm59
-INFO     utils.common_flows:common_flows.py:148 دکمه 'بعدی' کلیک شد.
-INFO     utils.common_flows:common_flows.py:154 رمز عبور وارد شد.
-INFO     utils.common_flows:common_flows.py:158 دکمه 'بعدی' کلیک شد.
-INFO     utils.common_flows:common_flows.py:164 دکمه 'ادامه' کلیک شد.
-INFO     utils.config:test_create_account.py:59 گزینه 'کارت ملی' انتخاب شد.
-INFO     utils.config:test_create_account.py:64 دسترسی به دوربین تأیید شد.
-INFO     utils.config:test_create_account.py:72 عکس جلوی کارت ملی گرفته شد.
-INFO     utils.config:test_create_account.py:79 عکس تایید شد.
-INFO     utils.config:test_create_account.py:83 عکس پشت کارت ملی گرفته شد.
-INFO     utils.config:test_create_account.py:88 عکس تایید شد.
-INFO     utils.config:test_create_account.py:91 کلیک روی دکمه 'ادامه'...
-INFO     utils.config:test_create_account.py:94 دکمه 'ادامه' کلیک شد.
-INFO     utils.config:test_create_account.py:98 کلیک بر روی اولین شغل
-INFO     utils.config:test_create_account.py:101 اولین شغل از لیست انتخاب شد.
-INFO     utils.config:test_create_account.py:102 کلیک روی دکمه تایید...
-INFO     utils.config:test_create_account.py:104 دکمه 'ادامه' کلیک شد.
-INFO     utils.config:test_create_account.py:107 ویدیو آموزشی در حال پخش است ...
-INFO     utils.config:test_create_account.py:110 ویدیو آموزشی پخش و بر روی ادامه کلیک شد.
-INFO     utils.config:test_create_account.py:114 مجوز دوربین تأیید شد.
-INFO     utils.config:test_create_account.py:120 دوربین سلفی جهت فیلم برداری باز شد...
-INFO     utils.config:test_create_account.py:123 ضبط ویدیو شروع شد.
-INFO     utils.config:test_create_account.py:126 ضبط ویدیو متوقف شد.
-INFO     utils.config:test_create_account.py:128 ویدیو آپلود شد.
-INFO     utils.config:test_create_account.py:133 آپلود ویدیو تایید شد.
-INFO     utils.config:test_create_account.py:139 مراحل ایجاد حساب کاربری با موفقیت به پایان رسید.
-INFO     utils.config:test_create_account.py:143 انتقال به صفحه ورود و بررسی نام کاربری...
-INFO     utils.config:test_create_account.py:151 Username verification successful: cardm59
-INFO     conftest:conftest.py:55 App opened without logging in.
-INFO     utils.common_flows:common_flows.py:27 Generated user info - Phone Number: 09194917901, National Code: 0429995121, Username: cardm60
-INFO     utils.common_flows:common_flows.py:34 Clicked on 'Allow' button for notification permission.
-INFO     utils.common_flows:common_flows.py:39 کلیک روی دکمه 'ایجاد حساب کاربری'...
-INFO     utils.common_flows:common_flows.py:44 دکمه 'ایجاد حساب کاربری' کلیک شد.
-INFO     utils.common_flows:common_flows.py:52 Clicked on 'Allow' button for notification permission.
-INFO     utils.common_flows:common_flows.py:58 کلیک روی دکمه 'باز کردن حساب'...
-INFO     utils.common_flows:common_flows.py:61 دکمه 'باز کردن حساب' کلیک شد.
-INFO     utils.common_flows:common_flows.py:65 انتخاب سرور 'UAT'...
-INFO     utils.common_flows:common_flows.py:68 سرور 'UAT' انتخاب شد.
-INFO     utils.common_flows:common_flows.py:72 کلیک روی دکمه 'شروع'...
-INFO     utils.common_flows:common_flows.py:75 دکمه 'شروع' کلیک شد.
-INFO     utils.common_flows:common_flows.py:80 Initial switch status: OFF
-INFO     utils.common_flows:common_flows.py:83 Switch status after toggle: ON
-INFO     utils.common_flows:common_flows.py:87 کلیک روی دکمه 'تایید'...
-INFO     utils.common_flows:common_flows.py:89 دکمه 'تایید' کلیک شد و به صفحه وارد کردن شماره تلفن هدایت شد.
-INFO     utils.common_flows:common_flows.py:95 شماره تلفن وارد شد: 09194917901
-INFO     utils.common_flows:common_flows.py:100 دکمه 'بعدی' کلیک شد.
-INFO     utils.common_flows:common_flows.py:108 متن ریفرال صحیح است: مانند:‌ MDMGKP
-INFO     utils.common_flows:common_flows.py:112 دکمه 'بعدی' کلیک شد.
-INFO     utils.common_flows:common_flows.py:120 متن کد ملی صحیح است: کد ملی ۱۰ رقمی
-INFO     utils.common_flows:common_flows.py:124 کدملی وارد شد: 0429995121
-INFO     utils.common_flows:common_flows.py:128 دکمه 'بعدی' کلیک شد.
-INFO     utils.common_flows:common_flows.py:134 سال با موفقیت اسکرول شد.
-INFO     utils.common_flows:common_flows.py:138 دکمه 'بعدی' کلیک شد.
-INFO     utils.common_flows:common_flows.py:144 نام کاربری وارد شد: cardm60
-INFO     utils.common_flows:common_flows.py:148 دکمه 'بعدی' کلیک شد.
-INFO     utils.common_flows:common_flows.py:154 رمز عبور وارد شد.
-INFO     utils.common_flows:common_flows.py:158 دکمه 'بعدی' کلیک شد.
-INFO     utils.common_flows:common_flows.py:164 دکمه 'ادامه' کلیک شد.
-INFO     utils.config:test_national_ID_card_upload.py:56 گزینه 'کارت ملی' انتخاب شد.
-INFO     utils.config:test_national_ID_card_upload.py:61 دسترسی به دوربین تأیید شد.
-INFO     utils.config:test_national_ID_card_upload.py:69 عکس جلوی کارت ملی گرفته شد.
-INFO     utils.config:test_national_ID_card_upload.py:76 عکس تایید شد.
-INFO     utils.config:test_national_ID_card_upload.py:80 عکس پشت کارت ملی گرفته شد.
-INFO     utils.config:test_national_ID_card_upload.py:85 عکس تایید شد.
-INFO     utils.config:test_national_ID_card_upload.py:88 کلیک روی دکمه 'ادامه'...
-INFO     utils.config:test_national_ID_card_upload.py:91 دکمه 'ادامه' کلیک شد.
-INFO     utils.config:test_national_ID_card_upload.py:95 کلیک بر روی اولین شغل
-INFO     utils.config:test_national_ID_card_upload.py:98 اولین شغل از لیست انتخاب شد.
-INFO     utils.config:test_national_ID_card_upload.py:99 کلیک روی دکمه تایید...
-INFO     utils.config:test_national_ID_card_upload.py:101 دکمه 'ادامه' کلیک شد.
-INFO     utils.config:test_national_ID_card_upload.py:104 ویدیو آموزشی در حال پخش است ...
-INFO     utils.config:test_national_ID_card_upload.py:107 ویدیو آموزشی پخش و بر روی ادامه کلیک شد.
-INFO     utils.config:test_national_ID_card_upload.py:111 مجوز دوربین تأیید شد.
-INFO     utils.config:test_national_ID_card_upload.py:117 دوربین سلفی جهت فیلم برداری باز شد...
-INFO     utils.config:test_national_ID_card_upload.py:120 ضبط ویدیو شروع شد.
-INFO     utils.config:test_national_ID_card_upload.py:123 ضبط ویدیو متوقف شد.
-INFO     utils.config:test_national_ID_card_upload.py:125 ویدیو آپلود شد.
-INFO     utils.config:test_national_ID_card_upload.py:130 آپلود ویدیو تایید شد.
-INFO     utils.config:test_national_ID_card_upload.py:136 مراحل ایجاد حساب کاربری با موفقیت به پایان رسید.
-INFO     utils.config:test_national_ID_card_upload.py:140 انتقال به صفحه ورود و بررسی نام کاربری...
-INFO     utils.config:test_national_ID_card_upload.py:148 Username verification successful: cardm60
+INFO     utils.common_flows:common_flows.py:77 متن تایتل برای صفحه توضیحات صحیح است: در فرایند بازکردن حساب در بلو به موارد زیر نیاز خواهید داشت:
+INFO     utils.common_flows:common_flows.py:99 متن صفحه توضیحات صحیح است: ۷ دقیقه زمان!
+INFO     utils.common_flows:common_flows.py:112 متن صفحه توضیحات صحیح است: کمتر از ۷ دقیقه زمان نیاز دارید
+INFO     utils.common_flows:common_flows.py:125 متن صفحه توضیحات صحیح است: سیم‌کارت به‌نام
+INFO     utils.common_flows:common_flows.py:138 متن صفحه توضیحات صحیح است: فعال و به نام خودتان باشد
+INFO     utils.common_flows:common_flows.py:151 متن صفحه توضیحات صحیح است: اصل مدرک هویتی
+INFO     utils.common_flows:common_flows.py:164 متن صفحه توضیحات صحیح است: [ کارت ملی هوشمند ] یا [ کد رهگیری + شناسنامه ]
+INFO     utils.common_flows:common_flows.py:172 کلیک روی دکمه 'شروع'...
+INFO     utils.common_flows:common_flows.py:175 دکمه 'شروع' کلیک شد.
+INFO     utils.common_flows:common_flows.py:180 Initial switch status: OFF
