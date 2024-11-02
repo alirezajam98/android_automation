@@ -66,6 +66,42 @@ def setup_user_account_creation_steps(driver, phone_number, national_code, usern
             select_server_page = SelectServerPage(driver)
             select_server_page.select_uat_server()
             logger.info("سرور 'UAT' انتخاب شد.")
+            # بررسی متن "create_account_info_page" اما اگر اشتباه بود، ادامه پیدا کند
+
+        with allure.step("Check 'create_account_info_page' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["create_account_info_page_title"]
+                create_account_info_page = CreateAccountInfoPage(driver)
+                actual_text = create_account_info_page.get_account_info_page_title()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن تایتل برای صفحه توضیحات صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن تایتل صفحه توضیحات: {e}")
+
+                # گرفتن اسکرین‌شات و افزودن به گزارش
+                screenshot_path = capture_screenshot(driver, "account_info_title_mismatch")
+                allure.attach.file(screenshot_path, name="Mismatch Screenshot",
+                                   attachment_type=allure.attachment_type.PNG)
+
+                # اضافه کردن متن خطا به گزارش
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+
+            # بررسی متن "clock_title_info_page" اما اگر اشتباه بود، ادامه پیدا کند
+        with allure.step("Check 'clock_title_info_page' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["clock_title_info_page"]
+                create_account_info_page = CreateAccountInfoPage(driver)
+                actual_text = create_account_info_page.get_account_info_page_title()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه توضیحات صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن ساعت صفحه توضیحات: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
 
         # مرحله 6: کلیک روی دکمه 'شروع'
         with allure.step("Click on 'Start' button"):

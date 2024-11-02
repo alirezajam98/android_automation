@@ -1,16 +1,11 @@
 import time
-
 from selenium.common import TimeoutException
 from selenium.webdriver import ActionChains
-from selenium.webdriver.common.actions.interaction import Interaction
-from selenium.webdriver.common.actions.pointer_input import PointerInput
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from appium.webdriver.common.appiumby import AppiumBy
-
 from conftest import driver
 from pages.base_page import BasePage
-from pages.login_page import LoginPage
 
 
 class NotificationPermissionPage(BasePage):
@@ -139,7 +134,8 @@ class CreateAccountInfoPage(BasePage):
     def get_identification_documents_text_subtitle(self):
         get_identification_documents_text_subtitle = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located(
-                (AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("[ کارت ملی هوشمند ] یا [ کد رهگیری + شناسنامه ]")'))
+                (AppiumBy.ANDROID_UIAUTOMATOR,
+                 'new UiSelector().text("[ کارت ملی هوشمند ] یا [ کد رهگیری + شناسنامه ]")'))
         )
         return get_identification_documents_text_subtitle.get_attribute("text")
 
