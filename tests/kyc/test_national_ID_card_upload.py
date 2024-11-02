@@ -1,18 +1,15 @@
 import json
-import time
 from time import sleep
-import pytest
 import allure
 from appium.webdriver.common.appiumby import AppiumBy
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
 from conftest import mobile_number_generator, national_code_generator, username_generator
-from pages.kyc.kyc_pages import NotificationPermissionPage, CreateAccountPage, OpenAccountPage, SelectServerPage, \
+from pages.kyc.kyc_pages import NotificationPermissionPage, OpenAccountPage, SelectServerPage, \
     CreateAccountInfoPage, AcceptRulesAndRegulations, EnterPhoneNumberPage, ReferralPage, NationalCodePage, \
     BirthDatePage, UserNamePage, PasswordPage, CreateAccountInBluStatePage, SelectNationalCardOrTrackerIdPage, \
-    TakePhotoPage, ConfirmPhotoPage, ConfirmPhotoModal, UploadPhotoModal, SelectJobPage, VideoDemoPage, \
+    TakePhotoPage, ConfirmPhotoPage, ConfirmPhotoModal, SelectJobPage, VideoDemoPage, \
     VideoRecordingPage, ConfirmVideoModal, FinalPage
 from pages.login_page import LoginPage
 from utils.common_flows import setup_user_account_creation_steps
@@ -35,12 +32,12 @@ with open('utils/version.json') as f:
 
 
 @allure.epic("KYC")
-@allure.feature("Create a new user account")
-# @allure.story("Create a new user account")
+@allure.feature("Create a new user account_National_ID_upload")
+# @allure.story("Create a new user account_National_ID_upload")
 @allure.suite(f"version:{VERSION}")
 @allure.sub_suite("Tests for Create account by ID card")
 @allure.severity(allure.severity_level.BLOCKER)
-def test_create_account(open_app_without_login):
+def test_national_id_card_upload(open_app_without_login):
     driver = open_app_without_login
     # تولید داده‌های کاربر
     phone_number = mobile_number_generator()
@@ -48,10 +45,10 @@ def test_create_account(open_app_without_login):
     username = username_generator()
     # بارگذاری فایل JSON برای دریافت متون مرجع
     text_reference = load_text_reference()
+
+    # اجرای مراحل مشترک
     setup_user_account_creation_steps(driver, phone_number, national_code, username, text_reference)
-
     try:
-
         # مرحله 17: انتخاب گزینه 'کارت ملی'
         with allure.step("Select 'National Card' option"):
             select_national_card = SelectNationalCardOrTrackerIdPage(driver)

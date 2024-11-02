@@ -1,0 +1,53 @@
+INFO:conftest:App opened without logging in.
+INFO:utils.common_flows:Generated user info - Phone Number: 09134161868, National Code: 1951137361, Username: cardm59
+INFO:utils.common_flows:Clicked on 'Allow' button for notification permission.
+INFO:utils.common_flows:کلیک روی دکمه 'ایجاد حساب کاربری'...
+INFO:utils.common_flows:دکمه 'ایجاد حساب کاربری' کلیک شد.
+INFO:utils.common_flows:Clicked on 'Allow' button for notification permission.
+INFO:utils.common_flows:کلیک روی دکمه 'باز کردن حساب'...
+INFO:utils.common_flows:دکمه 'باز کردن حساب' کلیک شد.
+INFO:utils.common_flows:انتخاب سرور 'UAT'...
+INFO:utils.common_flows:سرور 'UAT' انتخاب شد.
+INFO:utils.common_flows:کلیک روی دکمه 'شروع'...
+INFO:utils.common_flows:دکمه 'شروع' کلیک شد.
+INFO:utils.common_flows:Initial switch status: OFF
+INFO:utils.common_flows:Switch status after toggle: ON
+INFO:utils.common_flows:کلیک روی دکمه 'تایید'...
+INFO:utils.common_flows:دکمه 'تایید' کلیک شد و به صفحه وارد کردن شماره تلفن هدایت شد.
+INFO:utils.common_flows:شماره تلفن وارد شد: 09134161868
+INFO:utils.common_flows:دکمه 'بعدی' کلیک شد.
+INFO:utils.common_flows:متن ریفرال صحیح است: مانند:‌ MDMGKP
+INFO:utils.common_flows:دکمه 'بعدی' کلیک شد.
+INFO:utils.common_flows:متن کد ملی صحیح است: کد ملی ۱۰ رقمی
+INFO:utils.common_flows:کدملی وارد شد: 1951137361
+INFO:utils.common_flows:دکمه 'بعدی' کلیک شد.
+INFO:utils.common_flows:سال با موفقیت اسکرول شد.
+INFO:utils.common_flows:دکمه 'بعدی' کلیک شد.
+INFO:utils.common_flows:نام کاربری وارد شد: cardm59
+INFO:utils.common_flows:دکمه 'بعدی' کلیک شد.
+INFO:utils.common_flows:رمز عبور وارد شد.
+INFO:utils.common_flows:دکمه 'بعدی' کلیک شد.
+INFO:utils.common_flows:دکمه 'ادامه' کلیک شد.
+INFO:utils.config:گزینه 'کارت ملی' انتخاب شد.
+INFO:utils.config:دسترسی به دوربین تأیید شد.
+INFO:utils.config:عکس جلوی کارت ملی گرفته شد.
+INFO:utils.config:عکس تایید شد.
+INFO:utils.config:عکس پشت کارت ملی گرفته شد.
+INFO:utils.config:عکس تایید شد.
+INFO:utils.config:کلیک روی دکمه 'ادامه'...
+INFO:utils.config:دکمه 'ادامه' کلیک شد.
+INFO:utils.config:کلیک بر روی اولین شغل
+INFO:utils.config:اولین شغل از لیست انتخاب شد.
+INFO:utils.config:کلیک روی دکمه تایید...
+INFO:utils.config:دکمه 'ادامه' کلیک شد.
+INFO:utils.config:ویدیو آموزشی در حال پخش است ...
+INFO:utils.config:ویدیو آموزشی پخش و بر روی ادامه کلیک شد.
+INFO:utils.config:مجوز دوربین تأیید شد.
+INFO:utils.config:دوربین سلفی جهت فیلم برداری باز شد...
+INFO:utils.config:ضبط ویدیو شروع شد.
+INFO:utils.config:ضبط ویدیو متوقف شد.
+INFO:utils.config:ویدیو آپلود شد.
+INFO:utils.config:آپلود ویدیو تایید شد.
+INFO:utils.config:مراحل ایجاد حساب کاربری با موفقیت به پایان رسید.
+INFO:utils.config:انتقال به صفحه ورود و بررسی نام کاربری...
+INFO:utils.config:Username verification successful: cardm59

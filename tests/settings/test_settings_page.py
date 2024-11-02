@@ -1,14 +1,20 @@
 import json
 import allure
 import pytest
-from utils.logging_config import logger
+from utils.config import logger
 
 
 # تابعی برای بارگذاری فایل JSON
 def load_text_reference():
     with open('utils/text_reference.json', 'r', encoding='utf-8') as f:
         return json.load(f)
+# بارگذاری نسخه از فایل
+with open('utils/version.json') as f:
+    config = json.load(f)
+    VERSION = config.get("version", "unknown_version")  # مقدار پیش‌فرض در صورت نبود نسخه
 
+
+@allure.suite(f"version:{VERSION}")
 @pytest.mark.order(1)
 @allure.feature("Settings Page")
 @allure.story("Verify settings page texts")
