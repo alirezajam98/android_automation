@@ -5,7 +5,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from pages.kyc.kyc_pages import NotificationPermissionPage, OpenAccountPage, SelectServerPage, \
-    CreateAccountInfoPage, AcceptRulesAndRegulations, EnterPhoneNumberPage, ReferralPage, NationalCodePage, \
+    CreateAccountInfoPage, AcceptRulesAndRegulationsPage, EnterPhoneNumberPage, ReferralPage, NationalCodePage, \
     BirthDatePage, UserNamePage, PasswordPage, CreateAccountInBluStatePage
 from utils.config import capture_screenshot  # تنظیمات لاگ و تابع اسکرین‌شات
 
@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 
 
 def setup_user_account_creation_steps(driver, phone_number, national_code, username, text_reference):
-    accept_page = AcceptRulesAndRegulations(driver)
+    accept_page = AcceptRulesAndRegulationsPage(driver)
 
     # افزودن اطلاعات کاربر به عنوان پارامترهای اولیه در گزارش Allure
     with allure.step("User Information Setup") as step:
@@ -167,12 +167,157 @@ def setup_user_account_creation_steps(driver, phone_number, national_code, usern
                 allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
                               allure.attachment_type.TEXT)
                 # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+
+        with allure.step("Check 'start_button' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["start_button"]
+                create_account_info_page = CreateAccountInfoPage(driver)
+                actual_text = create_account_info_page.get_start_button_text()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه توضیحات صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن دکمه شروع توضیحات: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+
         # مرحله 6: کلیک روی دکمه 'شروع'
         with allure.step("Click on 'Start' button"):
             logger.info("کلیک روی دکمه 'شروع'...")
             create_account_info_page = CreateAccountInfoPage(driver)
             create_account_info_page.click_start()
             logger.info("دکمه 'شروع' کلیک شد.")
+
+            # بررسی متن های "AcceptRulesAndRegulations" اما اگر اشتباه بود، ادامه پیدا کند
+        with allure.step("Check 'accept_rule_page_title' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["accept_rule_page_title"]
+                accept_rules_and_regulations_page = AcceptRulesAndRegulationsPage(driver)
+                actual_text = accept_rules_and_regulations_page.get_accept_rule_page_title()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه موافقت با قوانین و شرایط، صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن صفحه موافقت با قوانین و شرایط: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+
+        with allure.step("Check 'accept_rule_page_subtitle' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["accept_rule_page_subtitle"]
+                accept_rules_and_regulations_page = AcceptRulesAndRegulationsPage(driver)
+                actual_text = accept_rules_and_regulations_page.get_accept_rule_page_subtitle()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه موافقت با قوانین و شرایط، صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن صفحه موافقت با قوانین و شرایط: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+        with allure.step("Check 'create_account_step_title' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["create_account_step_title"]
+                accept_rules_and_regulations_page = AcceptRulesAndRegulationsPage(driver)
+                actual_text = accept_rules_and_regulations_page.get_create_account_step_title()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه موافقت با قوانین و شرایط، صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن صفحه موافقت با قوانین و شرایط: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+        with allure.step("Check 'create_account_step_subtitle' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["create_account_step_subtitle"]
+                accept_rules_and_regulations_page = AcceptRulesAndRegulationsPage(driver)
+                actual_text = accept_rules_and_regulations_page.get_create_account_step_subtitle()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه موافقت با قوانین و شرایط، صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن صفحه موافقت با قوانین و شرایط: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+        with allure.step("Check 'Documents_scan_step_title' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["Documents_scan_step_title"]
+                accept_rules_and_regulations_page = AcceptRulesAndRegulationsPage(driver)
+                actual_text = accept_rules_and_regulations_page.get_documents_scan_step_title()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه موافقت با قوانین و شرایط، صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن صفحه موافقت با قوانین و شرایط: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+        with allure.step("Check 'Identification_step_title' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["Identification_step_title"]
+                accept_rules_and_regulations_page = AcceptRulesAndRegulationsPage(driver)
+                actual_text = accept_rules_and_regulations_page.get_identification_step_title()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه موافقت با قوانین و شرایط، صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن صفحه موافقت با قوانین و شرایط: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+        with allure.step("Check 'Check_information_step_title' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["Check_information_step_title"]
+                accept_rules_and_regulations_page = AcceptRulesAndRegulationsPage(driver)
+                actual_text = accept_rules_and_regulations_page.get_check_information_step_title()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه موافقت با قوانین و شرایط، صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن صفحه موافقت با قوانین و شرایط: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+        with allure.step("Check 'card_order_step_title' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["card_order_step_title"]
+                accept_rules_and_regulations_page = AcceptRulesAndRegulationsPage(driver)
+                actual_text = accept_rules_and_regulations_page.get_card_order_step_title()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه موافقت با قوانین و شرایط، صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن صفحه موافقت با قوانین و شرایط: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+        with allure.step("Check 'rules_and_regulations_title' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["rules_and_regulations_title"]
+                accept_rules_and_regulations_page = AcceptRulesAndRegulationsPage(driver)
+                actual_text = accept_rules_and_regulations_page.get_rules_and_regulations_title()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه موافقت با قوانین و شرایط، صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن صفحه موافقت با قوانین و شرایط: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+        with allure.step("Check 'confirm_button_title' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["confirm_button_title"]
+                accept_rules_and_regulations_page = AcceptRulesAndRegulationsPage(driver)
+                actual_text = accept_rules_and_regulations_page.get_confirm_button_title()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن دکمه ادامه در صفحه موافقت با قوانین و شرایط، صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن ذکمه ادامه در صفحه موافقت با قوانین و شرایط: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
 
         # مرحله 7: بررسی و تغییر وضعیت سوییچ
         with allure.step("Check and toggle the agreement switch"):

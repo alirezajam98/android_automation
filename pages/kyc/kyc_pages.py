@@ -14,7 +14,7 @@ class NotificationPermissionPage(BasePage):
     def allow_notification_permission(self):
         """اجازه دسترسی به نوتیفیکیشن (اگر مجوز درخواست شد)"""
         try:
-            allow_button = WebDriverWait(self.driver, 5).until(
+            allow_button = WebDriverWait(self.driver, 3).until(
                 EC.presence_of_element_located((AppiumBy.ID, "com.android.permissioncontroller:id"
                                                              "/permission_allow_button"))
             )
@@ -26,7 +26,7 @@ class NotificationPermissionPage(BasePage):
     def allow_camera_permission(self):
         """اجازه دسترسی به دوربین (اگر مجوز درخواست شد)"""
         try:
-            allow_button = WebDriverWait(self.driver, 5).until(
+            allow_button = WebDriverWait(self.driver, 3).until(
                 EC.presence_of_element_located((AppiumBy.ID, "com.android.permissioncontroller:id"
                                                              "/permission_allow_foreground_only_button"))
             )
@@ -161,8 +161,96 @@ class CreateAccountInfoPage(BasePage):
         return start_button_text.get_attribute("text")
 
 
-class AcceptRulesAndRegulations(BasePage):
+class AcceptRulesAndRegulationsPage(BasePage):
     """کلاس مربوط به قبول قوانین و مقررات"""
+
+    def get_accept_rule_page_title(self):
+        title_text = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located(
+                (AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("بازکردن حساب در بلو")'))
+        )
+        return title_text.get_attribute("text")
+
+    def get_accept_rule_page_subtitle(self):
+        subtitle_text = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located(
+                (
+                    AppiumBy.ANDROID_UIAUTOMATOR,
+                    'new UiSelector().text("تکمیل مراحل زیر، فقط چند دقیقه زمان نیاز دارد")'))
+        )
+        return subtitle_text.get_attribute("text")
+
+    def get_create_account_step_title(self):
+        create_account_step_title = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located(
+                (
+                    AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("ساخت حساب کاربری")'))
+        )
+        return create_account_step_title.get_attribute("text")
+
+    def get_create_account_step_subtitle(self):
+        create_account_step_subtitle = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located(
+                (
+                    AppiumBy.ANDROID_UIAUTOMATOR,
+                    'new UiSelector().text("در این مرحله اطلاعات خودتان را وارد می‌کنید و '
+                    'رمز عبور انتخاب می‌کنید.")'))
+        )
+        return create_account_step_subtitle.get_attribute("text")
+
+    def get_documents_scan_step_title(self):
+        documents_scan_step_title = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located(
+                (
+                    AppiumBy.ANDROID_UIAUTOMATOR,
+                    'new UiSelector().text("اسکن مدارک شما")'))
+        )
+        return documents_scan_step_title.get_attribute("text")
+
+    def get_identification_step_title(self):
+        identification_step_title = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located(
+                (
+                    AppiumBy.ANDROID_UIAUTOMATOR,
+                    'new UiSelector().text("شناسایی هویت شما")'))
+        )
+        return identification_step_title.get_attribute("text")
+
+    def get_check_information_step_title(self):
+        check_information_step_titl = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located(
+                (
+                    AppiumBy.ANDROID_UIAUTOMATOR,
+                    'new UiSelector().text("بررسی اطلاعات شما توسط بلو")'))
+        )
+        return check_information_step_titl.get_attribute("text")
+
+    def get_card_order_step_title(self):
+        card_order_step_title = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located(
+                (
+                    AppiumBy.ANDROID_UIAUTOMATOR,
+                    'new UiSelector().text("سفارش رایگان بلوکارت")'))
+        )
+        return card_order_step_title.get_attribute("text")
+
+    def get_rules_and_regulations_title(self):
+        rules_and_regulations_title = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located(
+                (
+                    AppiumBy.ANDROID_UIAUTOMATOR,
+                    'new UiSelector().text("قوانین و شرایط را خواندم و قبول می‌کنم")'))
+        )
+        return rules_and_regulations_title.get_attribute("text")
+
+    def get_confirm_button_title(self):
+        confirm_button_title = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located(
+                (
+                    AppiumBy.ANDROID_UIAUTOMATOR,
+                    'new UiSelector().resourceId("com.samanpr.blu.dev:id/confirm")'))
+        )
+        return confirm_button_title.get_attribute("text")
 
     def click_rules_and_regulations(self):
         """کلیک روی سوییچ قوانین و مقررات"""

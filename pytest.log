@@ -1,5 +1,5 @@
 INFO     conftest:conftest.py:55 App opened without logging in.
-INFO     utils.common_flows:common_flows.py:27 Generated user info - Phone Number: 09116520744, National Code: 0251789543, Username: cardm64
+INFO     utils.common_flows:common_flows.py:27 Generated user info - Phone Number: 09187064733, National Code: 1384187065, Username: andauto3
 INFO     utils.common_flows:common_flows.py:34 Clicked on 'Allow' button for notification permission.
 INFO     utils.common_flows:common_flows.py:39 کلیک روی دکمه 'ایجاد حساب کاربری'...
 INFO     utils.common_flows:common_flows.py:46 No nCreate Account button displayed, continuing.
@@ -15,6 +15,23 @@ INFO     utils.common_flows:common_flows.py:125 متن صفحه توضیحات �
 INFO     utils.common_flows:common_flows.py:138 متن صفحه توضیحات صحیح است: فعال و به نام خودتان باشد
 INFO     utils.common_flows:common_flows.py:151 متن صفحه توضیحات صحیح است: اصل مدرک هویتی
 INFO     utils.common_flows:common_flows.py:164 متن صفحه توضیحات صحیح است: [ کارت ملی هوشمند ] یا [ کد رهگیری + شناسنامه ]
-INFO     utils.common_flows:common_flows.py:172 کلیک روی دکمه 'شروع'...
-INFO     utils.common_flows:common_flows.py:175 دکمه 'شروع' کلیک شد.
-INFO     utils.common_flows:common_flows.py:180 Initial switch status: OFF
+INFO     utils.common_flows:common_flows.py:177 متن صفحه توضیحات صحیح است: شروع
+INFO     utils.common_flows:common_flows.py:186 کلیک روی دکمه 'شروع'...
+INFO     utils.common_flows:common_flows.py:189 دکمه 'شروع' کلیک شد.
+INFO     utils.common_flows:common_flows.py:198 متن صفحه موافقت با قوانین و شرایط، صحیح است: بازکردن حساب در بلو
+INFO     utils.common_flows:common_flows.py:211 متن صفحه موافقت با قوانین و شرایط، صحیح است: تکمیل مراحل زیر، فقط چند دقیقه زمان نیاز دارد
+INFO     utils.common_flows:common_flows.py:224 متن صفحه موافقت با قوانین و شرایط، صحیح است: ساخت حساب کاربری
+INFO     utils.common_flows:common_flows.py:237 متن صفحه موافقت با قوانین و شرایط، صحیح است: در این مرحله اطلاعات خودتان را وارد می‌کنید و رمز عبور انتخاب می‌کنید.
+INFO     utils.common_flows:common_flows.py:250 متن صفحه موافقت با قوانین و شرایط، صحیح است: اسکن مدارک شما
+INFO     utils.common_flows:common_flows.py:263 متن صفحه موافقت با قوانین و شرایط، صحیح است: شناسایی هویت شما
+INFO     utils.common_flows:common_flows.py:276 متن صفحه موافقت با قوانین و شرایط، صحیح است: بررسی اطلاعات شما توسط بلو
+INFO     utils.common_flows:common_flows.py:289 متن صفحه موافقت با قوانین و شرایط، صحیح است: سفارش رایگان بلوکارت
+INFO     utils.common_flows:common_flows.py:302 متن صفحه موافقت با قوانین و شرایط، صحیح است: قوانین و شرایط را خواندم و قبول می‌کنم
+INFO     utils.common_flows:common_flows.py:315 متن دکمه ادامه در صفحه موافقت با قوانین و شرایط، صحیح است: ادامه
+INFO     utils.common_flows:common_flows.py:325 Initial switch status: OFF
+INFO     utils.common_flows:common_flows.py:328 Switch status after toggle: ON
+INFO     utils.common_flows:common_flows.py:332 کلیک روی دکمه 'تایید'...
+INFO     utils.common_flows:common_flows.py:334 دکمه 'تایید' کلیک شد و به صفحه وارد کردن شماره تلفن هدایت شد.
+INFO     utils.common_flows:common_flows.py:340 شماره تلفن وارد شد: 09187064733
+INFO     utils.common_flows:common_flows.py:345 دکمه 'بعدی' کلیک شد.
+INFO     utils.common_flows:common_flows.py:353 متن ریفرال صحیح است: مانند:‌ MDMGKP

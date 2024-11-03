@@ -7,7 +7,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from conftest import mobile_number_generator, national_code_generator, username_generator
 from pages.kyc.kyc_pages import NotificationPermissionPage, OpenAccountPage, SelectServerPage, \
-    CreateAccountInfoPage, AcceptRulesAndRegulations, EnterPhoneNumberPage, ReferralPage, NationalCodePage, \
+    CreateAccountInfoPage, AcceptRulesAndRegulationsPage, EnterPhoneNumberPage, ReferralPage, NationalCodePage, \
     BirthDatePage, UserNamePage, PasswordPage, CreateAccountInBluStatePage, SelectNationalCardOrTrackerIdPage, \
     TakePhotoPage, ConfirmPhotoPage, ConfirmPhotoModal, SelectJobPage, VideoDemoPage, \
     VideoRecordingPage, ConfirmVideoModal, FinalPage

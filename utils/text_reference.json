@@ -30,7 +30,18 @@
     "video_subtitle_info_page": "کوتاه و با متن مشخص\u200Cشده از شما ضبط خواهد شد",
     "national_code": "کد ملی ۱۰ رقمی",
     "referralInputEditText": "مانند:‌ MDMGKP",
-    "end_text_KYC": "امیر کنارنگ عزیز\\n\\nاطلاعات شما با موفقیت دریافت شد\\n\\nاطلاعات شما را تا 1 ساعت آینده بررسی می\u200Cکنیم و نتیجه را از طریق پیامک به شما اطلاع می\u200Cدهیم"
+    "end_text_KYC": "امیر کنارنگ عزیز\\n\\nاطلاعات شما با موفقیت دریافت شد\\n\\nاطلاعات شما را تا 1 ساعت آینده بررسی می\u200Cکنیم و نتیجه را از طریق پیامک به شما اطلاع می\u200Cدهیم",
+    "start_button": "شروع",
+    "accept_rule_page_title": "بازکردن حساب در بلو",
+    "accept_rule_page_subtitle": "تکمیل مراحل زیر، فقط چند دقیقه زمان نیاز دارد",
+    "create_account_step_title": "ساخت حساب کاربری",
+    "create_account_step_subtitle": "در این مرحله اطلاعات خودتان را وارد می\u200Cکنید و رمز عبور انتخاب می\u200Cکنید.",
+    "Documents_scan_step_title": "اسکن مدارک شما",
+    "Identification_step_title": "شناسایی هویت شما",
+    "Check_information_step_title": "بررسی اطلاعات شما توسط بلو",
+    "card_order_step_title": "سفارش رایگان بلوکارت",
+    "rules_and_regulations_title": "قوانین و شرایط را خواندم و قبول می\u200Cکنم",
+    "confirm_button_title": "ادامه"
   }
 }
 

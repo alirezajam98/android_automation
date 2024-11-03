@@ -179,7 +179,7 @@ def write_counter(counter, filename='utils/counter.txt'):
 def username_generator():
     counter = read_counter() + 1
     write_counter(counter)
-    return f"cardm{counter}"
+    return f"andauto{counter}"
 
 
 ###############################################################################################
