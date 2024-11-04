@@ -1,5 +1,5 @@
 INFO     conftest:conftest.py:55 App opened without logging in.
-INFO     utils.common_flows:common_flows.py:27 Generated user info - Phone Number: 09113142718, National Code: 2242273388, Username: andauto20
+INFO     utils.common_flows:common_flows.py:27 Generated user info - Phone Number: 09118549484, National Code: 9771678558, Username: andauto22
 INFO     utils.common_flows:common_flows.py:34 Clicked on 'Allow' button for notification permission.
 INFO     utils.common_flows:common_flows.py:39 کلیک روی دکمه 'ایجاد حساب کاربری'...
 INFO     utils.common_flows:common_flows.py:44 دکمه 'ایجاد حساب کاربری' کلیک شد.
@@ -36,14 +36,14 @@ INFO     utils.common_flows:common_flows.py:343 متن صفحه شماره تل�
 INFO     utils.common_flows:common_flows.py:356 متن صفحه شماره تلفن، صحیح است: شماره تلفن همراه خود را وارد کنید
 INFO     utils.common_flows:common_flows.py:369 متن صفحه شماره تلفن، صحیح است: مانند: ۶۷۸۹ ۳۴۵ ۰۹۱۲
 INFO     utils.common_flows:common_flows.py:382 متن صفحه شماره تلفن، صحیح است: در ادامه کد تایید برای شما ارسال می‌شود
-INFO     utils.common_flows:common_flows.py:393 شماره تلفن وارد شد: 09113142718
+INFO     utils.common_flows:common_flows.py:393 شماره تلفن وارد شد: 09118549484
 INFO     utils.common_flows:common_flows.py:398 دکمه 'بعدی' کلیک شد.
 INFO     utils.common_flows:common_flows.py:407 متن صفحه ریفرال، صحیح است: کد معرف خود را وارد کنید (اختیاری)
 INFO     utils.common_flows:common_flows.py:421 متن ریفرال صحیح است: مانند:‌ MDMGKP
 INFO     utils.common_flows:common_flows.py:430 دکمه 'بعدی' کلیک شد.
 INFO     utils.common_flows:common_flows.py:439 متن صفحه کدملی، صحیح است: کد ملی خود را وارد کنید
 INFO     utils.common_flows:common_flows.py:453 متن کد ملی صحیح است: کد ملی ۱۰ رقمی
-INFO     utils.common_flows:common_flows.py:462 کدملی وارد شد: 2242273388
+INFO     utils.common_flows:common_flows.py:462 کدملی وارد شد: 9771678558
 INFO     utils.common_flows:common_flows.py:466 دکمه 'بعدی' کلیک شد.
 INFO     utils.common_flows:common_flows.py:475 متن صفحه تاریخ تولد، صحیح است: تاریخ تولد خود را وارد کنید
 INFO     utils.common_flows:common_flows.py:488 متن صفحه تاریخ تولد، صحیح است: روز/ماه/سال
@@ -51,7 +51,7 @@ INFO     utils.common_flows:common_flows.py:499 سال با موفقیت اسک�
 INFO     utils.common_flows:common_flows.py:503 دکمه 'بعدی' کلیک شد.
 INFO     utils.common_flows:common_flows.py:512 متن صفحه تاریخ تولد، صحیح است: نام کاربری دلخواه خود را وارد کنید
 INFO     utils.common_flows:common_flows.py:525 متن صفحه تاریخ تولد، صحیح است: مانند: blu
-INFO     utils.common_flows:common_flows.py:536 نام کاربری وارد شد: andauto20
+INFO     utils.common_flows:common_flows.py:536 نام کاربری وارد شد: andauto22
 INFO     utils.common_flows:common_flows.py:540 دکمه 'بعدی' کلیک شد.
 INFO     utils.common_flows:common_flows.py:549 متن صفحه رمزعبور، صحیح است: رمز عبور امنی برای خود انتخاب کنید
 INFO     utils.common_flows:common_flows.py:562 متن صفحه رمزعبور، صحیح است: رمز عبور
@@ -63,26 +63,3 @@ INFO     utils.common_flows:common_flows.py:625 رمز عبور وارد شد.
 INFO     utils.common_flows:common_flows.py:629 دکمه 'بعدی' کلیک شد.
 INFO     utils.common_flows:common_flows.py:638 متن صفحه مرحله ساخت اکانت، صحیح است: در این مرحله به کارت ملی یا کد رهگیری و شناسنامه نیاز دارید.
 INFO     utils.common_flows:common_flows.py:649 دکمه 'ادامه' کلیک شد.
-INFO     utils.config:test_national_ID_card_upload.py:56 گزینه 'کارت ملی' انتخاب شد.
-INFO     utils.config:test_national_ID_card_upload.py:61 دسترسی به دوربین تأیید شد.
-INFO     utils.config:test_national_ID_card_upload.py:69 عکس جلوی کارت ملی گرفته شد.
-INFO     utils.config:test_national_ID_card_upload.py:76 عکس تایید شد.
-INFO     utils.config:test_national_ID_card_upload.py:80 عکس پشت کارت ملی گرفته شد.
-INFO     utils.config:test_national_ID_card_upload.py:85 عکس تایید شد.
-INFO     utils.config:test_national_ID_card_upload.py:88 کلیک روی دکمه 'ادامه'...
-INFO     utils.config:test_national_ID_card_upload.py:91 دکمه 'ادامه' کلیک شد.
-INFO     utils.config:test_national_ID_card_upload.py:95 کلیک بر روی اولین شغل
-INFO     utils.config:test_national_ID_card_upload.py:98 اولین شغل از لیست انتخاب شد.
-INFO     utils.config:test_national_ID_card_upload.py:99 کلیک روی دکمه تایید...
-INFO     utils.config:test_national_ID_card_upload.py:101 دکمه 'ادامه' کلیک شد.
-INFO     utils.config:test_national_ID_card_upload.py:104 ویدیو آموزشی در حال پخش است ...
-INFO     utils.config:test_national_ID_card_upload.py:107 ویدیو آموزشی پخش و بر روی ادامه کلیک شد.
-INFO     utils.config:test_national_ID_card_upload.py:111 مجوز دوربین تأیید شد.
-INFO     utils.config:test_national_ID_card_upload.py:117 دوربین سلفی جهت فیلم برداری باز شد...
-INFO     utils.config:test_national_ID_card_upload.py:120 ضبط ویدیو شروع شد.
-INFO     utils.config:test_national_ID_card_upload.py:123 ضبط ویدیو متوقف شد.
-INFO     utils.config:test_national_ID_card_upload.py:125 ویدیو آپلود شد.
-INFO     utils.config:test_national_ID_card_upload.py:130 آپلود ویدیو تایید شد.
-INFO     utils.config:test_national_ID_card_upload.py:136 مراحل ایجاد حساب کاربری با موفقیت به پایان رسید.
-INFO     utils.config:test_national_ID_card_upload.py:140 انتقال به صفحه ورود و بررسی نام کاربری...
-INFO     utils.config:test_national_ID_card_upload.py:148 Username verification successful: andauto20
