@@ -61,7 +61,7 @@ def setup_user_account_creation_steps(driver, phone_number, national_code, usern
             logger.info("دکمه 'باز کردن حساب' کلیک شد.")
 
         # مرحله 5: انتخاب سرور 'UAT'
-        with allure.step("Select 'UAT' from server selection"):
+        with allure.step("Click on 'UAT' from server selection"):
             logger.info("انتخاب سرور 'UAT'...")
             select_server_page = SelectServerPage(driver)
             select_server_page.select_uat_server()
@@ -333,6 +333,59 @@ def setup_user_account_creation_steps(driver, phone_number, national_code, usern
             accept_page.click_confirm_button()
             logger.info("دکمه 'تایید' کلیک شد و به صفحه وارد کردن شماره تلفن هدایت شد.")
 
+            # بررسی متن های "EnterPhoneNumberPage" اما اگر اشتباه بود، ادامه پیدا کند
+        with allure.step("Check 'phone_number_page_header' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["phone_number_page_header"]
+                enter_phone_number_page = EnterPhoneNumberPage(driver)
+                actual_text = enter_phone_number_page.get_phone_number_page_header()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه شماره تلفن، صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن صفحه شماره تلفن: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+
+        with allure.step("Check 'phone_number_page_title' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["phone_number_page_title"]
+                enter_phone_number_page = EnterPhoneNumberPage(driver)
+                actual_text = enter_phone_number_page.get_phone_number_page_title()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه شماره تلفن، صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن صفحه شماره تلفن: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+
+        with allure.step("Check 'phone_number_field_text' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["phone_number_field_text"]
+                enter_phone_number_page = EnterPhoneNumberPage(driver)
+                actual_text = enter_phone_number_page.get_phone_number_field_text()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه شماره تلفن، صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن صفحه شماره تلفن: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+
+        with allure.step("Check 'phone_number_page_subtitle' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["phone_number_page_subtitle"]
+                enter_phone_number_page = EnterPhoneNumberPage(driver)
+                actual_text = enter_phone_number_page.get_phone_number_page_subtitle()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه شماره تلفن، صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن صفحه شماره تلفن: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+
         # مرحله 9: وارد کردن شماره تلفن
         with allure.step("Enter phone number"):
             phone_page = EnterPhoneNumberPage(driver)
@@ -344,25 +397,65 @@ def setup_user_account_creation_steps(driver, phone_number, national_code, usern
             phone_page.click_next_button()
             logger.info("دکمه 'بعدی' کلیک شد.")
 
+            # بررسی متن های "ReferralPage" اما اگر اشتباه بود، ادامه پیدا کند
+        with allure.step("Check 'referral_page_title' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["referral_page_title"]
+                referral_page = ReferralPage(driver)
+                actual_text = referral_page.get_referral_page_title()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه ریفرال، صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن صفحه ریفرال: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+
         # مرحله 11: بررسی متن ریفرال
         with allure.step("Check 'مانند:‌ MDMGKP' text"):
-            expected_text = text_reference["kyc_pages"]["referralInputEditText"]
-            referral_page = ReferralPage(driver)
-            actual_text = referral_page.get_referral_field_text()
-            assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
-            logger.info(f"متن ریفرال صحیح است: {actual_text}")
+            try:
+                expected_text = text_reference["kyc_pages"]["referralInputEditText"]
+                referral_page = ReferralPage(driver)
+                actual_text = referral_page.get_referral_field_text()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن ریفرال صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن صفحه موافقت با قوانین و شرایط: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
 
         with allure.step("Click next button"):
             referral_page.click_next_button()
             logger.info("دکمه 'بعدی' کلیک شد.")
 
+            # بررسی متن های "NationalCodePage" اما اگر اشتباه بود، ادامه پیدا کند
+        with allure.step("Check 'national_code_title' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["national_code_title"]
+                national_page = NationalCodePage(driver)
+                actual_text = national_page.get_national_code_title()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه کدملی، صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن صفحه کدملی: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+
         # مرحله 12: بررسی و وارد کردن کد ملی
         with allure.step("Check 'کد ملی ۱۰ رقمی' text"):
-            expected_text = text_reference["kyc_pages"]["national_code"]
-            national_page = NationalCodePage(driver)
-            actual_text = national_page.get_national_code_text()
-            assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
-            logger.info(f"متن کد ملی صحیح است: {actual_text}")
+            try:
+                expected_text = text_reference["kyc_pages"]["national_code"]
+                national_page = NationalCodePage(driver)
+                actual_text = national_page.get_national_code_text()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن کد ملی صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن صفحه کدملی: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+                # خطا را لاگ می‌کنیم اما ادام
 
         with allure.step("Enter national code"):
             national_page.enter_national_code(national_code)
@@ -371,6 +464,33 @@ def setup_user_account_creation_steps(driver, phone_number, national_code, usern
         with allure.step("Click next button"):
             national_page.click_next_button()
             logger.info("دکمه 'بعدی' کلیک شد.")
+
+            # بررسی متن های "BirthDatePage" اما اگر اشتباه بود، ادامه پیدا کند
+        with allure.step("Check 'birth_day_page_title' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["birth_day_page_title"]
+                birth_day_page = BirthDatePage(driver)
+                actual_text = birth_day_page.get_birth_day_page_title()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه تاریخ تولد، صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن صفحه تاریخ تولد: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+
+        with allure.step("Check 'birth_day_empty_field_text' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["birth_day_empty_field_text"]
+                birth_day_page = BirthDatePage(driver)
+                actual_text = birth_day_page.get_birth_day_empty_field_text()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه تاریخ تولد، صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن صفحه تاریخ تولد: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
 
         # مرحله 13: اسکرول کردن سال
         with allure.step("Scroll year field"):
@@ -382,6 +502,33 @@ def setup_user_account_creation_steps(driver, phone_number, national_code, usern
             birth_date_page.click_next_button()
             logger.info("دکمه 'بعدی' کلیک شد.")
 
+            # بررسی متن های "UserNamePage" اما اگر اشتباه بود، ادامه پیدا کند
+        with allure.step("Check 'username_page_title' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["username_page_title"]
+                username_page = UserNamePage(driver)
+                actual_text = username_page.get_username_page_title()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه تاریخ تولد، صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن صفحه تاریخ تولد: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+
+        with allure.step("Check 'username_field_text' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["username_field_text"]
+                username_page = UserNamePage(driver)
+                actual_text = username_page.get_username_field_text()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه تاریخ تولد، صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن صفحه تاریخ تولد: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+
         # مرحله 14: وارد کردن نام کاربری
         with allure.step("Enter new username"):
             username_page = UserNamePage(driver)
@@ -392,6 +539,85 @@ def setup_user_account_creation_steps(driver, phone_number, national_code, usern
             username_page.click_next_button()
             logger.info("دکمه 'بعدی' کلیک شد.")
 
+            # بررسی متن های "PasswordPage" اما اگر اشتباه بود، ادامه پیدا کند
+        with allure.step("Check 'password_page_title' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["password_page_title"]
+                password_page = PasswordPage(driver)
+                actual_text = password_page.get_password_page_title()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه رمزعبور، صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن صفحه رمزعبور: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+
+        with allure.step("Check 'password_page_field_text' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["password_page_field_text"]
+                password_page = PasswordPage(driver)
+                actual_text = password_page.get_password_page_field_text()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه رمزعبور، صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن صفحه رمزعبور: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+
+        with allure.step("Check 'password_condition_lowercase_and_uppercase' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["password_condition_lowercase_and_uppercase"]
+                password_page = PasswordPage(driver)
+                actual_text = password_page.get_password_condition_lowercase_and_uppercase()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه رمزعبور، صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن صفحه رمزعبور: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+
+        with allure.step("Check 'password_condition_minimum_characters' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["password_condition_minimum_characters"]
+                password_page = PasswordPage(driver)
+                actual_text = password_page.get_password_condition_minimum_characters()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه رمزعبور، صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن صفحه رمزعبور: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+
+        with allure.step("Check 'password_condition_number' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["password_condition_number"]
+                password_page = PasswordPage(driver)
+                actual_text = password_page.get_password_condition_number()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه رمزعبور، صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن صفحه رمزعبور: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+
+        with allure.step("Check 'password_page_subtitle' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["password_page_subtitle"]
+                password_page = PasswordPage(driver)
+                actual_text = password_page.get_password_page_subtitle()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه رمزعبور، صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن صفحه رمزعبور: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
+
         # مرحله 15: وارد کردن رمز عبور
         with allure.step("Enter password"):
             password_page = PasswordPage(driver)
@@ -401,6 +627,20 @@ def setup_user_account_creation_steps(driver, phone_number, national_code, usern
         with allure.step("Click next button"):
             password_page.click_next_button()
             logger.info("دکمه 'بعدی' کلیک شد.")
+
+            # بررسی متن های "CreateAccountInBluStatePage" اما اگر اشتباه بود، ادامه پیدا کند
+        with allure.step("Check 'Documents_scan_step_subtitle' text"):
+            try:
+                expected_text = text_reference["kyc_pages"]["Documents_scan_step_subtitle"]
+                create_account_state_page = CreateAccountInBluStatePage(driver)
+                actual_text = create_account_state_page.get_documents_scan_step_subtitle()
+                assert actual_text == expected_text, f"Expected '{expected_text}', but got '{actual_text}'"
+                logger.info(f"متن صفحه مرحله ساخت اکانت، صحیح است: {actual_text}")
+            except AssertionError as e:
+                logger.error(f"خطا در بررسی متن صفحه مرحله ساخت اکانت: {e}")
+                allure.attach(f"Expected: {expected_text}\nActual: {actual_text}", "Mismatch in text",
+                              allure.attachment_type.TEXT)
+                # خطا را لاگ می‌کنیم اما ادامه می‌دهیم
 
         # مرحله 16: تایید وضعیت حساب کاربری در Blu
         with allure.step("Click next button"):

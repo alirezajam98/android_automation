@@ -293,6 +293,42 @@ class EnterPhoneNumberPage(BasePage):
         )
         phone_number_field.send_keys(phone_number)
 
+    def get_phone_number_page_header(self):
+        phone_number_page_header = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located(
+                (
+                    AppiumBy.ANDROID_UIAUTOMATOR,
+                    'new UiSelector().text("ساخت حساب کاربری")'))
+        )
+        return phone_number_page_header.get_attribute("text")
+
+    def get_phone_number_page_title(self):
+        phone_number_page_title = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located(
+                (
+                    AppiumBy.ANDROID_UIAUTOMATOR,
+                    'new UiSelector().resourceId("com.samanpr.blu.dev:id/titleTextView")'))
+        )
+        return phone_number_page_title.get_attribute("text")
+
+    def get_phone_number_field_text(self):
+        phone_number_field_text = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located(
+                (
+                    AppiumBy.ANDROID_UIAUTOMATOR,
+                    'new UiSelector().resourceId("com.samanpr.blu.dev:id/phoneInputEditText")'))
+        )
+        return phone_number_field_text.get_attribute("text")
+
+    def get_phone_number_page_subtitle(self):
+        phone_number_page_subtitle = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located(
+                (
+                    AppiumBy.ANDROID_UIAUTOMATOR,
+                    'new UiSelector().resourceId("com.samanpr.blu.dev:id/guideTextView")'))
+        )
+        return phone_number_page_subtitle.get_attribute("text")
+
     def click_next_button(self):
         """کلیک روی دکمه بعدی"""
         next_button = WebDriverWait(self.driver, 10).until(
@@ -303,6 +339,13 @@ class EnterPhoneNumberPage(BasePage):
 
 class ReferralPage(BasePage):
     """کلاس مربوط به صفحه وارد کردن کد ریفرال"""
+
+    def get_referral_page_title(self):
+        """دریافت متن فیلد ریفرال"""
+        referral_page_title = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((AppiumBy.ID, "com.samanpr.blu.dev:id/titleTextView"))
+        )
+        return referral_page_title.get_attribute("text")
 
     def get_referral_field_text(self):
         """دریافت متن فیلد ریفرال"""
@@ -336,6 +379,14 @@ class NationalCodePage(BasePage):
         )
         return national_code_field.get_attribute("text")
 
+    def get_national_code_title(self):
+        """دریافت متن فیلد کد ملی"""
+        national_code_title = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().resourceId('
+                                                                          '"com.samanpr.blu.dev:id/titleTextView")'))
+        )
+        return national_code_title.get_attribute("text")
+
     def click_next_button(self):
         """کلیک روی دکمه بعدی"""
         next_button = WebDriverWait(self.driver, 10).until(
@@ -346,6 +397,22 @@ class NationalCodePage(BasePage):
 
 class BirthDatePage(BasePage):
     """کلاس مربوط به تنظیم تاریخ تولد"""
+
+    def get_birth_day_page_title(self):
+        """دریافت متن فیلد کد ملی"""
+        birth_day_page_title = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().resourceId('
+                                                                          '"com.samanpr.blu.dev:id/pageTitle")'))
+        )
+        return birth_day_page_title.get_attribute("text")
+
+    def get_birth_day_empty_field_text(self):
+        """دریافت متن فیلد کد ملی"""
+        birth_day_empty_field_text = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().resourceId('
+                                                                          '"com.samanpr.blu.dev:id/birthdateInputEditText")'))
+        )
+        return birth_day_empty_field_text.get_attribute("text")
 
     def scroll_year(self):
         """اسکرول کردن سال با استفاده از ActionChains با مختصات مطلق"""
@@ -367,6 +434,22 @@ class BirthDatePage(BasePage):
 class UserNamePage(BasePage):
     """کلاس مربوط به وارد کردن نام کاربری"""
 
+    def get_username_page_title(self):
+        username_page_title = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().resourceId('
+                                                                          '"com.samanpr.blu.dev:id/titleTextView")'))
+        )
+        return username_page_title.get_attribute("text")
+
+    def get_username_field_text(self):
+        username_field = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((AppiumBy.ANDROID_UIAUTOMATOR,
+                                            'new UiSelector().resourceId('
+                                            '"com.samanpr.blu.dev:id/usernameInputEditText")'
+                                            ))
+        )
+        return username_field.get_attribute("text")
+
     def enter_username(self, username):
         """وارد کردن نام کاربری"""
         username_field = WebDriverWait(self.driver, 10).until(
@@ -386,6 +469,46 @@ class UserNamePage(BasePage):
 class PasswordPage(BasePage):
     """کلاس مربوط به وارد کردن رمز عبور"""
 
+    def get_password_page_title(self):
+        password_page_title = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().resourceId('
+                                                                          '"com.samanpr.blu.dev:id/titleTextView")'))
+        )
+        return password_page_title.get_attribute("text")
+
+    def get_password_page_field_text(self):
+        password_page_field_text = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().resourceId('
+                                                                          '"com.samanpr.blu.dev:id/textInputEditText")'))
+        )
+        return password_page_field_text.get_attribute("text")
+
+    def get_password_condition_lowercase_and_uppercase(self):
+        password_condition_lowercase_and_uppercase = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("شامل حروف کوچک و بزرگ انگلیسی")'))
+        )
+        return password_condition_lowercase_and_uppercase.get_attribute("text")
+
+    def get_password_condition_minimum_characters(self):
+        username_field = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located(
+                (AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("شامل حداقل ۸ کاراکتر")'))
+        )
+        return username_field.get_attribute("text")
+
+    def get_password_condition_number(self):
+        password_condition_number = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("شامل عدد")'))
+        )
+        return password_condition_number.get_attribute("text")
+
+    def get_password_page_subtitle(self):
+        password_page_subtitle = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().resourceId('
+                                                                          '"com.samanpr.blu.dev:id/guideTextView")'))
+        )
+        return password_page_subtitle.get_attribute("text")
+
     def enter_password(self, password):
         """وارد کردن رمز عبور"""
         password_field = WebDriverWait(self.driver, 10).until(
@@ -403,6 +526,14 @@ class PasswordPage(BasePage):
 
 class CreateAccountInBluStatePage(BasePage):
     """کلاس مربوط به تایید ایجاد حساب در بلو استیت"""
+
+    def get_documents_scan_step_subtitle(self):
+        documents_scan_step_subtitle = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("در این مرحله به '
+                                                                          'کارت ملی یا کد رهگیری و شناسنامه نیاز '
+                                                                          'دارید.")'))
+        )
+        return documents_scan_step_subtitle.get_attribute("text")
 
     def click_confirm_button(self):
         """کلیک روی دکمه تایید"""

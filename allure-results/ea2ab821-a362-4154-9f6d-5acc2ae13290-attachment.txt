@@ -1,0 +1,88 @@
+INFO:conftest:App opened without logging in.
+INFO:utils.common_flows:Generated user info - Phone Number: 09113142718, National Code: 2242273388, Username: andauto20
+INFO:utils.common_flows:Clicked on 'Allow' button for notification permission.
+INFO:utils.common_flows:کلیک روی دکمه 'ایجاد حساب کاربری'...
+INFO:utils.common_flows:دکمه 'ایجاد حساب کاربری' کلیک شد.
+INFO:utils.common_flows:Clicked on 'Allow' button for notification permission.
+INFO:utils.common_flows:کلیک روی دکمه 'باز کردن حساب'...
+INFO:utils.common_flows:دکمه 'باز کردن حساب' کلیک شد.
+INFO:utils.common_flows:انتخاب سرور 'UAT'...
+INFO:utils.common_flows:سرور 'UAT' انتخاب شد.
+INFO:utils.common_flows:متن تایتل برای صفحه توضیحات صحیح است: در فرایند بازکردن حساب در بلو به موارد زیر نیاز خواهید داشت:
+INFO:utils.common_flows:متن صفحه توضیحات صحیح است: ۷ دقیقه زمان!
+INFO:utils.common_flows:متن صفحه توضیحات صحیح است: کمتر از ۷ دقیقه زمان نیاز دارید
+INFO:utils.common_flows:متن صفحه توضیحات صحیح است: سیم‌کارت به‌نام
+INFO:utils.common_flows:متن صفحه توضیحات صحیح است: فعال و به نام خودتان باشد
+INFO:utils.common_flows:متن صفحه توضیحات صحیح است: اصل مدرک هویتی
+INFO:utils.common_flows:متن صفحه توضیحات صحیح است: [ کارت ملی هوشمند ] یا [ کد رهگیری + شناسنامه ]
+INFO:utils.common_flows:متن صفحه توضیحات صحیح است: شروع
+INFO:utils.common_flows:کلیک روی دکمه 'شروع'...
+INFO:utils.common_flows:دکمه 'شروع' کلیک شد.
+INFO:utils.common_flows:متن صفحه موافقت با قوانین و شرایط، صحیح است: بازکردن حساب در بلو
+INFO:utils.common_flows:متن صفحه موافقت با قوانین و شرایط، صحیح است: تکمیل مراحل زیر، فقط چند دقیقه زمان نیاز دارد
+INFO:utils.common_flows:متن صفحه موافقت با قوانین و شرایط، صحیح است: ساخت حساب کاربری
+INFO:utils.common_flows:متن صفحه موافقت با قوانین و شرایط، صحیح است: در این مرحله اطلاعات خودتان را وارد می‌کنید و رمز عبور انتخاب می‌کنید.
+INFO:utils.common_flows:متن صفحه موافقت با قوانین و شرایط، صحیح است: اسکن مدارک شما
+INFO:utils.common_flows:متن صفحه موافقت با قوانین و شرایط، صحیح است: شناسایی هویت شما
+INFO:utils.common_flows:متن صفحه موافقت با قوانین و شرایط، صحیح است: بررسی اطلاعات شما توسط بلو
+INFO:utils.common_flows:متن صفحه موافقت با قوانین و شرایط، صحیح است: سفارش رایگان بلوکارت
+INFO:utils.common_flows:متن صفحه موافقت با قوانین و شرایط، صحیح است: قوانین و شرایط را خواندم و قبول می‌کنم
+INFO:utils.common_flows:متن دکمه ادامه در صفحه موافقت با قوانین و شرایط، صحیح است: ادامه
+INFO:utils.common_flows:Initial switch status: OFF
+INFO:utils.common_flows:Switch status after toggle: ON
+INFO:utils.common_flows:کلیک روی دکمه 'تایید'...
+INFO:utils.common_flows:دکمه 'تایید' کلیک شد و به صفحه وارد کردن شماره تلفن هدایت شد.
+INFO:utils.common_flows:متن صفحه شماره تلفن، صحیح است: ساخت حساب کاربری
+INFO:utils.common_flows:متن صفحه شماره تلفن، صحیح است: شماره تلفن همراه خود را وارد کنید
+INFO:utils.common_flows:متن صفحه شماره تلفن، صحیح است: مانند: ۶۷۸۹ ۳۴۵ ۰۹۱۲
+INFO:utils.common_flows:متن صفحه شماره تلفن، صحیح است: در ادامه کد تایید برای شما ارسال می‌شود
+INFO:utils.common_flows:شماره تلفن وارد شد: 09113142718
+INFO:utils.common_flows:دکمه 'بعدی' کلیک شد.
+INFO:utils.common_flows:متن صفحه ریفرال، صحیح است: کد معرف خود را وارد کنید (اختیاری)
+INFO:utils.common_flows:متن ریفرال صحیح است: مانند:‌ MDMGKP
+INFO:utils.common_flows:دکمه 'بعدی' کلیک شد.
+INFO:utils.common_flows:متن صفحه کدملی، صحیح است: کد ملی خود را وارد کنید
+INFO:utils.common_flows:متن کد ملی صحیح است: کد ملی ۱۰ رقمی
+INFO:utils.common_flows:کدملی وارد شد: 2242273388
+INFO:utils.common_flows:دکمه 'بعدی' کلیک شد.
+INFO:utils.common_flows:متن صفحه تاریخ تولد، صحیح است: تاریخ تولد خود را وارد کنید
+INFO:utils.common_flows:متن صفحه تاریخ تولد، صحیح است: روز/ماه/سال
+INFO:utils.common_flows:سال با موفقیت اسکرول شد.
+INFO:utils.common_flows:دکمه 'بعدی' کلیک شد.
+INFO:utils.common_flows:متن صفحه تاریخ تولد، صحیح است: نام کاربری دلخواه خود را وارد کنید
+INFO:utils.common_flows:متن صفحه تاریخ تولد، صحیح است: مانند: blu
+INFO:utils.common_flows:نام کاربری وارد شد: andauto20
+INFO:utils.common_flows:دکمه 'بعدی' کلیک شد.
+INFO:utils.common_flows:متن صفحه رمزعبور، صحیح است: رمز عبور امنی برای خود انتخاب کنید
+INFO:utils.common_flows:متن صفحه رمزعبور، صحیح است: رمز عبور
+INFO:utils.common_flows:متن صفحه رمزعبور، صحیح است: شامل حروف کوچک و بزرگ انگلیسی
+INFO:utils.common_flows:متن صفحه رمزعبور، صحیح است: شامل حداقل ۸ کاراکتر
+INFO:utils.common_flows:متن صفحه رمزعبور، صحیح است: شامل عدد
+INFO:utils.common_flows:متن صفحه رمزعبور، صحیح است: رمز عبور شما همان رمز بانکی شماست!
+INFO:utils.common_flows:رمز عبور وارد شد.
+INFO:utils.common_flows:دکمه 'بعدی' کلیک شد.
+INFO:utils.common_flows:متن صفحه مرحله ساخت اکانت، صحیح است: در این مرحله به کارت ملی یا کد رهگیری و شناسنامه نیاز دارید.
+INFO:utils.common_flows:دکمه 'ادامه' کلیک شد.
+INFO:utils.config:گزینه 'کارت ملی' انتخاب شد.
+INFO:utils.config:دسترسی به دوربین تأیید شد.
+INFO:utils.config:عکس جلوی کارت ملی گرفته شد.
+INFO:utils.config:عکس تایید شد.
+INFO:utils.config:عکس پشت کارت ملی گرفته شد.
+INFO:utils.config:عکس تایید شد.
+INFO:utils.config:کلیک روی دکمه 'ادامه'...
+INFO:utils.config:دکمه 'ادامه' کلیک شد.
+INFO:utils.config:کلیک بر روی اولین شغل
+INFO:utils.config:اولین شغل از لیست انتخاب شد.
+INFO:utils.config:کلیک روی دکمه تایید...
+INFO:utils.config:دکمه 'ادامه' کلیک شد.
+INFO:utils.config:ویدیو آموزشی در حال پخش است ...
+INFO:utils.config:ویدیو آموزشی پخش و بر روی ادامه کلیک شد.
+INFO:utils.config:مجوز دوربین تأیید شد.
+INFO:utils.config:دوربین سلفی جهت فیلم برداری باز شد...
+INFO:utils.config:ضبط ویدیو شروع شد.
+INFO:utils.config:ضبط ویدیو متوقف شد.
+INFO:utils.config:ویدیو آپلود شد.
+INFO:utils.config:آپلود ویدیو تایید شد.
+INFO:utils.config:مراحل ایجاد حساب کاربری با موفقیت به پایان رسید.
+INFO:utils.config:انتقال به صفحه ورود و بررسی نام کاربری...
+INFO:utils.config:Username verification successful: andauto20
