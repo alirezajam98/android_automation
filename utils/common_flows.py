@@ -654,3 +654,6 @@ def setup_user_account_creation_steps(driver, phone_number, national_code, usern
         screenshot_path = capture_screenshot(driver, "account_creation_error")
         allure.attach.file(screenshot_path, name="Error Screenshot", attachment_type=allure.attachment_type.PNG)
         raise e
+
+
+
